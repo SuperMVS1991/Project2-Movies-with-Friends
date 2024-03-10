@@ -3,6 +3,7 @@
     "bulma": "^0.9.4",
     "express": "^4.17.1",
     "mongoose": "^5.9.7",
+    "serialize": "^0.1.3",
     "streaming-availability": "^3.0.1"
   },
   "devDependencies": {
