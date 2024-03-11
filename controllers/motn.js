@@ -9,9 +9,20 @@ const options = {
   }
 };
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-}
+  fetch(url, options)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        //console.log(data) 
+        //call random movies function
+        randomMovies(data);      
+    });
+
+    function randomMovies(data) {
+      for (i = 0; i < 2; i++) {
+          var randomMovies = Math.floor(Math.random() * 50);
+  
+          console.log(data.results[randomMovies].title);
+      }
+  }
