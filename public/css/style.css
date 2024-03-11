@@ -12,6 +12,22 @@ font-style: normal; */
     border-style: solid;
 }
 
+span.chennai {
+    font-family: "chennai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 125%;
+}
+
+main p, h1, h2, h3, h4, h5, h6 {
+    line-height: 125%;
+}
+
+ .navbar-menu p {
+    color:darkgray !important;
+ }
+
 .centered-image {
     max-width: 100%;
     display: block;
