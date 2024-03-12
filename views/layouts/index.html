@@ -33,8 +33,16 @@
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      <br>
+      <form>
+      <input type="text" name="user" id="users" placeholder="username">
 
- 
+      <div class="commentInput">
+        <input type="text" placeholder="start a conversation" id="comment">
+          <button type="submit" id="publish">Publish</button>
+      </form>
+
+         
     </main>
     <footer>
       
@@ -44,6 +52,8 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="../../controllers/motn.js"></script>
+  <script src="../../public/javascript/cmment.js"></script>
   {{/if}}
 </body>
 

@@ -1,13 +1,18 @@
-const axios = require('axios');
 
-const options = {
-  method: 'GET',
-  url: 'https://streaming-availability.p.rapidapi.com/genres',
-  headers: {
-    'X-RapidAPI-Key': 'e6c23ce8a9mshf3da26607ad49bap1186f7jsn882568b6ee1c',
-    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-  }
+function getMovies(data) {
+  var url = 'https://streaming-availability.p.rapidapi.com/genres' + data + '/';
+  randomMoviesEl.innerHTML = '';
+
+ 
+  const url = 'https://streaming-availability.p.rapidapi.com/countries';
+  const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e0fd7191d3msh744fc8740a01ac7p1081e7jsn8cd0c4f9b596',
+		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+	}
 };
+
 
   fetch(url, options)
     .then(function (response) {
@@ -19,6 +24,8 @@ const options = {
         randomMovies(data);      
     });
 
+  }
+
     function randomMovies(data) {
       for (i = 0; i < 2; i++) {
           var randomMovies = Math.floor(Math.random() * 50);
@@ -26,3 +33,16 @@ const options = {
           console.log(data.results[randomMovies].title);
       }
   }
+
+  printMovies(data, oldData, i);
+
+
+  function printMovies(data, oldData, i) {
+    console.log(i);
+    var movieTitleId = "movieTitle" + i;
+    var movie = oldData + ': ';
+    document.getElementById(movieTitleId).innerHTML = movie;
+    //this opens up the modal to make it visible
+    var instance = M.Modal.getInstance(document.getElementById('movieModal'));
+    instance.open();
+}
