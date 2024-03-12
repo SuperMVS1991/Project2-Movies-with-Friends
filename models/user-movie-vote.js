@@ -1,24 +1,32 @@
-const mongoose = require('mongoose');
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
 
-const userMovieVoteSchema = new mongoose.Schema({
-    userId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',
-        required: true
+const UserMovieVote = sequelize.define('UserMovieVote', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
     },
     movieId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Movie',
-        required: true
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        reference: {
+            model: 'movies',
+            key: 'id',
+        },
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        reference: {
+            model: 'users',
+            key: 'id',
+        },
     },
     vote: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 5
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 });
-
-const UserMovieVote = mongoose.model('UserMovieVote', userMovieVoteSchema);
 
 module.exports = UserMovieVote;

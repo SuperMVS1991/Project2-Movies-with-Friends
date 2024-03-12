@@ -1,16 +1,20 @@
-const genres = [
-    { name: 'Action' },
-    { name: 'Adventure' },
-    { name: 'Comedy' },
-    { name: 'Drama' },
-    { name: 'Fantasy' },
-    { name: 'Horror' },
-    { name: 'Mystery' },
-    { name: 'Romance' },
-    { name: 'Sci-Fi' },
-    { name: 'Thriller' },
-    { name: 'Western' },
-    { name: 'Animation' }
-];
+const { DataTypes } = require('sequelize');
+const sequelize = require('../database/connection');
 
-module.exports = genres;
+const Genre = sequelize.define('Genre', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
+});
+
+module.exports = Genre;
