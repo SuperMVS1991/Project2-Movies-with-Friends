@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Discussion Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Discussion Page</h1>
+    <div class="discussion-container">
+      {{#each comments}}
+        <div class="comment">
+          <h3>{{author}}</h3>
+          <p>{{content}}</p>
+        </div>
+      {{/each}}
+    </div>
+    <form class="comment-form" action="/post-comment" method="POST">
+      <input type="text" name="author" placeholder="Your Name" required />
+      <textarea
+        name="content"
+        placeholder="Write your comment here"
+        required
+      ></textarea>
+      <button type="submit">Post Comment</button>
+    </form>
+  </body>
+</html>

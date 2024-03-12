@@ -8,54 +8,81 @@
   <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
  <!-- <link rel="stylesheet" href="/css/jass.css"> -->
   <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
-<body>
-  <div class="flex-column justify-space-around">
-    <header class="container is-full">
-        <div class="image is-2by1 theater">
-            <img src="/public/images/mob/MwF_Logo.png" alt="Movies with Friends" />
+<body class="has-background-dark has-text-light">
+  <section class="hero is-info is-fullheight has-background-black">
+    <div class="hero-head has-background-black">
+        <div>
+            <img src="/public/images/mob/Theater-w-logo-mob.png" alt="Movies with Friends mobile header" class="image mobile-image centered-image" />
+            <img src="/public/images/des/Theater-w-logo-des-des.png"  class="image desktop-image centered-image"> 
+
+            <nav class="navbar has-background-black" role="navigation" aria-label="main navigation">
+                <div class="navbar-menu is-light">
+                  <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                  </a>
+                </div>
+                <!-- Conditionally render login or logout links -->
+                <!--{{#if logged_in}} -->
+                <div id="navbar-menu-signed-in" class="navbar-menu">
+                        <div class="navbar-item"><p>My profile</p></div>
+                        <div class="navbar-item"><p>Friends' profiles</p></div>
+                        <hr class="navbar-divider">
+                        <div class="navbar-item"><p>About Movies with Friends</p></div>
+                        <div class="navbar-item"><p>Contact Us</p></div>
+                        <hr class="navbar-divider">
+                        <div class="navbar-item"><p>Sign out</p></div>
+                </div>
+                <!--{{/if}} -->
+                <!--{{else}} -->
+                <div id="navbar-menu-signed-out" class="navbar-menu">
+                        <div class="navbar-item"><p>Sign in</p></div>
+                        <div class="navbar-item"><p>Sign up</p></div>
+                        <hr class="navbar-divider has-text-link">
+                        <div class="navbar-item"><p>About Movies with Friends</p></div>
+                        <div class="navbar-item"><p>Contact Us</p></div>
+                <!-- {{else}} -->
+                </div>
+              </nav>
+        </div> 
+    </header>
+
+    <main class="section mx-2 my-2">
+      <!-- Render the sub layout -->
+      <!-- {{{ body }}} -->
+      <h1 class="has-text-centered is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <br /> <span class="chennai">Movies with Friends</span> if...</h1>
+
+      <section class="tile is-ancestor m-3">
+
+        <div class="tile">
+          <p><i class="fa-solid fa-check mr-1 is-size-2"></i></p>
+          <p><i class="fa-solid fa-people-line is-size-4 mr-2"></i></p>
+          <p>You love to watch movies AND discuss them with other people</p>
+          </div>
+
+        <div class="tile">
+          <p><i class="fa-solid fa-check mr-1 is-size-2"></i></p>
+          <p><i class="fa-solid fa-pen-to-square is-size-4 mr-2"></i><p>You like to read and write reviews on major movie websites</p>
         </div>
 
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
-      {{{ body }}}
-      <br>
-      <form>
-      <input type="text" name="user" id="users" placeholder="username">
+        <div class="tile">
+          <p><i class="fa-solid fa-check mr-1 is-size-2"></i></p>
+          <p><i class="fa-solid fa-share-nodes is-size-4 mr-2"></i></p>
+          <p>You post about movies you have watched on other social media platforms, but not everyone shares your passion for movie discussion or has watched the same movies.</p></div>
+      </section>
 
-      <div class="commentInput">
-        <input type="text" placeholder="start a conversation" id="comment">
-          <button type="submit" id="publish">Publish</button>
-      </form>
-
-         
+      <h2 class="mt-1">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</h2>
+      
     </main>
+
     <footer>
       
     </footer>
-  </div>
-
-  <!-- Render script for logged in users only -->
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  <script src="../../controllers/motn.js"></script>
-  <script src="../../public/javascript/cmment.js"></script>
-  {{/if}}
+    <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
