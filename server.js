@@ -2,6 +2,7 @@ const express = require("express");
 
 // Import the connection object
 const sequelize = require("./config/connection");
+// check with tutor if file path is correct above
 
 const app = express();
 const PORT = process.env.PORT || 3306;

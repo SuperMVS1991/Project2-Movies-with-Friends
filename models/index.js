@@ -8,6 +8,6 @@ module.exports = {
     Movie,
 };
 // Import your controllers here
-const homeRoutes = require('./home-routes');
+const homeRoutes = require('controllers\home-routes.js');
 const apiRoutes = require('./api');
 const dashboardRoutes = require('./dashboard-routes');
