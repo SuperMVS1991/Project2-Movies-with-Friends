@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to our Movie App!</h1>
+    <p>Enjoy browsing our collection of movies.</p>
+    <ul>
+      {{#each movies}}
+        <li>{{this.title}}</li>
+      {{/each}}
+    </ul>
+  </body>
+</html>
