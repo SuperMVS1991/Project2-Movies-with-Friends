@@ -1,15 +1,27 @@
-// Import any necessary modules or libraries here
+const { DataTypes, Model } = require("sequelize");
+const sequelize = require("../database/connection");
 
-// Define your movie model here
-class Movie {
-    constructor(title, director, releaseYear) {
-        this.title = title;
-        this.director = director;
-        this.releaseYear = releaseYear;
-    }
+const Movie = sequelize.define("Movie", {
+  title: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  releaseYear: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  genre: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    references: {
+      model: "genres",
+      key: "id",
+    },
+  },
+  director: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+});
 
-    // Add any additional methods or properties here
-}
-
-// Export the movie model
 module.exports = Movie;
