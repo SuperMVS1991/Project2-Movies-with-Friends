@@ -1,4 +1,9 @@
 {
+  "name": "package.json",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "nodemon app.js"
+  },
   "dependencies": {
     "bulma": "^0.9.4",
     "express": "^4.17.1",
@@ -7,6 +12,7 @@
     "streaming-availability": "^3.0.1"
   },
   "devDependencies": {
-    "mocha": "^10.3.0"
+    "mocha": "^10.3.0",
+    "nodemon": "^3.1.0"
   }
 }
