@@ -1,7 +1,8 @@
 {
+  "name": "package.json",
+  "version": "1.0.0",
   "scripts": {
-    "start": "node server.js",
-    "watch": "nodemon your-entry-file.js"
+    "watch": "nodemon app.js"
   },
   "dependencies": {
     "bulma": "^0.9.4",

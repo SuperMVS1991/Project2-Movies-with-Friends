@@ -1,0 +1,17 @@
+<div class="nominate-info">
+    <h2>Nominate a Movie</h2>
+    <p>Fill out the form below to nominate a movie:</p>
+    
+    <form action="/nominate" method="POST">
+        <label for="movie-title">Movie Title:</label>
+        <input type="text" id="movie-title" name="movieTitle" required>
+        
+        <label for="release-year">Release Year:</label>
+        <input type="number" id="release-year" name="releaseYear" required>
+        
+        <label for="director">Director:</label>
+        <input type="text" id="director" name="director" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+</div>

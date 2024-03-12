@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Vote</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Vote</h1>
+    <form action="/vote" method="POST">
+      <label for="movie">Select a movie:</label>
+      <select name="movie" id="movie">
+        {{#each movies}}
+          <option value="{{this}}">{{this}}</option>
+        {{/each}}
+      </select>
+      <button type="submit">Vote</button>
+    </form>
+  </body>
+</html>

@@ -1,7 +1,7 @@
-const express = require('express');
+const express = require("express");
 
 // Import the connection object
-const sequelize = require('./config/connection.js');
+const sequelize = require("./config/connection");
 
 const app = express();
 const PORT = process.env.PORT || 3306;
@@ -11,5 +11,5 @@ app.use(express.urlencoded({ extended: true }));
 
 // Connect to the database before starting the Express.js server
 sequelize.sync().then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log("Now listening"));
 });
