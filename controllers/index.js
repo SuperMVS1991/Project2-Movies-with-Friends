@@ -1,4 +1,5 @@
-const Movie = require('./models/Movie');
+// Wrong code in this file, compare to class exercises
+const Movie = require('./models/movies');
 
 const getMovies = async (req, res) => {
     try {
