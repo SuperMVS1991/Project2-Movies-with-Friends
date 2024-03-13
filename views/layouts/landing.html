@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="/public/css/style.css">
 </head>
 
-<body class="has-text-dark">
+<body class="is-dark">
     
 <section class="hero is-black is-fullheight">
     <!-- Hero head: will stick at the top -->
@@ -23,7 +23,7 @@
             <a class="navbar-item">
               <img src= "/public/images/MwF-alt-logo.png" alt="Movies with Friends">
             </a>
-            <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span class="navbar-burger is-light" data-target="navbarMenuHeroA">
               <span></span>
               <span></span>
               <span></span>
@@ -32,7 +32,7 @@
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
               <a class="navbar-item">
-                Sign in
+                Member Sign in
               </a>
               <a class="navbar-item ">
                 Sign up
@@ -52,31 +52,34 @@
   
     <!-- Hero content: will be in the middle -->
     <div class="hero-body theater">
-      <div class="container has-text-centered pt-7">
-        <section>
+      <div class="container has-text-centered pt-5 px-6">
+        <section class="top-start">
             <h1 class="is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <br /> <span class="chennai">Movies with Friends</span> if...</h1>
         </section>
         <section>
-         <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-people-line is-size-4 mr-2"></i></span><br />You love to watch movies AND discuss them with other people</p>
+         <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-people-line is-size-2 mt-5"></i></span><br />You love to watch movies AND discuss them with other people.</p>
         </section>
         <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-pen-to-square is-size-4 mr-2"></i></span><br />You like to read and write reviews on major movie websites</p> 
+            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-pen-to-square is-size-2 mt-5"></i></span><br />You like to read and write reviews on major movie websites.</p> 
         </section>
         <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-share-nodes is-size-4 mr-2"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
+            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-share-nodes is-size-2 mt-5"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
         </section>
       </div>
     </div>
   
     <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
-        <container class="has-text-centered">
-            <p>Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
-        </container>
-        <div id ="entry-buttons" class="container is-full-width mx-auto">
-            <a class="button m-2 hero-button">Sign Up</a>
-            <a class="button m-2 hero-button">Sign In</a>
+        <container class="has-text-centered px-7 pb-7 mx-auto">
+            <div class="column">
+                <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop has-text-warning">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
         </div>
+        <div id ="entry-buttons" class="column">
+            <a class="button m-2 hero-button is-danger">Sign Up</a>
+            <a class="button m-2 hero-button is-danger is-outlined">Member Sign In</a>
+        </div>
+        </container>
+       
     </div>
   </section>
 
