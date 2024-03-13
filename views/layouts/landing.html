@@ -4,37 +4,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Welcome to Movies with Friends</title> 
-        <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
-        <!-- <link rel="stylesheet" href="/css/jass.css"> -->
-         <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
-         <link rel="stylesheet" href="/public/css/style.css">
-    </head> 
+  <title>Movies with Friends</title>
+  <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+ <!-- <link rel="stylesheet" href="/css/jass.css"> -->
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="has-text-dark">
     
-    <body> 
-        <section class="hero is-info is-fullheight"> 
-            <div class="hero-head"> 
-                <nav class="navbar"> 
-                    <div class="container"> 
-                        <div class="navbar-brand"> 
-                            <a class="navbar-item" href="../"> <img src="http://bulma.io/images/bulma-type-white.png" alt="Logo"> </a> <span class="navbar-burger burger" data-target="navbarMenu"> <span></span> <span></span> <span></span> </span> 
-                        </div> 
-                        <div id="navbarMenu" class="navbar-menu"> 
-                            <div class="navbar-end"> <span class="navbar-item"> <a class="button is-white is-outlined" href="#"> <span class="icon"> <i class="fa fa-home"></i> </span> <span>Home</span> </a> </span> <span class="navbar-item"> <a class="button is-white is-outlined" href="#"> <span class="icon"> <i class="fa fa-superpowers"></i> </span> <span>Examples</span> </a> </span> <span class="navbar-item"> <a class="button is-white is-outlined" href="#"> <span class="icon"> <i class="fa fa-book"></i> </span> <span>Documentation</span> </a> </span> <span class="navbar-item"> <a class="button is-white is-outlined" href="https://github.com/BulmaTemplates/bulma-templates/blob/master/templates/landing.html"> <span class="icon"> <i class="fa fa-github"></i> </span> <span>View Source</span> </a> </span> 
-                            </div> 
-                        </div> 
-                    </div> 
-                </nav> 
-            </div> 
-            <div class="hero-body"> 
-                <div class="container has-text-centered"> 
-                    <div class="column is-6 is-offset-3"> 
-                        <h1 class="title"> Coming Soon </h1> 
-                        <h2 class="subtitle"> $this is the best software platform for running an internet business. We handle billions of dollars every year for forward-thinking businesses around the world. </h2> 
-                        <div class="box"> 
-                            <div class="field is-grouped"> 
-                                <p class="control is-expanded"> <input class="input" type="text" placeholder="Enter your email"> </p> 
-                                <p class="control"> <a class="button is-info"> Notify Me </a> </p> 
-                            </div> 
-                        </div> 
-                    </div> </div> </div> </section> <script async type="text/javascript" src="../js/bulma.js"></script> </body> </html>
+<section class="hero is-black is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <!--connect to home-->
+            <a class="navbar-item">
+              <img src= "/public/images/MwF-alt-logo.png" alt="Movies with Friends">
+            </a>
+            <span class="navbar-burger" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item">
+                Sign in
+              </a>
+              <a class="navbar-item ">
+                Sign up
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                About Movies with Friends
+              </a>
+              <a class="navbar-item">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body theater">
+      <div class="container has-text-centered pt-7">
+        <section>
+            <h1 class="is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <br /> <span class="chennai">Movies with Friends</span> if...</h1>
+        </section>
+        <section>
+         <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-people-line is-size-4 mr-2"></i></span><br />You love to watch movies AND discuss them with other people</p>
+        </section>
+        <section>
+            <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-pen-to-square is-size-4 mr-2"></i></span><br />You like to read and write reviews on major movie websites</p> 
+        </section>
+        <section>
+            <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop"><span><i class="fa-solid fa-share-nodes is-size-4 mr-2"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
+        </section>
+      </div>
+    </div>
+  
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+        <container class="has-text-centered">
+            <p>Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
+        </container>
+        <div id ="entry-buttons" class="container is-full-width mx-auto">
+            <a class="button m-2 hero-button">Sign Up</a>
+            <a class="button m-2 hero-button">Sign In</a>
+        </div>
+    </div>
+  </section>
+
+  <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
