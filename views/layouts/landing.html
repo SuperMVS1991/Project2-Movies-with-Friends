@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Movies with Friends</title>
-  <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+
  <!-- <link rel="stylesheet" href="/css/jass.css"> -->
   <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
   <link rel="stylesheet" href="/public/css/style.css">
@@ -54,35 +54,60 @@
     <div class="hero-body theater">
       <div class="container has-text-centered pt-5 px-6">
         <section class="top-start">
-            <h1 class="is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <br /> <span class="chennai">Movies with Friends</span> if...</h1>
+            <h1 class="has-text-light has-shadow is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <span class="chennai">Movies with Friends</span> if...</h1>
         </section>
         <section>
-         <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-people-line is-size-2 mt-5"></i></span><br />You love to watch movies AND discuss them with other people.</p>
+         <p class="has-text-warning is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-people-line is-size-2 mt-5"></i></span><br />You love to watch movies AND discuss them with other people.</p>
         </section>
         <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-pen-to-square is-size-2 mt-5"></i></span><br />You like to read and write reviews on major movie websites.</p> 
+            <p class="has-text-info is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-pen-to-square is-size-2 mt-5"></i></span><br />You like to read and write reviews on major movie websites.</p> 
         </section>
         <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-share-nodes is-size-2 mt-5"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
+            <p class="has-text-success is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-share-nodes is-size-2 mt-5"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
         </section>
       </div>
     </div>
   
     <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
+        <!--Call to action-->
         <container class="has-text-centered px-7 pb-7 mx-auto">
             <div class="column">
-                <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop has-text-warning">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
-        </div>
-        <div id ="entry-buttons" class="column">
+                <p class="is-size-5-mobile is-size-4-tablet is-size-3-desktop has-text-light">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
+            </div>
+            <div id ="entry-buttons" class="column">
             <a class="button m-2 hero-button is-danger">Sign Up</a>
-            <a class="button m-2 hero-button is-danger is-outlined">Member Sign In</a>
-        </div>
+            <a id = "landing-showlogin" class="button m-2 hero-button is-danger is-outlined">Member Sign In</a>
+            </div>
         </container>
+
+<!--member sign in box, visible when the sign in button is clicked-->
+        <container id="member-signin">
+
+            <form class="box mx-auto pb-2">
+                <div class="field">
+                  <label class="label has-text-grey-light">Email</label>
+                  <div class="control">
+                    <input class="input" type="email" placeholder="e.g. luke@starwars.com">
+                  </div>
+                </div>
+              
+                <div class="field">
+                  <label class="label has-text-grey-light">Password</label>
+                  <div class="control">
+                    <input class="input" type="password" placeholder="********">
+                  </div>
+                </div>
+              
+                <button id="landing-signin" class="button is-danger">Sign in</button>
+              </form>
+
+        </container> <!--end of sign in box-->
        
     </div>
   </section>
 
+  <script src="public/javascript/mwf-misc.js"></script>
   <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
 </body>
 
