@@ -26,12 +26,9 @@ const USERID = {
       function addPost() {
           if(!userComment.value) return;
           USERID.name = userName.value;
-          if(USERID.name === "Anonymous") {
-              USERID.identity = false;
-              USERID.image = "anonymous.png"
-          }else {
+          if(!USERID.name) return; 
+            else {
               USERID.identity = true;
-              USERID.image = "user.png"
           }
   
           USERID.message = userComment.value;
