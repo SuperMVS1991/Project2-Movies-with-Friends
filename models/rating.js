@@ -23,12 +23,22 @@ const Rating = sequelize.define('Rating', {
             key: 'id',
         },
     },
-    rating: {
-        type: DataTypes.FLOAT,
+    title: {
+        type: DataTypes.STRING,
         allowNull: false,
+    },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    review: {
+        type: DataTypes.TEXT,
+        allowNull: true,
     },
 }, {
     tableName: 'ratings',
+    timestamps: false,
+    underscored: true,
 });
 
 module.exports = Rating;
