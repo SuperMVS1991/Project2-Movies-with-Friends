@@ -15,6 +15,11 @@ const Genre = sequelize.define('Genre', {
         type: DataTypes.TEXT,
         allowNull: true,
     },
+}, {
+    tableName: 'genres',
+    timestamps: false,
+    underscored: true,
 });
+
 
 module.exports = Genre;
