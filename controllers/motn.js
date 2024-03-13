@@ -1,17 +1,28 @@
-const axios = require('axios');
-
+function getMovies() {
+const urlGenres = 'https://streaming-availability.p.rapidapi.com/genres';
+const url = 'https://streaming-availability.p.rapidapi.com/countries';
 const options = {
-  method: 'GET',
-  url: 'https://streaming-availability.p.rapidapi.com/genres',
-  headers: {
-    'X-RapidAPI-Key': 'e6c23ce8a9mshf3da26607ad49bap1186f7jsn882568b6ee1c',
-    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-  }
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e0fd7191d3msh744fc8740a01ac7p1081e7jsn8cd0c4f9b596',
+		'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+	}
 };
 
-try {
-	const response = await axios.request(options);
-	console.log(response.data);
-} catch (error) {
-	console.error(error);
-}
+fetch(url, urlGenres, options)
+.then(function (response) {
+    return response.json();
+})
+.then(function (data) {
+
+    randomMovies(data);      
+}); 
+};
+
+
+function randomMovies(data) {
+    for (i = 0; i < 5; i++) {
+        var randomMovies = Math.floor(Math.random() * 50);
+
+    }};
+

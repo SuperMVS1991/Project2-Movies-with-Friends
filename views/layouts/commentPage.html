@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movies with Friends</title>
+  <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+ <!-- <link rel="stylesheet" href="/css/jass.css"> -->
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+  <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+
+
+    <div class="container">
+        <div class="head"><h1>Post a Comment</h1></div>
+        <div><span id="comment">0</span> Comments</div>
+        <div class="text"><p>We are happy to hear from you</p></div>
+        <div class="comments"></div>
+        <div class="commentbox">
+            <div class="content">
+                <h2>Comment as: </h2>
+                <input type="text" placeholder="username" class="user">
+
+                <div class="commentinput">
+                    <input type="text" placeholder="Enter comment" class="usercomment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="publish">Publish</button>
+                        <div class="notify">
+                            <input type="checkbox" class="notifyinput"> <span>Notify me</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="../../public/javascript/comment.js">
+
+</script>
+
+</body>
+</html>
