@@ -4,7 +4,14 @@ const router = express.Router();
 // Define your API routes here
 
 // Example route to fetch movies
-router.get('/movies', (req, res) => {
+router.get('/movies', (req, res) => {const url = 'https://moviesminidatabase.p.rapidapi.com/movie/id/%7Bmovie_id%7D/cast/';
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e0fd7191d3msh744fc8740a01ac7p1081e7jsn8cd0c4f9b596',
+		'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
+	}
+};
     // Logic to fetch movies from database or external API
     // Replace this with your own implementation
     const movies = [

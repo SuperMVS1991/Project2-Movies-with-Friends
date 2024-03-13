@@ -48,7 +48,18 @@
                 <!-- {{else}} -->
                 </div>
               </nav>
-        </div> 
+        </div>
+        
+        <!--button to create new discussion board, this will send user to voting page, which will then send user to commenting page -->
+          <button onclick="toggle()">add discussion</button>
+          <br>
+          <div id="popup">
+          <input type="text" placeholder="name of discussion" id="discussionName">
+          <br>
+          <button>create</button>
+          </div>
+      
+          <script src="../../public/javascript/dom.js"></script>
     </header>
 
     <main class="section mx-2 my-2">
@@ -83,6 +94,7 @@
       
     </footer>
     <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+    <script src="../../public/javascript/dom.js"></script>
 </body>
 
 </html>
