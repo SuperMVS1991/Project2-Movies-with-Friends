@@ -1,21 +1,44 @@
-class Rating {
-    constructor(movieId, userId, rating) {
-        this.movieId = movieId;
-        this.userId = userId;
-        this.rating = rating;
-    }
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/database');
 
-    // Add any additional methods or properties here
-
-    // Example method to calculate average rating
-    static calculateAverageRating(ratings) {
-        if (ratings.length === 0) {
-            return 0;
-        }
-
-        const totalRating = ratings.reduce((sum, rating) => sum + rating.rating, 0);
-        return totalRating / ratings.length;
-    }
-}
+const Rating = sequelize.define('Rating', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    movieId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        reference: {
+            model: 'movies',
+            key: 'id',
+        },
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        reference: {
+            model: 'users',
+            key: 'id',
+        },
+    },
+    title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    review: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+    },
+}, {
+    tableName: 'ratings',
+    timestamps: false,
+    underscored: true,
+});
 
 module.exports = Rating;

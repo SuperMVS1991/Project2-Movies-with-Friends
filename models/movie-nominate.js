@@ -27,6 +27,18 @@ const Movie = sequelize.define("Movie", {
         type: DataTypes.STRING,
         allowNull: false,
     },
+    userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        reference: {
+            model: 'users',
+            key: 'id',
+        },
+    },
+    vote: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    }
 }, {
     tableName: 'movies',
     timestamps: false,
