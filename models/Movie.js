@@ -1,15 +1,13 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
 
+class Movie extends Model {
+    // checkPassword(loginPw) {
+    //   return bcrypt.compareSync(loginPw, this.password);
+    // }
+  }
 
-// const sequelize = require("../config/connection");
-// const sequelize = new Sequelize("database_name", "username", "password", {
-//   dialect: "mysql",
-//   host: "localhost",
-// });
-
-const movie = sequelize.define(
-  "movie",
+Movie.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -38,7 +36,7 @@ const movie = sequelize.define(
     },
   },
   {
-    tableName: "movie",
+    tableName: "Movie",
     timestamps: false,
     underscored: true,
   }

@@ -1,7 +1,16 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const UserMovieVote = sequelize.define('UserMovieVote', {
+class UserMovieVote extends Model {
+    // checkPassword(loginPw) {
+    //   return bcrypt.compareSync(loginPw, this.password);
+    // }
+
+}
+
+UserMovieVote.init(
+
+{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,

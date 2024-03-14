@@ -1,7 +1,14 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
-const Genre = sequelize.define('Genre', {
+class Genre extends Model {
+    // checkPassword(loginPw) {
+    //   return bcrypt.compareSync(loginPw, this.password);
+    // }
+
+}
+Genre.init(
+{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
