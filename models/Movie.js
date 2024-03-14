@@ -22,20 +22,13 @@ Movie.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    genre: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: "genres",
-        key: "id",
-      },
-    },
     director: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
+    sequelize,
     tableName: "Movie",
     timestamps: false,
     underscored: true,

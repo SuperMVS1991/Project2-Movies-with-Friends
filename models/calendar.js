@@ -1,6 +1,5 @@
-const Model = require('./model');
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/connection');
 
 
 class Calendar extends Model {

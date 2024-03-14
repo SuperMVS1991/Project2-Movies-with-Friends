@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Rating extends Model {
     // checkPassword(loginPw) {
@@ -18,7 +18,7 @@ Rating.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
-            model: 'movies',
+            model: 'Movie',
             key: 'id',
         },
     },
@@ -43,6 +43,7 @@ Rating.init(
         allowNull: true,
     },
 }, {
+    sequelize,
     tableName: 'ratings',
     timestamps: false,
     underscored: true,

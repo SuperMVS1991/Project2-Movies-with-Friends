@@ -1,13 +1,13 @@
 const { DataTypes, Model } = require("sequelize");
-const sequelize = require("../database/connection");
+const sequelize = require("../config/connection");
 
-class Movie extends Model {
+class movieNominate extends Model {
     // checkPassword(loginPw) {
     //   return bcrypt.compareSync(loginPw, this.password);
     // }
   }
 
-Movie.init(
+movieNominate.init(
      {
     id: {
         type: DataTypes.INTEGER,
@@ -22,14 +22,14 @@ Movie.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    genre: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-            model: "genres",
-            key: "id",
-    },
-},
+    // genreId: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     references: {
+    //         model: "genres",
+    //         key: "id",
+//     // },
+// },
     director: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -45,12 +45,17 @@ Movie.init(
     vote: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    },
+    month: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
 }, {
-    tableName: 'movies',
+    sequelize, 
+    tableName: 'movieNominate',
     timestamps: false,
     underscored: true,
 
 });
 
-module.exports = Movie;
+module.exports = movieNominate;

@@ -1,3 +1,3 @@
-CREATE DATABASE mwf_db;
+CREATE DATABASE MwF;
 
-USE mwf_db;
+USE MwF;

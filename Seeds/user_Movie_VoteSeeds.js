@@ -33,7 +33,7 @@ const userMovieVoteSeeds = [
     }
 ];
 
-const createUserMovieVoteSeeds = () => User.bulkCreate(userMovieVoteSeeds, {
+const createUserMovieVoteSeeds = () => UserMovieVote.bulkCreate(userMovieVoteSeeds, {
     individualHooks: true
 });
 
