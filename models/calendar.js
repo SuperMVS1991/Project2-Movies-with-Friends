@@ -61,7 +61,12 @@ Calendar.init(
         modelName: 'Calendar',
         timestamps: false,
         underscored: true,
+    },
+    {
+        sequelize,
+        modelName: 'Calendar',
     }
+
 );
 
 
