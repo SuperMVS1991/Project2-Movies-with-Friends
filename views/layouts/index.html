@@ -14,7 +14,7 @@
 
 <body class="is-dark">
     
-<section class="is-dark">
+<section class="has-background-dark">
       <nav class="navbar">
         <div class="container">
           <div class="navbar-brand">
@@ -22,20 +22,22 @@
             <a class="navbar-item">
               <img src= "/public/images/MwF-alt-logo.png" alt="Movies with Friends">
             </a>
-            <span class="navbar-burger is-light" data-target="navbarMenuHeroA">
+            <span class="navbar-burger is-light" data-target="navbarMenuMain">
               <span></span>
               <span></span>
               <span></span>
             </span>
           </div>
-          <div id="navbarMenuHeroA" class="navbar-menu">
+          <div id="navbarMenuMain" class="navbar-menu">
             <div class="navbar-end">
+              <!--{{#if logged_in}} -->
               <a class="navbar-item">
                 My profile
               </a>
               <a class="navbar-item ">
                 Friends' profiles
               </a>
+              <!--{{/if}} -->
               <hr class="navbar-divider">
               <a class="navbar-item">
                 About Movies with Friends
@@ -43,48 +45,22 @@
               <a class="navbar-item">
                 Contact Us
               </a>
+              <!--{{#if logged_in}} -->
                 <hr class="navbar-divider">
                 <a class="navbar-item">
                   Sign out
               </a>
+             <!--{{/if}} -->
             </div>
           </div>
         </div>
       </nav>
     </div>
   
-    <div class="hero-body theater">
-      <div class="container has-text-centered pt-5 px-6">
-        <section class="top-start">
-            <h1 class="is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <br /> <span class="chennai">Movies with Friends</span> if...</h1>
-        </section>
-        <section>
-         <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-people-line is-size-2 mt-5"></i></span><br />You love to watch movies AND discuss them with other people.</p>
-        </section>
-        <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-pen-to-square is-size-2 mt-5"></i></span><br />You like to read and write reviews on major movie websites.</p> 
-        </section>
-        <section>
-            <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop"><span><i class="fa-solid fa-share-nodes is-size-2 mt-5"></i></span><br />You post about movies you have watched on other social media platforms, but not everyone shares your passion for analysis or has watched the same films.</p>
-        </section>
-      </div>
-    </div>
-  
-    <!-- Hero footer: will stick at the bottom -->
-    <div class="hero-foot">
-        <container class="has-text-centered px-7 pb-7 mx-auto">
-            <div class="column">
-                <p class="is-size-5-mobile is-size-4-tablet is-size-4-desktop has-text-warning">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
-        </div>
-        <div id ="entry-buttons" class="column">
-            <a class="button m-2 hero-button is-danger">Sign Up</a>
-            <a class="button m-2 hero-button is-danger is-outlined">Member Sign In</a>
-        </div>
-        
-        </container>
-       
-    </div>
-  </section>
+    <main id="main-body">
+       <!-- Render the sub layout
+       {{{ body }}} -->
+      </main>
 
   <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
 </body>

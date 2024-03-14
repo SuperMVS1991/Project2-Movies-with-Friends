@@ -137,9 +137,25 @@ main p, h1, h2, h3, h4, h5, h6 {
 .hero-body p {
     margin-top:.5em;
 }
+.navbar {
+    background-color: #333;
+    color: whitesmoke;
+    font-family: "chennai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 100%;
+}
 
  .navbar-menu p {
-    color:darkgray !important;
+    color:whitesmoke!important;
+ }
+
+ #main-body {
+    background-color: #444444;
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
  }
 
  .has-shadow {
@@ -158,22 +174,21 @@ main p, h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
-#member-signin {
-    display: none;
-    overflow: hidden;
-
-    transition: height 0.5s;
-}
-
 #member-signin form {
-    background-color: #35000b !important;
+    background-color: #333;
     border-style: groove;
     border-color: is-dark; 
-    width: 25%;
+    width: 40%;
     margin-bottom: 2em;
 }
 
-.visible {
+.hidden-form {
+    display: none;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+.visible-form {
     display: block;
     height: 250px;
 
