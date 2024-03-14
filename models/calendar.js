@@ -29,16 +29,17 @@ Calendar.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
-        allDay: {
-            type: DataTypes.BOOLEAN,
-            allowNull: false,
-        },
     },
     {
         tableName: 'calendar',
         timestamps: false,
         underscored: true,
+    },
+    {
+        sequelize,
+        modelName: 'Calendar',
     }
+
 );
 
 
