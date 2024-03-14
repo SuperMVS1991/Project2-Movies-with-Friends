@@ -1,7 +1,14 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/database');
 
-const Rating = sequelize.define('Rating', {
+class Rating extends Model {
+    // checkPassword(loginPw) {
+    //   return bcrypt.compareSync(loginPw, this.password);
+    // }
+
+}
+Rating.init(
+{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
