@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "watch": "nodemon app.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "seed": "node seeds/index.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",

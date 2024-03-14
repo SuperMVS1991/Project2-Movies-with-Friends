@@ -1,66 +1,58 @@
 const sequelize = require('../config/connection');
 const { Genre } = require('../models');
 const genreSeeds = [
+
     {
         name: 'Action',
-        description: 'Action movies are movies that are filled with action sequences and exciting moments.'
-    },
-    {
-        name: 'Adventure',
-        description: 'Adventure movies are movies that are filled with exciting moments and journeys.'
-    },
-    {
-        name: 'Animation',
-        description: 'Animation movies are movies that are filled with animated characters and exciting moments.'
+        description: 'Action films are a film genre where action sequences, such as fighting, stunts, car chases or explosions, take precedence over elements like character development or complex plotting.',
+        movieId: 1,
     },
     {
         name: 'Comedy',
-        description: 'Comedy movies are movies that are filled with funny moments and laughter.'
-    },
-    {
-        name: 'Crime',
-        description: 'Crime movies are movies that are filled with criminal activity and suspenseful moments.'
+        description: 'Comedy is a genre of film that uses humor as a driving force. The aim of a comedy film is to illicit laughter from the audience through entertaining stories and characters.',
+        movieId: 2,
     },
     {
         name: 'Drama',
-        description: 'Drama movies are movies that are filled with intense moments and emotional scenes.'
-    },
-    {
-        name: 'Fantasy',
-        description: 'Fantasy movies are movies that are filled with magical moments and mystical characters.'
+        description: 'Drama is a genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone, focusing on in-depth development of realistic characters who must deal with realistic emotional struggles.',
+        movieId: 3,
     },
     {
         name: 'Horror',
-        description: 'Horror movies are movies that are filled with scary moments and suspenseful scenes.'
-    },
-    {
-        name: 'Musical',
-        description: 'Musical movies are movies that are filled with musical numbers and exciting moments.'
-    },
-    {
-        name: 'Mystery',
-        description: 'Mystery movies are movies that are filled with suspenseful moments and mysterious scenes.'
-    },
-    {
-        name: 'Romance',
-        description: 'Romance movies are movies that are filled with romantic moments and emotional scenes.'
+        description: 'Horror is a genre of film that seeks to elicit fear in its audience for entertainment purposes. Horror films are unsettling movies that strive to elicit the emotions of fear, disgust and horror from viewers.',
+        movieId: 4,
     },
     {
         name: 'Science Fiction',
-        description: 'Science Fiction movies are movies that are filled with futuristic moments and exciting scenes.'
+        description: 'Science fiction is a genre of speculative fiction that typically deals with imaginative and futuristic concepts such as advanced science and technology, space exploration, time travel, parallel universes, and extraterrestrial life.',
+        movieId: 5,
     },
     {
-        name: 'Thriller',
-        description: 'Thriller movies are movies that are filled with suspenseful moments and thrilling scenes.'
-    },
-    {
-        name: 'War',
-        description: 'War movies are movies that are filled with intense moments and action scenes.'
+        name: 'Musical',
+        description: 'Musical film is a film genre in which songs sung by the characters are interwoven into the narrative, sometimes accompanied by dancing.',
+        movieId: 6,
     },
     {
         name: 'Western',
-        description: 'Western movies are movies that are filled with action scenes and exciting moments.'
+        description: 'Western is a genre of fiction set primarily in the latter half of the 19th and early 20th century in the Western United States, which is styled the "Old West".',
+        movieId: 7,
     },
+    {
+        name: 'Documentary',
+        description: 'Documentary film is a broad category of visual expression that is based on the attempt, in one fashion or another, to document reality.',
+        movieId: 8,
+    },
+    {
+        name: 'Animation',
+        description: 'Animation is a method in which figures are manipulated to appear as moving images.',
+        movieId: 9,
+    },
+    {
+        name: 'Fantasy',
+        description: 'Fantasy is a genre of speculative fiction set in a fictional universe, often inspired by real world myth and folklore.',
+        movieId: 10,
+    },
+
 ];
 
 const seedGenres = () => Genre.bulkCreate(genreSeeds, { individualHooks: true });
