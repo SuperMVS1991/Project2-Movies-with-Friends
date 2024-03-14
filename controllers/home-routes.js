@@ -8,7 +8,7 @@ const {
   user_movie_vote,
   calendar,
 } = require("../models");
-const withAuth = require("../utils/auth");
+const withAuth = require("../utilities/auth");
 
 router.get("/", async (req, res) => {
   try {
