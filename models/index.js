@@ -1,6 +1,6 @@
 // Import your models here
-const User = require('./User');
-const Movie = require('./Movie');
+const User = require('./User.js');
+const Movie = require('./Movie.js');
 
 // Export your models here
 module.exports = {
