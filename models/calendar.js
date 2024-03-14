@@ -7,7 +7,6 @@ class Calendar extends Model {
     constructor() {
         super();
         this.events = [];
-Calendar.init();
     }
 }
 
