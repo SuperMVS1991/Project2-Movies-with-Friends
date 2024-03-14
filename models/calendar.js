@@ -10,28 +10,55 @@ class Calendar extends Model {
     }
 }
 
-Calendar.init(
+Calendar.init(   
     {
-        id: {
+        "month-num": {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true,
         },
-        title: {
+        "month-name": {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        start: {
+        "genre-long-name": {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            defaultValue: 'TBD',
+        },
+       "date-nom-start": {
             type: DataTypes.DATE,
             allowNull: false,
         },
-        end: {
+        "date-nom-end": {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        "date-vote-start": {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        "date-vote-end": {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        "date-discuss-start": {
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        "date-discuss-end": {
             type: DataTypes.DATE,
             allowNull: false,
         },
     },
+    
     {
-        tableName: 'calendar',
+        sequelize,
+        modelName: 'Calendar',
         timestamps: false,
         underscored: true,
     },
