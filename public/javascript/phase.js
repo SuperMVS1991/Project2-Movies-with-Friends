@@ -7,7 +7,6 @@ window.addEventListener("DOMContentLoaded", function() {
 /* Checks the current date to determine the phase of site activity */
 function getCurrentPhase(currentDate) {
     const currentDate = new Date(); // Use the current date
-    const currentPhase = getCurrentPhase(currentDate);
     const phases = [
         { name: "Nomination", start: 1, end: 5 },
         { name: "Voting", start: 6, end: 7 },
