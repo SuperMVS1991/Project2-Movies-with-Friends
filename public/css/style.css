@@ -192,6 +192,10 @@ main p {
     color:whitesmoke!important;
  }
 
+ .navbar-item, .navbar-link {
+    color:whitesmoke!important;
+ }
+
  #main-body {
     background-color: #444444;
     padding: 2em;
