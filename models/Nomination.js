@@ -1,16 +1,14 @@
-const { DataTypes, Model } = require("sequelize");
+const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class movieNominate extends Model {
-    // checkPassword(loginPw) {
-    //   return bcrypt.compareSync(loginPw, this.password);
-    // }
+class Nomination extends Model {
   }
 
-movieNominate.init(
+nomination.init(
      {
-    id: {
+    nomination_id: {
         type: DataTypes.INTEGER,
+        allowNull: false,
         primaryKey: true,
         autoIncrement: true,
     },
@@ -18,33 +16,29 @@ movieNominate.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    releaseYear: {
+    release_year: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    // genreId: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     references: {
-    //         model: "genres",
-    //         key: "id",
-//     // },
-// },
+    genre_id: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        references: {
+            model: "genres",
+            key: "id",
+        }
+    },
     director: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    userId: {
+    user_name: {
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
             model: 'users',
-            key: 'id',
+            key: 'user_id',
         },
-    },
-    vote: {
-        type: DataTypes.INTEGER,
-        allowNull: false
     },
     month: {
         type: DataTypes.STRING,
@@ -52,10 +46,10 @@ movieNominate.init(
     },
 }, {
     sequelize, 
-    tableName: 'movieNominate',
-    timestamps: false,
+    tableName: 'nomination',
+    timestamps: true,
     underscored: true,
 
 });
 
-module.exports = movieNominate;
+module.exports = Nomination;
