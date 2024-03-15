@@ -14,9 +14,6 @@ router.use('/rating', ratingRoutes);
 
 router.use('/users', userRoutes);
 
-<<<<<<< HEAD
-module.exports = router;
-=======
 // Example route to fetch a specific movie by ID
 router.get('/movies/:id', (req, res) => {
     // Logic to fetch a movie by ID from database or external API
@@ -56,4 +53,3 @@ router.delete('/movies/:id', (req, res) => {
 });
 
 module.exports = router;
->>>>>>> origin/main
