@@ -2,11 +2,6 @@ const router = require("express").Router();
 const {
   User,
   Movie,
-  Genre,
-  movie_nominate,
-  rating,
-  user_movie_vote,
-  calendar,
 } = require("../models");
 const withAuth = require("../utilities/auth");
 

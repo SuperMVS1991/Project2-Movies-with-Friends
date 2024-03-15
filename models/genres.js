@@ -1,13 +1,13 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Genre extends Model {
+class Genres extends Model {
     // checkPassword(loginPw) {
     //   return bcrypt.compareSync(loginPw, this.password);
     // }
 
 }
-Genre.init(
+Genres.init(
 {
     id: {
         type: DataTypes.INTEGER,
@@ -38,4 +38,4 @@ Genre.init(
 });
 
 
-module.exports = Genre;
+module.exports = Genres;
