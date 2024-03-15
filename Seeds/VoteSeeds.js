@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 const { UserMovieVote } = require('../models');
-const userMovieVoteSeeds = [
+const VoteSeeds = [
     {
         userId: 1,
         movieId: 1,
@@ -33,8 +33,8 @@ const userMovieVoteSeeds = [
     }
 ];
 
-const createUserMovieVoteSeeds = () => UserMovieVote.bulkCreate(userMovieVoteSeeds, {
+const createVoteSeeds = () => UserMovieVote.bulkCreate(VoteSeeds, {
     individualHooks: true
 });
 
-module.exports = createUserMovieVoteSeeds;
+module.exports = createVoteSeeds;
