@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 const { UserMovieVote } = require('../models');
-const VoteSeeds = [
+const voteSeeds = [
     {
         userId: 1,
         movieId: 1,
