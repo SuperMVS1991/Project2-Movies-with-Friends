@@ -1,4 +1,6 @@
-const { DataTypes } = require('sequelize');
+// Remove this from the project
+
+/* const { DataTypes } = require('sequelize');
 const sequelize = require('../database/connection');
 
 const Genre = sequelize.define('Genre', {
@@ -22,4 +24,4 @@ const Genre = sequelize.define('Genre', {
 });
 
 
-module.exports = Genre;
+module.exports = Genre; */

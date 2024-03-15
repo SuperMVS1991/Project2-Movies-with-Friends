@@ -29,16 +29,16 @@ User.hasMany(UserMovieVote, {
     
         foreignKey: 'userId',
         onDelete: 'CASCADE'
-    });
+});
     UserMovieVote.belongsTo(User, {
         foreignKey: 'userId'
-    });
+});
 
     Genre.belongsTo(Movie, {
         foreignKey: 'movieId',
         onDelete: 'CASCADE'
     });
-    Movie.hasMany(Genre, {
+    Movie.hasOne(Genre, {
         foreignKey: 'movieId'
     });
     // Genre.belongsTo(movieNominate, {
