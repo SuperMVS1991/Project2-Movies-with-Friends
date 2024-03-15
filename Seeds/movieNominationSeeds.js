@@ -1,5 +1,5 @@
-const { movieNominate } = require('../models');
-const movieNominateSeeds = [
+const { movieNominationSeeds } = require('../models');
+const movieNominationSeeds = [
     {
         title: 'The Shawshank Redemption',
         releaseYear: 1994,
@@ -29,8 +29,8 @@ const movieNominateSeeds = [
     },
 ];
 
-const createMovieNominateSeeds = () => movieNominate.bulkCreate(movieNominateSeeds, {
+const createmovieNominationSeeds = () => createmovieNominationSeeds.bulkCreate(movieNominationSeeds, {
     individualHooks: true
 });
 
-module.exports = createMovieNominateSeeds;
+module.exports = createmovieNominationSeeds;
