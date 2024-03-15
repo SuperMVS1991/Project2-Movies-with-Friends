@@ -25,6 +25,7 @@ const options = {
 // Example route to fetch a specific movie by ID
 router.get('/movies/:id', (req, res) => {
     // Logic to fetch a movie by ID from database or external API
+    
     // Replace this with your own implementation
     const movieId = req.params.id;
     const movie = { id: movieId, title: `Movie ${movieId}` };

@@ -46,6 +46,14 @@ font-style: normal; */
     width: 95%;
 }
 
+#commentreply {
+    display: none;
+}
+
+#commentreply1 {
+    display: none;
+}
+
 .buttons {
     display: flex;
     justify-content: space-between;
@@ -69,22 +77,23 @@ font-style: normal; */
     color: #fff;
 }
 
-.parents {
+#parents {
     font-family: Arial, sans-serif;
     display: flex;
     margin-bottom: 30px;
+    border: solid;
 }
 
-.parents h1 {
+#parents h1 {
     font-size: 0.9em;
 }
 
-.parents p {
+#parents p {
     margin: 10px 0;
     font-size: 0.9em;
 }
 
-.parents > img {
+#parents > img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -92,7 +101,32 @@ font-style: normal; */
     object-fit: cover;
     object-position: center;
 }
+/* reply comment stylings*/
+#parents1 {
+    font-family: Arial, sans-serif;
+    display: flex;
+    margin-bottom: 30px;
+    border: solid;
+    max-width: 50%;
+}
 
+#parents1 h1 {
+    font-size: 0.9em;
+}
+
+#parents1 p {
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+#parents1 > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+    object-position: center;
+}
 
 .date {
     color: #808080;
@@ -102,6 +136,10 @@ font-style: normal; */
 
 /* pop up button drop down on click*/
 #popup {
+    display: none;
+}
+
+#genresList {
     display: none;
 }
 

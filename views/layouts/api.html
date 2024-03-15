@@ -12,23 +12,20 @@
 </head>
 
 <body>
-<div class="movieModal">
-<ul class="dropdown">
-  <li class="click" data-value="byGen/Action"><a href="#">Action</a></li>
-  <li class="click" data-value="byGen/Adventure"><a href="#">Adventure</a></li>
-  <li class="click" data-value="byGen/Comedy"><a href="#">Comedy</a></li>
-  <li class="click" data-value="byGen/Crime"><a href="#">Crime</a></li>
-  <li class="click" data-value="byGen/Drama"><a href="#">Drama</a></li>
-  <li class="click" data-value="byGen/Fantasy"><a href="#">Fantasy</a></li>
-  <li class="click" data-value="byGen/Family"><a href="#">Family</a></li>
-  <li class="click" data-value="byGen/Horror"><a href="#">Horror</a></li>
-  <li class="click" data-value="byGen/Mystery"><a href="#">Mystery</a></li>
-  <li class="click" data-value="byGen/Romance"><a href="#">Romance</a></li>
-  <li class="click" data-value="byGen/Sci-Fi"><a href="#">Sci-Fi</a></li>
-</ul>
-</div>
-
-
-
-<script src="../../controllers/motn.js"></script>
+  
+  <button id="voteButton" onclick="generateGenresList()">vote</button>
+  <ul id="genresList">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Comedy</a></li>
+    <li><a href="#">Horror</a></li>
+    <li><a href="#">Thriller</a></li>
+    <li><a href="#">Family Films</a></li>
+    <li><a href="#">Classics</a></li>
+    <li><a href="#">Drama</a></li>
+    <li><a href="#">Action</a></li>
+  </ul>
+ 
+  
+<script src="../../controllers/api/motn.js"></script>
+</body>
 </body>

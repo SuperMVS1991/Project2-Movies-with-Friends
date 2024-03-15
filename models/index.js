@@ -1,10 +1,20 @@
-const User = require("./User");
-// const Calendar = require('./calendar');
+const UserPrivate = require("./UserPrivate");
+const UserPublic = require("./UserPublic");
 const Genres = require("./Genres");
 const Movie = require("./Movie");
 const movieNominate = require("./Nomination");
 const Rating = require("./rating");
 const UserMovieVote = require("./Vote");
+const UserPrivate = require("./UserPrivate");
+
+//USER INFO
+UserPrivate.hasOne(UserPublic, {
+  foreignKey: "userId",
+});
+UserPublic.belongsTo(UserPrivate, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+  });
 
 User.hasMany(Rating, {
   foreignKey: "userId",
@@ -31,6 +41,9 @@ Movie.hasOne(Genres, {
 // movieNominate.hasMany(Genre, {
 //     foreignKey: 'genreid'
 // });
+
+
+
 Movie.hasMany(movieNominate, {
   foreignKey: "movieId",
   onDelete: "CASCADE",
@@ -45,6 +58,10 @@ Movie.hasMany(UserMovieVote, {
   foreignKey: "movieId",
   onDelete: "CASCADE",
 });
+
+
+
+
 UserMovieVote.belongsTo(Movie, {
   foreignKey: "movieId",
 });
