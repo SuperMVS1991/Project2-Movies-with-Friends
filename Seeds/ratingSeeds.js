@@ -40,7 +40,7 @@ const ratingData = [
 ];
 
 
-const seedRating = () => User.bulkCreate(ratingData, {
+const seedRating = () => Rating.bulkCreate(ratingData, {
     individualHooks: true
 });
 

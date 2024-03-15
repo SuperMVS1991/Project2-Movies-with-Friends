@@ -1,7 +1,14 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../database/connection');
+const { DataTypes, Model } = require('sequelize');
+const sequelize = require('../config/connection');
 
-const Genre = sequelize.define('Genre', {
+class Genres extends Model {
+    // checkPassword(loginPw) {
+    //   return bcrypt.compareSync(loginPw, this.password);
+    // }
+
+}
+Genres.init(
+{
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -15,11 +22,20 @@ const Genre = sequelize.define('Genre', {
         type: DataTypes.TEXT,
         allowNull: true,
     },
+    movieId: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
+        reference: {
+            model: 'Movie',
+            key: 'id',
+        },
+    },
 }, {
+    sequelize,
     tableName: 'genres',
     timestamps: false,
     underscored: true,
 });
 
 
-module.exports = Genre;
+module.exports = Genres;

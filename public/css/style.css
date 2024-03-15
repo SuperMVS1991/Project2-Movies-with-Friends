@@ -165,19 +165,38 @@ main p, h1, h2, h3, h4, h5, h6 {
     margin-right: 2em;
 }
 
+main p {
+    line-height: 115%;
+}
+
 .hero h1 {
-    line-height: 175%;
+    line-height: 125%;
     margin-left: 2em;
     margin-right: 2em;
-    margin-top: 4em;
 }
 
 .hero-body p {
     margin-top:.5em;
 }
+.navbar {
+    background-color: #333;
+    color: whitesmoke;
+    font-family: "chennai", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 100%;
+}
 
  .navbar-menu p {
-    color:darkgray !important;
+    color:whitesmoke!important;
+ }
+
+ #main-body {
+    background-color: #444444;
+    padding: 2em;
+    margin-top: 2em;
+    margin-bottom: 2em;
  }
 
  .has-shadow {
@@ -196,22 +215,24 @@ main p, h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
-#member-signin {
+#member-signin form {
+    background-color: #333;
+    border-style: groove;
+    border-color: is-dark; 
+    margin-bottom: 1em;
+}
+
+.label:not(:last-child), .field:not(:last-child) {
+    margin-bottom: 0 !important;
+}
+
+.hidden-form {
     display: none;
     overflow: hidden;
-
     transition: height 0.5s;
 }
 
-#member-signin form {
-    background-color: #35000b !important;
-    border-style: groove;
-    border-color: is-dark; 
-    width: 25%;
-    margin-bottom: 2em;
-}
-
-.visible {
+.visible-form {
     display: block;
     height: 250px;
 
@@ -235,29 +256,20 @@ main p, h1, h2, h3, h4, h5, h6 {
 
     }
 }
-
+/*Tablet and Desktop*/
 @media screen and (min-width: 769px) {
     .top-start h1{
-        margin-top: 6em;
-    }
-    .desktop-image {
-        display: block;
-    }
-
-    .mobile-image {
-        display: none;
+        margin-top: 5em;
     }
 }
 
+/*Mobile*/
 @media screen and (max-width: 768px) {
-    .desktop-image {
-        display: none;
-    }
     .theater {
             background-image: url(/public/images/mob/Theater-w-logo-mob.png);
         }
     .top-start h1 {
-        margin-top: 12em;
+        margin-top: 7em;
     }
 }
     .mobile-image {
