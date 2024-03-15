@@ -1,26 +1,18 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const userRoutes = require('./userRoutes');
+const  movieRoutes = require('./movieRoutes');
+const genreRoutes = require('./genreRoutes');
+const calendarRoutes = require('./calendarRoutes');
+const nominationRoutes = require('./nominationRoutes');
+const ratingRoutes = require('./ratingRoutes');
 
-// Define your API routes here
+router.use('/movies', movieRoutes);
+router.use('/genre', genreRoutes);
+router.use('/calendar', calendarRoutes);
+router.use('/nomination', nominationRoutes);
+router.use('/rating', ratingRoutes);
 
-// Example route to fetch movies
-router.get('/movies', (req, res) => {const url = 'https://moviesminidatabase.p.rapidapi.com/movie/id/%7Bmovie_id%7D/cast/';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': 'e0fd7191d3msh744fc8740a01ac7p1081e7jsn8cd0c4f9b596',
-		'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com'
-	}
-};
-    // Logic to fetch movies from database or external API
-    // Replace this with your own implementation
-    const movies = [
-        { id: 1, title: 'Movie 1' },
-        { id: 2, title: 'Movie 2' },
-        { id: 3, title: 'Movie 3' }
-    ];
-    res.json(movies);
-});
+router.use('/users', userRoutes);
 
 // Example route to fetch a specific movie by ID
 router.get('/movies/:id', (req, res) => {

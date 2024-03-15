@@ -1,59 +1,65 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const { User } = require('../../models');
 
-// Example user data (replace with actual database interactions)
-const users = [
-    { id: 1, username: 'user1', email: 'user1@example.com' },
-    { id: 2, username: 'user2', email: 'user2@example.com' },
-    { id: 3, username: 'user3', email: 'user3@example.com' }
-];
+router.post('/', async (req, res) => {
+  try {
+    const userData = await User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password
+    });
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
 
-// Route to get all users
-router.get('/users', (req, res) => {
-    res.json(users);
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).json(err);
+  }
 });
 
-// Route to get a specific user by ID
-router.get('/users/:id', (req, res) => {
-    const userId = parseInt(req.params.id);
-    const user = users.find(user => user.id === userId);
-    if (user) {
-        res.json(user);
-    } else {
-        res.status(404).json({ message: 'User not found' });
+router.post('/login', async (req, res) => {
+  try {
+    const userData = await User.findOne({ where: { email: req.body.email } });
+
+    if (!userData) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
     }
-});
 
-// Route to create a new user
-router.post('/users', (req, res) => {
-    const { username, email } = req.body;
-    const newUser = { id: users.length + 1, username, email };
-    users.push(newUser);
-    res.status(201).json(newUser);
-});
+    const validPassword = await userData.checkPassword(req.body.password);
 
-// Route to update an existing user
-router.put('/users/:id', (req, res) => {
-    const userId = parseInt(req.params.id);
-    const userIndex = users.findIndex(user => user.id === userId);
-    if (userIndex !== -1) {
-        users[userIndex] = { ...users[userIndex], ...req.body };
-        res.json(users[userIndex]);
-    } else {
-        res.status(404).json({ message: 'User not found' });
+    if (!validPassword) {
+      res
+        .status(400)
+        .json({ message: 'Incorrect email or password, please try again' });
+      return;
     }
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      
+      res.json({ user: userData, message: 'You are now logged in!' });
+    });
+
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-// Route to delete a user
-router.delete('/users/:id', (req, res) => {
-    const userId = parseInt(req.params.id);
-    const userIndex = users.findIndex(user => user.id === userId);
-    if (userIndex !== -1) {
-        users.splice(userIndex, 1);
-        res.json({ message: 'User deleted successfully' });
-    } else {
-        res.status(404).json({ message: 'User not found' });
-    }
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;
