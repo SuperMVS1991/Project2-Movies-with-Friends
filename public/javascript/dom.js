@@ -1,6 +1,3 @@
-const fs = require("fs");
-const inquirer = require("inquirer");
-const path = require("path");
 
 function toggle() {
   var  x = document.getElementById("popup")
@@ -13,9 +10,4 @@ function toggle() {
   }
 };
 
-document.getElementById("discussionName").value;
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, value) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), value);
-}

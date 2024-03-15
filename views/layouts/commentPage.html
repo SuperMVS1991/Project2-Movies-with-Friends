@@ -16,7 +16,6 @@
     <div class="container">
         <div class="head"><h1>Post a Comment</h1></div>
         <div><span id="comment">0</span> Comments</div>
-        <div class="text"><p>We are happy to hear from you</p></div>
         <div class="comments"></div>
         <div class="commentbox">
             <div class="content">
@@ -27,9 +26,17 @@
                     <input type="text" placeholder="Enter comment" class="usercomment">
                     <div class="buttons">
                         <button type="submit" disabled id="publish">Publish</button>
-                        <div class="notify">
-                            <input type="checkbox" class="notifyinput"> <span>Notify me</span>
-                        </div>
+                    </div>
+                </div>
+
+                <div id="commentreply">
+                    <h2>Reply to: </h2>
+                    <input type="text" placeholder="username" class="userReply">
+
+              
+                    <input type="text" placeholder="Enter comment" class="replyComment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="publishReply">Publish</button>
                     </div>
                 </div>
             </div>
