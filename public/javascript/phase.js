@@ -23,6 +23,6 @@ function getCurrentPhase(currentDate) {
   console.log(getCurrentPhase());
 
   let phaseDisplay = document.getElementById('phase-display');
-  phaseDisplay.textContent = phase.name;
+  phaseDisplay.innerHTML = phase.name;
 
 }  
