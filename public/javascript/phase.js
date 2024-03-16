@@ -9,6 +9,18 @@ window.addEventListener("DOMContentLoaded", function() {
     let monthName = getCurrentMonth();
     let monthDisplay = document.getElementById('current-month-display');
     monthDisplay.innerHTML = monthName;
+
+    let genreName = getMonthGenre();
+    let genreDisplay = document.getElementById('genre-display');
+   genreDisplay.innerHTML = genreName;
+
+    let buttonText = getButtonText();
+    let buttonDisplay = document.getElementById('action-text');
+    buttonDisplay.innerHTML = buttonText;
+
+    let winningMovie = getWinningMovie();
+    let winningMovieDisplay = document.getElementById('winning-movie-display');
+    winningMovieDisplay.innerHTML = winningMovie;
 });
 
 /* Checks the current date to determine the phase of site activity */
@@ -43,9 +55,32 @@ function getCurrentMonth() {
 function getMonthGenre() {
     const currentMonth = currentDate.getMonth();
     const genres = [
-        "Drama", "Romance", "Comedy", "Action", "Horror", "Documentary",
-        "Science Fiction", "Fantasy", "Mystery", "Thriller", "Adventure", "Animation"
+        "Action", "Documentary", "Comedy", "Sci-fi & Fantasy", "Thrillers", "Anime", "Classics", "Horror", "Romance", "Mystery", "Indie Films", "Family Movies"
     ];
     const genre = genres[currentMonth];
     return genre;
+}
+
+/* Selects the appropriate button text based on the current phase */
+function getButtonText() {
+    const phase = getCurrentPhase();
+    if (phase === "Nominating") {
+        return "Nominate a Movie";
+    } else if (phase === "Voting") {
+        return "Vote for a Movie";
+    } else if (phase === "Discussing") {
+        return "Join the Discussion";
+    } else {
+        return "No current phase";
+    }
+}
+
+function getWinningMovie() {
+    const phase = getCurrentPhase();
+    if (phase === "Nominating" || phase === "Voting") {
+        return "To be announced!";
+    } else {
+        /* not sure how to reference the winning movie from the database */
+        return "{{Movie}}";
+    }
 }

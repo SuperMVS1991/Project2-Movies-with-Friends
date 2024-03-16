@@ -14,55 +14,44 @@
 
 <body class="is-dark">
     
-<section class="has-background-dark">
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <!--connect to home-->
-            <a class="navbar-item">
-              <img src= "/public/images/MwF-alt-logo.png" alt="Movies with Friends">
-            </a>
-            <span class="navbar-burger is-light" data-target="navbarMenuMain">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuMain" class="navbar-menu">
-            <div class="navbar-end">
-              <!--{{#if logged_in}} -->
-              <a class="navbar-item">
-                My profile
-              </a>
-              <a class="navbar-item ">
-                Friends' profiles
-              </a>
-              <!--{{/if}} -->
-              <hr class="navbar-divider">
-              <a class="navbar-item">
-                About Movies with Friends
-              </a>
-              <a class="navbar-item">
-                Contact Us
-              </a>
-              <!--{{#if logged_in}} -->
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Sign out
-              </a>
-             <!--{{/if}} -->
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
+
   
-    <main id="main-body">
+    <main id="main-body" class="has-text-light test">
       <!--WELCOME PAGE BEGINS-->
        <!-- Render the welcome.handlebars -->
-       <h3 class="is-size-4 has-text-light pb-4">Welcome, <span class= "chennai">{{username}}!</span></h1>
-        <h1 class="has-text-light has-shadow is-size-2"><span id="current-month-display"></span> is {{genre}} month!</h1>
-        <h2 class="is-size-3">Right now we are <span id="phase-display"></span></h2>
+       
+       <!--User Header-->
+       <section class="py-3 pl-3 has-background-black container-spacing">
+       <h3 class="is-size-4  has-text-light">Welcome, <img src="/public/images/pac-danger.png" alt="user avatar" class="inline-image" /> <span class= "chennai">{{username}}!</span></h3>
+       </section>
+
+       <!--Group Stage-->
+       
+       <section class="section">
+        <div class="container has-text-centered">
+            <div class="columns is-centered is-vcentered">
+                <div class="column is-full-width has-background-black">
+                    <h1 class="is-size-1 my-4 em;"><span id="current-month-display"></span> is <span id="genre-display"></span> month!</h1>
+                    <p class="is-size-3 mb-5">Right now we are <span id="phase-display"></span></p>
+                    <div id="welcome-buttons" class="has-text-weight-bold">
+                        <a class="button is-info is-outlined ">View Calendar</a>
+                        <a id="action-button" class="button is-warning"><span id="action-text"></span></a>
+                    </div>
+                    <!--Partial: Calendar Modal-->
+                   
+                    <div class="is-size-4 mt-5 mb-5">
+                      <p>The winning movie for this month is <span id="winning-movie-display"></span></p>
+                    </div>
+                    <div id="poster-display">
+                      <!--source needs to be updated programmatically-->
+                        <img id="winning-movie-poster" src="/public/images/temp-poster-kfp.jpg" alt="winning movie poster" class="poster">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       </section>
       </main>
   
   <script src="/public/javascript/mwf-misc.js"></script>

@@ -161,9 +161,7 @@ span.chennai {
 
 main p, h1, h2, h3, h4, h5, h6 {
     line-height: 125%;
-    margin-left: 2em;
-    margin-right: 2em;
-}
+}   
 
 main p {
     line-height: 115%;
@@ -178,6 +176,9 @@ main p {
 .hero-body p {
     margin-top:.5em;
 }
+
+/*Navigation styles*/
+
 .navbar-item {
     color: #AAA;
     font-family: "chennai", sans-serif;
@@ -190,6 +191,11 @@ main p {
 .navbar-item img {
     max-height: 4rem;
     min-height: 3rem;  
+}
+
+.inline-image {
+    max-height: 1.5em;
+    vertical-align: bottom;
 }
 
  .main-menu {
@@ -208,9 +214,27 @@ main p {
     margin-bottom: 2em;
  }
 
+
  .has-shadow {
     text-shadow: 2px 2px 8px #000000;
  }
+
+.group {
+    min-height: 16em;
+    background-color: #000;
+    margin: auto;
+ }
+
+ .poster {
+    max-width: 50%;
+    max-height: 500px;
+    border: solid #444444 2px;
+    padding: 1em;
+    display: block;
+    margin: 0 auto;
+ 
+ }
+
 
 .centered-image {
     max-width: 100%;
@@ -258,6 +282,8 @@ main p {
     font-size: 100%;
     margin-top: 20px;
 }
+
+/* Media Queries */
 
 @media (max-width: 768px) {
     .theater {
