@@ -208,6 +208,7 @@ main p {
  }
 
  #main-body {
+    background-image: url(/public/images/filmstrip-bg.png);
     background-color: #444444;
     padding: 2em;
     margin-top: 2em;
@@ -281,6 +282,20 @@ main p {
     font-weight: 700;
     font-size: 100%;
     margin-top: 20px;
+}
+
+#closed-forums {
+    display: block;
+    padding: 1em;
+}
+
+#closed-forums p {
+    margin-bottom: .5em;
+    color:#808080
+}
+
+#closed-forums a {
+    color:lightblue;
 }
 
 /* Media Queries */

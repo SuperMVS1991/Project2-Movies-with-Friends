@@ -13,17 +13,12 @@
 </head>
 
 <body class="is-dark">
-    
+<main id="main-body" class="has-text-light test">
 
-  
-    <main id="main-body" class="has-text-light test">
       <!--WELCOME PAGE BEGINS-->
        <!-- Render the welcome.handlebars -->
        
-       <!--User Header-->
-       <section class="py-3 pl-3 has-background-black container-spacing">
-       <h3 class="is-size-4  has-text-light">Welcome, <img src="/public/images/pac-danger.png" alt="user avatar" class="inline-image" /> <span class= "chennai">{{username}}!</span></h3>
-       </section>
+      {{{user-header}}}
 
        <!--Group Stage-->
        
@@ -33,11 +28,14 @@
                 <div class="column is-full-width has-background-black">
                     <h1 class="is-size-1 my-4 em;"><span id="current-month-display"></span> is <span id="genre-display"></span> month!</h1>
                     <p class="is-size-3 mb-5">Right now we are <span id="phase-display"></span></p>
-                    <div id="welcome-buttons" class="has-text-weight-bold">
-                        <a class="button is-info is-outlined ">View Calendar</a>
+
+                    <div id="welcome-buttons" class="has-text-weight-bold buttons is-centered">
+                        <a id="show-calendar" class="button is-info is-outlined js-modal-trigger" data-target="calendarModal">View Calendar</a>
                         <a id="action-button" class="button is-warning"><span id="action-text"></span></a>
                     </div>
+
                     <!--Partial: Calendar Modal-->
+                    {{{group-calendar}}}
                    
                     <div class="is-size-4 mt-5 mb-5">
                       <p>The winning movie for this month is <span id="winning-movie-display"></span></p>
@@ -46,6 +44,23 @@
                       <!--source needs to be updated programmatically-->
                         <img id="winning-movie-poster" src="/public/images/temp-poster-kfp.jpg" alt="winning movie poster" class="poster">
                     </div>
+                </div>
+
+                <!--Links to view the closed forums-->
+                <div id="closed-forums" class="column is-full-width">
+                  <div class="is-size-4 p-2 has-background-black">
+                    <p>Check out the forums from past months <br /><span class="is-size-5">(closed for discussion)</span></p>
+                    <div class="is-size-5 has-text-light">
+                      <!--Should be {{month}}: {{title}}-->
+                      <p><a href="">January: Die Hard</a></p>
+                      <p><a href="">February: The Ark and the Darkness</a></p>
+                   </div>
+                  </div>
+                   
+                </div>
+            </div>
+            </div>
+
                 </div>
             </div>
         </div>
