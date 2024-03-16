@@ -178,9 +178,8 @@ main p {
 .hero-body p {
     margin-top:.5em;
 }
-.navbar {
-    background-color: #333;
-    color: whitesmoke;
+.navbar-item {
+    color: #AAA;
     font-family: "chennai", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -188,9 +187,15 @@ main p {
     font-size: 100%;
 }
 
- .navbar-menu p {
-    color:whitesmoke!important;
- }
+.navbar-item img {
+    max-height: 4rem;
+    min-height: 3rem;  
+}
+
+ .main-menu {
+    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
+}
+ 
 
  .navbar-item, .navbar-link {
     color:whitesmoke!important;
