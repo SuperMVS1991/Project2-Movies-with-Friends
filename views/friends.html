@@ -1,0 +1,38 @@
+<!--This file will serve as the friends.handlebars. Including the main/index code so it will display-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies with Friends</title>
+
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+
+<body class="is-dark">
+    <main id="main-body" class="has-text-light">
+
+<!--FRIENDS PAGE BEGINS-->
+<!-- Render the friends.handlebars -->
+
+{{{user-header}}} <!-- This is the user-header.handlebars partial -->
+
+<div id="users-profiles" class="container is-size-5">
+    <h1 class="is-size-3">Movies with Friends Members</h1>
+    <div id="user-nominations" class="bg-success-alpha p-3">
+      <ul>
+        {{#each user.Users}}
+          <li class="pb-3"><img src="/public/images/{{this.user_avatar}}" alt="Avatar" class="avatar inline-image"><span class="has-text-weight-bold">{{this.user_name}}</span> is from {{this.state}} <br />Favorite genres:&emsp;{{this.favorite_genres}}  <br />Favorite movies:&emsp;{{this.favorite_movies}}  <br />About me:&emsp;{{this.about_me}}</li>
+        {{/each}}
+      </ul>
+  </div>
+
+<!--end friends.handlebars ************************* -->
+
+        </main>
+</body>
+
+</html>
