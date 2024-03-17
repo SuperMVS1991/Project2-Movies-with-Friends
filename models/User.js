@@ -2,15 +2,15 @@ const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
-class UserPrivate extends Model {
+class User extends Model {
   checkPassword(loginPw) {
     return bcrypt.compareSync(loginPw, this.password);
   }
 }
 
-UserPrivate.init(
+User.init(
   {
-    user_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -39,6 +39,31 @@ UserPrivate.init(
         len: [8],
       },
     },
+    user_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+   favorite_genres: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    favorite_movies: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    about_me: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    user_avatar: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {
@@ -51,16 +76,13 @@ UserPrivate.init(
         return updatedUserData;
       },
     },
-  },
-   { 
-    // Options
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user_private',
+    modelName: 'user',
   }
 
 );
 
-module.exports = UserPrivate;
+module.exports = User;

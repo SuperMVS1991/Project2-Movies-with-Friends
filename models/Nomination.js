@@ -4,9 +4,9 @@ const sequelize = require("../config/connection");
 class Nomination extends Model {
   }
 
-nomination.init(
+Nomination.init(
      {
-    nomination_id: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -37,7 +37,7 @@ nomination.init(
         allowNull: false,
         reference: {
             model: 'users',
-            key: 'user_id',
+            key: 'id',
         },
     },
     month: {
