@@ -1,5 +1,5 @@
 const User = require("./User");
-const Genres = require("./Genres");
+const Genres = require("./genres");
 const Movie = require("./Movie");
 const Nomination = require("./Nomination");
 const Rating = require("./rating");
