@@ -7,6 +7,7 @@ font-weight: 300;
 font-style: normal; */
 
 /* a little bit of temporary styling for comments */
+
 .commentbox {
     display: flex;
     justify-content: space-around;
@@ -236,7 +237,19 @@ main p {
     transition: height 0.5s;
 }
 
+.hidden-signup-form {
+    display: none;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
 .visible-form {
+    display: block;
+    height: 250px;
+
+}
+
+.visible-signup-form {
     display: block;
     height: 250px;
 
@@ -281,3 +294,6 @@ main p {
     }
 
 
+    .hidden {
+        display: none;
+    }

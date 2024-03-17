@@ -10,7 +10,7 @@ class UserPrivate extends Model {
 
 UserPrivate.init(
   {
-    user_id: {
+      userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

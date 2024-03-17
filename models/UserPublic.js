@@ -34,9 +34,9 @@ UserPublic.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user_public',
+    modelName: 'userpublic',
   }
 
 );
 
-module.exports = UserPrivate;
+module.exports = UserPublic;

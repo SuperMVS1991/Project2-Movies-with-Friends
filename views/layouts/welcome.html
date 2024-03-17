@@ -63,6 +63,26 @@
        <h3 class="is-size-4"><span class= "chennai">Welcome, {{username}}!</span></h1>
         <h1 class="has-text-light has-shadow is-size-2">{{current-month}} is {{genre}} month!</h1>
         <h2 class="is-size-3">Right now we are <span id="phase-display"></span></h2>
+
+        <body>
+          <div class="container">
+            <div><span id="discussion">0</span> Discussions</div>
+            <div class="local"></div>
+            <div class="commentbox">
+                <div class="content">
+                  <button id="addBtn">Add a discussion</button>
+                    <div id="discussionInput" class="hidden">
+                        <input type="text" placeholder="Enter comment" class="usercomment">
+                        <div class="buttons">
+                            <button type="submit" disabled id="publish">Publish</button>
+                        </div>
+                    </div>
+        
+                   
+                </div>
+            </div>
+        </div>
+        </div>
       </main>
   
   <script src="/public/javascript/mwf-misc.js"></script>

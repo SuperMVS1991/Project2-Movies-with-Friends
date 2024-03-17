@@ -6,6 +6,8 @@ const USERID = {
     date: null
   }
   
+  const discussionName = document.querySelector(".dynamicId");
+  const paragraph = document.querySelector("#discussionName");
   const userComment = document.querySelector(".usercomment");
   const replyComment = document.querySelector(".replyComment");
   const publishBtn = document.querySelector("#publish");
