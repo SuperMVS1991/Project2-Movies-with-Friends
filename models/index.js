@@ -1,67 +1,67 @@
 const User = require("./User");
 const Genres = require("./Genres");
 const Movie = require("./Movie");
-const movieNominate = require("./Nomination");
+const Nomination = require("./Nomination");
 const Rating = require("./rating");
 const UserMovieVote = require("./Vote");
 
 //USER INFO
 
 User.hasMany(Rating, {
-  foreignKey: "userId",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
-User.hasMany(movieNominate, {
-  foreignKey: "userId",
+User.hasMany(Nomination, {
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 User.hasMany(UserMovieVote, {
-  foreignKey: "userId",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 Movie.hasOne(Genres, {
-  foreignKey: "movieId",
+  foreignKey: "id",
 });
 
-Movie.hasMany(movieNominate, {
-  foreignKey: "movieId",
+Movie.hasMany(Nomination, {
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 Movie.hasMany(Rating, {
-  foreignKey: "movieId",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 Movie.hasMany(UserMovieVote, {
-  foreignKey: "movieId",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
 
 UserMovieVote.belongsTo(Movie, {
-  foreignKey: "movieId",
+  foreignKey: "id",
 });
 Rating.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "id",
 });
-movieNominate.belongsTo(User, {
-  foreignKey: "userId",
+Nomination.belongsTo(User, {
+  foreignKey: "id",
 });
 UserMovieVote.belongsTo(User, {
-  foreignKey: "userId",
+  foreignKey: "id",
 });
 Genres.belongsTo(Movie, {
-  foreignKey: "movieId",
+  foreignKey: "id",
   onDelete: "CASCADE",
 });
-movieNominate.belongsTo(Movie, {
-  foreignKey: "movieId",
+Nomination.belongsTo(Movie, {
+  foreignKey: "id",
 });
 Rating.belongsTo(Movie, {
-  foreignKey: "movieId",
+  foreignKey: "id",
 });
 
-module.exports = { User, Genres, Movie, movieNominate, Rating, UserMovieVote };
+module.exports = { User, Genres, Movie, Nomination, Rating, UserMovieVote };

@@ -10,7 +10,7 @@ class User extends Model {
 
 User.init(
   {
-    user_id: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -76,11 +76,8 @@ User.init(
         return updatedUserData;
       },
     },
-  },
-   { 
-    // Options
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
