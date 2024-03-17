@@ -1,8 +1,7 @@
 // we need to seed 3 things: users, posts, and comments
 var userSeeds = require('./userSeeds');
 var genreSeeds = require('./genreSeeds');
-var createMovieNominateSeeds = require('./movieNominationSeeds');
-var user_Movie_VoteSeeds = require('./VoteSeeds');
+var nominationSeeds = require('./nominationSeeds');
 var movieSeeds = require('./movieSeeds');
 var sequelize = require('../config/connection');
 const seedRating = require('./ratingSeeds');
@@ -14,8 +13,7 @@ function seedAll() {
     await movieSeeds();
     await genreSeeds();
     await seedRating();
-    await createmovieNominationSeeds();
-    await voteSeeds();    
+    await nominationSeeds();
   });
 }
 seedAll();

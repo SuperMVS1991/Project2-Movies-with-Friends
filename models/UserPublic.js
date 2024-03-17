@@ -39,4 +39,4 @@ UserPublic.init(
 
 );
 
-module.exports = UserPrivate;
+module.exports = UserPublic;

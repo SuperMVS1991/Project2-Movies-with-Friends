@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 class Nomination extends Model {
   }
 
-nomination.init(
+Nomination.init(
      {
     nomination_id: {
         type: DataTypes.INTEGER,
@@ -20,24 +20,24 @@ nomination.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    genre_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-            model: "genres",
-            key: "id",
-        }
-    },
+    // genreid: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     references: {
+    //         model: "genres",
+    //         key: "id",
+    //     }
+    // },
     director: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    user_name: {
+    userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
-            model: 'users',
-            key: 'user_id',
+            model: 'user_private',
+            key: 'id',
         },
     },
     month: {

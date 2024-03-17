@@ -1,88 +1,36 @@
 const UserPrivate = require("./UserPrivate");
-const UserPublic = require("./UserPublic");
 const Genres = require("./Genres");
 const Movie = require("./Movie");
-const movieNominate = require("./Nomination");
-const Rating = require("./rating");
-const UserMovieVote = require("./Vote");
+const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for clarity
+const Rating = require("./Rating"); // Assuming you have a Rating model defined
+const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined
 
-
-//USER INFO
-UserPrivate.hasOne(UserPublic, {
-  foreignKey: "userId",
-});
-UserPublic.belongsTo(UserPrivate, {
-  foreignKey: "user_id",
-  onDelete: "CASCADE",
-  });
-
-User.hasMany(Rating, {
+// Define associations
+UserPrivate.hasMany(Rating, { foreignKey: "userId", onDelete: "CASCADE" });
+UserPrivate.hasMany(Nomination, { foreignKey: "userId", onDelete: "CASCADE" });
+UserPrivate.hasMany(UserMovieVote, {
   foreignKey: "userId",
   onDelete: "CASCADE",
 });
 
-User.hasMany(movieNominate, {
-  foreignKey: "userId",
-  onDelete: "CASCADE",
-});
+Movie.hasMany(Nomination, { foreignKey: "movieId", onDelete: "CASCADE" });
+Movie.hasMany(Rating, { foreignKey: "movieId", onDelete: "CASCADE" });
+Movie.hasMany(UserMovieVote, { foreignKey: "movieId", onDelete: "CASCADE" });
 
-User.hasMany(UserMovieVote, {
-  foreignKey: "userId",
-  onDelete: "CASCADE",
-});
+Genres.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
+Nomination.belongsTo(UserPrivate, { foreignKey: "userId" });
+Nomination.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
+Rating.belongsTo(UserPrivate, { foreignKey: "userId" });
+Rating.belongsTo(Movie, { foreignKey: "movieId" });
+UserMovieVote.belongsTo(UserPrivate, { foreignKey: "userId" });
+UserMovieVote.belongsTo(Movie, { foreignKey: "movieId" });
 
-Movie.hasOne(Genres, {
-  foreignKey: "movieId",
-});
-// Genre.belongsTo(movieNominate, {
-//     foreignKey: 'genreid',
-//     onDelete: 'CASCADE'
-// });
-// movieNominate.hasMany(Genre, {
-//     foreignKey: 'genreid'
-// });
-
-
-
-Movie.hasMany(movieNominate, {
-  foreignKey: "movieId",
-  onDelete: "CASCADE",
-});
-
-Movie.hasMany(Rating, {
-  foreignKey: "movieId",
-  onDelete: "CASCADE",
-});
-
-Movie.hasMany(UserMovieVote, {
-  foreignKey: "movieId",
-  onDelete: "CASCADE",
-});
-
-
-
-
-UserMovieVote.belongsTo(Movie, {
-  foreignKey: "movieId",
-});
-Rating.belongsTo(User, {
-  foreignKey: "userId",
-});
-movieNominate.belongsTo(User, {
-  foreignKey: "userId",
-});
-UserMovieVote.belongsTo(User, {
-  foreignKey: "userId",
-});
-Genres.belongsTo(Movie, {
-  foreignKey: "movieId",
-  onDelete: "CASCADE",
-});
-movieNominate.belongsTo(Movie, {
-  foreignKey: "movieId",
-});
-Rating.belongsTo(Movie, {
-  foreignKey: "movieId",
-});
-
-module.exports = { User, Genres, Movie, movieNominate, Rating, UserMovieVote };
+// Export models
+module.exports = {
+  UserPrivate,
+  Genres,
+  Movie,
+  Nomination,
+  Rating,
+  UserMovieVote,
+};

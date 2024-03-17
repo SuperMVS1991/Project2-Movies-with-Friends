@@ -2,10 +2,10 @@ const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
 
 class Movie extends Model {
-    // checkPassword(loginPw) {
-    //   return bcrypt.compareSync(loginPw, this.password);
-    // }
-  }
+  // checkPassword(loginPw) {
+  //   return bcrypt.compareSync(loginPw, this.password);
+  // }
+}
 
 Movie.init(
   {

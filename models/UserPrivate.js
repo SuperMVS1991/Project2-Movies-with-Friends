@@ -16,11 +16,11 @@ UserPrivate.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name_first: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    name_last: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -41,6 +41,11 @@ UserPrivate.init(
     },
   },
   {
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user_private',
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -51,16 +56,7 @@ UserPrivate.init(
         return updatedUserData;
       },
     },
-  },
-   { 
-    // Options
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'user_private',
   }
-
 );
 
 module.exports = UserPrivate;
