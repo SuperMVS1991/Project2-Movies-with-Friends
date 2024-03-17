@@ -168,6 +168,10 @@ main p {
     line-height: 115%;
 }
 
+.profile p {
+    margin-bottom: 1em;
+}
+
 .hero h1 {
     line-height: 125%;
     margin-left: 2em;
@@ -208,7 +212,7 @@ main p {
     color:whitesmoke!important;
  }
 
- #main-body {
+ #main-body, #landing-body {
     background-image: url(/public/images/filmstrip-bg.png);
     background-color: #444444;
     padding: 2em;
@@ -308,7 +312,7 @@ main p {
 }
 
 #closed-forums a {
-    color:lightblue;
+    color:white;
 }
 
 /* Media Queries */

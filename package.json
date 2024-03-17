@@ -2,7 +2,7 @@
   "name": "package.json",
   "version": "1.0.0",
   "scripts": {
-    "watch": "nodemon app.js",
+    "watch": "nodemon server.js",
     "start": "node server.js",
     "seed": "node seeds/index.js"
   },

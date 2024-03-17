@@ -1,37 +1,27 @@
-const User = require("../models/UserPrivate");
+const { User } = require("../models");
 
 const userSeeds = [
   {
-    user_name: "john_doe",
+    first_name: "john_doe",
+    last_name: "doe",
     email: "john@gmail.com",
     password: "password123",
+    user_name: "john_doe",
   },
   {
-    user_name: "jane_smith",
+    first_name: "john_doe",
+    last_name: "doe",
     email: "jane@gmail.com",
     password: "password456",
-  },
-  {
-    user_name: "bob_jones",
-    email: "bob@gmail.com",
-    password: "password789",
-  },
-  {
-    user_name: "sally_miller",
-    email: "sally@gmail.com",
-    password: "password101112",
-  },
-  {
-    user_name: "mike_brown",
-    email: "mike@gmail.com",
-    password: "password131415",
-  },
+    user_name: "jane_doe",
+  }
 
   // Add more user objects as needed
 ];
 
-const seedUsers = () => User.bulkCreate(userSeeds, {
-    individualHooks: true
-});
+const seedUsers = () =>
+  User.bulkCreate(userSeeds, {
+    individualHooks: true,
+  });
 
 module.exports = seedUsers;

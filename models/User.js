@@ -1,3 +1,4 @@
+
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
@@ -16,11 +17,11 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name_first: {
+    first_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    name_last: {
+    last_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
