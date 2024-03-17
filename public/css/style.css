@@ -207,7 +207,7 @@ main p {
     color:whitesmoke!important;
  }
 
- #main-body {
+ #main-body, #landing-body {
     background-image: url(/public/images/filmstrip-bg.png);
     background-color: #444444;
     padding: 2em;
@@ -272,7 +272,6 @@ main p {
 
 }
 
-
 .hero-button {
     background-color: #f5f5f5;
     color: #000;
@@ -295,7 +294,7 @@ main p {
 }
 
 #closed-forums a {
-    color:lightblue;
+    color:white;
 }
 
 /* Media Queries */
