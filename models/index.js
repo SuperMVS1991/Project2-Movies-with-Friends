@@ -1,67 +1,36 @@
 const User = require("./User");
 const Genres = require("./Genres");
 const Movie = require("./Movie");
-const Nomination = require("./Nomination");
-const Rating = require("./rating");
-const UserMovieVote = require("./Vote");
+const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for clarity
+const Rating = require("./Rating"); // Assuming you have a Rating model defined
+const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined
 
-//USER INFO
-
-User.hasMany(Rating, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
-
-User.hasMany(Nomination, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
-
+// Define associations
+User.hasMany(Rating, { foreignKey: "userId", onDelete: "CASCADE" });
+User.hasMany(Nomination, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(UserMovieVote, {
-  foreignKey: "id",
+  foreignKey: "userId",
   onDelete: "CASCADE",
 });
 
-Movie.hasOne(Genres, {
-  foreignKey: "id",
-});
+Movie.hasMany(Nomination, { foreignKey: "movieId", onDelete: "CASCADE" });
+Movie.hasMany(Rating, { foreignKey: "movieId", onDelete: "CASCADE" });
+Movie.hasMany(UserMovieVote, { foreignKey: "movieId", onDelete: "CASCADE" });
 
-Movie.hasMany(Nomination, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
+Genres.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
+Nomination.belongsTo(User, { foreignKey: "userId" });
+Nomination.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
+Rating.belongsTo(User, { foreignKey: "userId" });
+Rating.belongsTo(Movie, { foreignKey: "movieId" });
+UserMovieVote.belongsTo(User, { foreignKey: "userId" });
+UserMovieVote.belongsTo(Movie, { foreignKey: "movieId" });
 
-Movie.hasMany(Rating, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
-
-Movie.hasMany(UserMovieVote, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
-
-UserMovieVote.belongsTo(Movie, {
-  foreignKey: "id",
-});
-Rating.belongsTo(User, {
-  foreignKey: "id",
-});
-Nomination.belongsTo(User, {
-  foreignKey: "id",
-});
-UserMovieVote.belongsTo(User, {
-  foreignKey: "id",
-});
-Genres.belongsTo(Movie, {
-  foreignKey: "id",
-  onDelete: "CASCADE",
-});
-Nomination.belongsTo(Movie, {
-  foreignKey: "id",
-});
-Rating.belongsTo(Movie, {
-  foreignKey: "id",
-});
-
-module.exports = { User, Genres, Movie, Nomination, Rating, UserMovieVote };
+// Export models
+module.exports = {
+  User,
+  Genres,
+  Movie,
+  Nomination,
+  Rating,
+  UserMovieVote,
+};

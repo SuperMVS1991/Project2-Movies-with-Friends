@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Genre } = require('../models');
+const { Genres } = require('../models');
 const genreSeeds = [
 
     {
@@ -55,7 +55,7 @@ const genreSeeds = [
 
 ];
 
-const seedGenres = () => Genre.bulkCreate(genreSeeds, { individualHooks: true });
+const seedGenres = () => Genres.bulkCreate(genreSeeds, { individualHooks: true });
 
 module.exports = seedGenres;
 
