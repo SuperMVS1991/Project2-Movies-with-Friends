@@ -20,23 +20,23 @@ Nomination.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    genre_id: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        references: {
-            model: "genres",
-            key: "id",
-        }
-    },
+    // genreid: {
+    //     type: DataTypes.STRING,
+    //     allowNull: false,
+    //     references: {
+    //         model: "genres",
+    //         key: "id",
+    //     }
+    // },
     director: {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    user_id: {
+    userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
-            model: 'users',
+            model: 'user',
             key: 'id',
         },
     },
