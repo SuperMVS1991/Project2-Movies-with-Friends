@@ -5,7 +5,7 @@ const Movie = require("./Movie");
 const movieNominate = require("./Nomination");
 const Rating = require("./rating");
 const UserMovieVote = require("./Vote");
-const UserPrivate = require("./UserPrivate");
+
 
 //USER INFO
 UserPrivate.hasOne(UserPublic, {
