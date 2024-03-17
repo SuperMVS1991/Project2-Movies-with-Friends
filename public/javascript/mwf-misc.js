@@ -1,3 +1,5 @@
+// Landing page login button event listeners
+
 const loginButton = document.getElementById('landing-showlogin');
 const memberSignin = document.getElementById('member-signin');
 

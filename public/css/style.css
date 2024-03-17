@@ -161,12 +161,14 @@ span.chennai {
 
 main p, h1, h2, h3, h4, h5, h6 {
     line-height: 125%;
-    margin-left: 2em;
-    margin-right: 2em;
-}
+}   
 
 main p {
     line-height: 115%;
+}
+
+.profile p {
+    margin-bottom: 1em;
 }
 
 .hero h1 {
@@ -178,9 +180,11 @@ main p {
 .hero-body p {
     margin-top:.5em;
 }
-.navbar {
-    background-color: #333;
-    color: whitesmoke;
+
+/*Navigation styles*/
+
+.navbar-item {
+    color: #AAA;
     font-family: "chennai", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -188,24 +192,54 @@ main p {
     font-size: 100%;
 }
 
- .navbar-menu p {
-    color:whitesmoke!important;
- }
+.navbar-item img {
+    max-height: 4rem;
+    min-height: 3rem;  
+}
+
+.inline-image {
+    max-height: 1.5em;
+    vertical-align: bottom;
+}
+
+ .main-menu {
+    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
+}
+ 
 
  .navbar-item, .navbar-link {
     color:whitesmoke!important;
  }
 
- #main-body {
+ #main-body, #landing-body {
+    background-image: url(/public/images/filmstrip-bg.png);
     background-color: #444444;
     padding: 2em;
     margin-top: 2em;
     margin-bottom: 2em;
  }
 
+
  .has-shadow {
     text-shadow: 2px 2px 8px #000000;
  }
+
+.group {
+    min-height: 16em;
+    background-color: #000;
+    margin: auto;
+ }
+
+ .poster {
+    max-width: 50%;
+    max-height: 500px;
+    border: solid #444444 2px;
+    padding: 1em;
+    display: block;
+    margin: 0 auto;
+ 
+ }
+
 
 .centered-image {
     max-width: 100%;
@@ -242,7 +276,6 @@ main p {
 
 }
 
-
 .hero-button {
     background-color: #f5f5f5;
     color: #000;
@@ -253,6 +286,22 @@ main p {
     font-size: 100%;
     margin-top: 20px;
 }
+
+#closed-forums {
+    display: block;
+    padding: 1em;
+}
+
+#closed-forums p {
+    margin-bottom: .5em;
+    color:#808080
+}
+
+#closed-forums a {
+    color:white;
+}
+
+/* Media Queries */
 
 @media (max-width: 768px) {
     .theater {

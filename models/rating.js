@@ -25,7 +25,7 @@ Rating.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       reference: {
-        model: "user_private",
+        model: "user",
         key: "id",
       },
     },

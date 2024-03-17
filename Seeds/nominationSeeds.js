@@ -21,7 +21,7 @@ const movieNominationSeeds = [
         release_year: 2008,
         // genreId: 1,
         director: 'Christopher Nolan',
-        userId: 3,
+        userId: 1,
         month: 'March'
     },
 ];
