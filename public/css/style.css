@@ -41,6 +41,12 @@
     --light-gray: #f5f5f5;
     --dark-gray: #363636;
   }
+body p {
+        line-height: 125%;
+        size: 1rem;
+        padding-bottom: 1em;
+    }
+  
 
   /*Backgrounds*/
 
@@ -215,16 +221,22 @@ span.chennai {
     white-space: nowrap;
 }
 
-main p, h1, h2, h3, h4, h5, h6 {
+main h1, h2, h3, h4, h5, h6 {
     line-height: 125%;
 }   
 
-main p {
-    line-height: 115%;
-}
-
 .profile p, li {
     margin-bottom: 1em;
+}
+
+#about-mwf {
+    max-width: 75%;
+    min-width: 35%;
+}
+
+#about-mwf p {
+    margin-bottom: 1em;
+    line-height: 150%;
 }
 
 .hero h1 {
@@ -255,6 +267,11 @@ main p {
 
 .inline-image {
     max-height: 1.5em;
+    vertical-align: bottom;
+}
+
+#users-profiles .inline-image {
+    max-height: 1em;
     vertical-align: bottom;
 }
 
@@ -393,44 +410,41 @@ font-style: normal; */
 font-weight: 300;
 font-style: normal; */
 
+
+/* Bulma size reference _________________________ */
+
+/* is-size-1 - 3rem - 48px
+is-size-2 - 2.5rem - 40px
+is-size-3 - 2rem - 32px
+is-size-4 - 1.5rem - 24px
+is-size-5 - 1.25rem - 20px
+is-size-6 - 1rem - 16px
+is-size-7 - 0.75rem - 12px */
+
+
 /* Bulma color reference ______________ */
 
-/* Primary Color:
+/* 
 
 Primary: #00d1b2
 Primary Light: #ebfffc
 Primary Dark: #00b89c
 
-
-Link Color:
-
 Link: #3273dc
 Link Light: #eff8ff
 Link Dark: #276cda
-
-
-Info Color:
 
 Info: #209cee
 Info Light: #d9f2ff
 Info Dark: #1aa3ff
 
-
-Success Color:
-
 Success: #23d160
 Success Light: #e7f9ed
 Success Dark: #20bd53
 
-
-Warning Color:
-
 Warning: #ffdd57
 Warning Light: #fff9e6
 Warning Dark: #ffd700
-
-
-Danger Color:
 
 Danger: #ff3860
 Danger Light: #ffe3eb
@@ -442,4 +456,6 @@ Gray Shades:
 White: #fff
 Black: #0a0a0a
 Light Gray: #f5f5f5
-Dark Gray: #363636 */
+Dark Gray: #363636 
+
+*/
