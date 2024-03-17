@@ -20,7 +20,7 @@ Genres.init(
     },
     description: {
         type: DataTypes.TEXT,
-        allowNull: true,
+        allowNull: true
     },
     movieId: {
         type: DataTypes.INTEGER,
