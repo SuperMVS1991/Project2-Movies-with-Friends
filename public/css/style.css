@@ -1,12 +1,68 @@
-/* font-family: "chennai", sans-serif;
-font-weight: 700;
-font-style: normal; */
+:root {
+    /* Primary Color */
+    --primary: #00d1b2;
+    --primary-light: #ebfffc;
+    --primary-dark: #00b89c;
+    --primary-dark-alpha: rgba(0, 184, 156, 0.1);
+  
+    /* Link Color */
+    --link: #3273dc;
+    --link-light: #eff8ff;
+    --link-dark: #276cda;
+    --link-dark-alpha: rgba(39, 108, 218, 0.1);
+  
+    /* Info Color */
+    --info: #209cee;
+    --info-light: #d9f2ff;
+    --info-dark: #1aa3ff;
+    --info-dark-alpha: rgba(26, 163, 255, 0.1);
+  
+    /* Success Color */
+    --success: #23d160;
+    --success-light: #e7f9ed;
+    --success-dark: #20bd53;
+    --success-dark-alpha: rgba(32, 189, 83, 0.1);
+  
+    /* Warning Color */
+    --warning: #ffdd57;
+    --warning-light: #fff9e6;
+    --warning-dark: #ffd700;
+    --warning-dark-alpha: rgba(255, 215, 0, 0.1);
+  
+    /* Danger Color */
+    --danger: #ff3860;
+    --danger-light: #ffe3eb;
+    --danger-dark: #ff3860;
+    --danger-dark-alpha: rgba(255, 56, 96, 0.1);
+  
+    /* Gray Shades */
+    --white: #fff;
+    --black: #0a0a0a;
+    --light-gray: #f5f5f5;
+    --dark-gray: #363636;
+  }
 
-/* font-family: "chennai", sans-serif;
-font-weight: 300;
-font-style: normal; */
+  /*Backgrounds*/
 
-/* a little bit of temporary styling for comments */
+.bg-danger-alpha {
+    background-color: var(--danger-dark-alpha);
+}
+
+.bg-success-alpha {
+    background-color: var(--success-dark-alpha);
+}
+
+.bg-warning-alpha {
+    background-color: var(--warning-dark-alpha);
+}
+
+
+ .main-menu {
+    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
+}
+
+/* COMMENT STYLES*/
+
 .commentbox {
     display: flex;
     justify-content: space-around;
@@ -41,7 +97,7 @@ font-style: normal; */
     padding: 10px;
     padding-left: 0;
     outline: none;
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid var(--link-dark);
     margin-bottom: 10px;
     width: 95%;
 }
@@ -58,7 +114,7 @@ font-style: normal; */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #808080;
+    color: var(--dark-gray);
 }
 
 .buttons > button {
@@ -73,8 +129,8 @@ font-style: normal; */
 }
 
 .buttons > button.abled {
-    background: blue;
-    color: #fff;
+    background: var(--info-dark);
+    color: var(--light-gray);
 }
 
 #parents {
@@ -129,7 +185,7 @@ font-style: normal; */
 }
 
 .date {
-    color: #808080;
+    color: var(--dark-gray);
     font-size: 0.8em;
 }
 /* end of comments styling*/
@@ -167,7 +223,7 @@ main p {
     line-height: 115%;
 }
 
-.profile p {
+.profile p, li {
     margin-bottom: 1em;
 }
 
@@ -184,7 +240,7 @@ main p {
 /*Navigation styles*/
 
 .navbar-item {
-    color: #AAA;
+    color: var(--light-gray);
     font-family: "chennai", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -202,9 +258,7 @@ main p {
     vertical-align: bottom;
 }
 
- .main-menu {
-    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
-}
+
  
 
  .navbar-item, .navbar-link {
@@ -329,4 +383,63 @@ main p {
         display: block;
     }
 
+/* Font style reference ______________ */
 
+/* font-family: "chennai", sans-serif;
+font-weight: 700;
+font-style: normal; */
+
+/* font-family: "chennai", sans-serif;
+font-weight: 300;
+font-style: normal; */
+
+/* Bulma color reference ______________ */
+
+/* Primary Color:
+
+Primary: #00d1b2
+Primary Light: #ebfffc
+Primary Dark: #00b89c
+
+
+Link Color:
+
+Link: #3273dc
+Link Light: #eff8ff
+Link Dark: #276cda
+
+
+Info Color:
+
+Info: #209cee
+Info Light: #d9f2ff
+Info Dark: #1aa3ff
+
+
+Success Color:
+
+Success: #23d160
+Success Light: #e7f9ed
+Success Dark: #20bd53
+
+
+Warning Color:
+
+Warning: #ffdd57
+Warning Light: #fff9e6
+Warning Dark: #ffd700
+
+
+Danger Color:
+
+Danger: #ff3860
+Danger Light: #ffe3eb
+Danger Dark: #ff3860
+
+
+Gray Shades:
+
+White: #fff
+Black: #0a0a0a
+Light Gray: #f5f5f5
+Dark Gray: #363636 */
