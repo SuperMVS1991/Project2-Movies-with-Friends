@@ -32,7 +32,7 @@ Nomination.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    user_name: {
+    user_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         reference: {
