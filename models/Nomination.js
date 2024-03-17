@@ -35,7 +35,7 @@ Nomination.init(
     userId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        reference: {
+        references: {
             model: 'user',
             key: 'id',
         },
