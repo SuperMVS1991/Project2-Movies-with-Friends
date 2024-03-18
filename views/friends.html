@@ -67,6 +67,20 @@
                 </ul>
             </div>
 
+            <hr />
+
+            <div id="user-votes" class="bg-warning-alpha p-3">
+                <h2 class="is-size-4 mb-4">Movies I have voted for:</h2>
+                <ul>
+                  {{#each user.UserMovieVote}}
+                    <li>{{this.title}}</li>
+                  {{/each}}
+                </ul>
+    </div>
+</div>
+
+<!--end profile.handlebars ************************* -->
+
 <!--end friends.handlebars ************************* -->
 <script src="/public/javascript/dom.js"></script>
 </main>
