@@ -5,6 +5,7 @@ const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for 
 const Rating = require("./Rating"); // Assuming you have a Rating model defined
 const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined
 const Discussion = require("./Discussion");
+// hello
 // Define associations
 User.hasMany(Rating, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(Nomination, { foreignKey: "userId", onDelete: "CASCADE" });
