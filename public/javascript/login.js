@@ -1,11 +1,11 @@
 async function signupFormHandler(event) {
     event.preventDefault();
-  
-    /*const username = document.querySelector("#name-signup").value.trim();*/
+
+
     const email = document.querySelector("#email-signup").value.trim();
     const password = document.querySelector("#password-signup").value.trim();
     console.log(username + email + password);
-    if (username && email && password) {
+    if (email && password) {
       const response = await fetch("/api/users", {
         method: "post",
         body: JSON.stringify({
@@ -18,6 +18,7 @@ async function signupFormHandler(event) {
       // check the response status
       if (response.ok) {
         console.log("success");
+        
       } else {
         alert(response.statusText);
       }
@@ -41,7 +42,8 @@ async function signupFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace("/dashboard");
+        userLoggedIn = true;
+        document.location.replace("/welcome");
       } else {
         alert(response.statusText);
       }

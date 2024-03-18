@@ -290,7 +290,7 @@ main h1, h2, h3, h4, h5, h6 {
  }
 
  #main-body, #landing-body {
-    background-image: url(/public/images/filmstrip-bg.png);
+    background-image: url(/images/filmstrip-bg.png);
     background-color: #444444;
     padding: 2em;
     margin-top: 2em;
@@ -326,7 +326,7 @@ main h1, h2, h3, h4, h5, h6 {
 }
 
 .theater {
-    background-image: url(/public/images/des/Theater-w-logo-des.png);
+    background-image: url(/images/des/Theater-w-logo-des.png);
     background-position: center top;
     background-repeat: no-repeat;
 }
@@ -396,7 +396,7 @@ main h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 768px) {
     .theater {
-        background-image: url(/public/images/mob/Theater-w-logo-mob.png);
+        background-image: url(/images/mob/Theater-w-logo-mob.png);
 
     }
 }
@@ -410,7 +410,7 @@ main h1, h2, h3, h4, h5, h6 {
 /*Mobile*/
 @media screen and (max-width: 768px) {
     .theater {
-            background-image: url(/public/images/mob/Theater-w-logo-mob.png);
+            background-image: url(/images/mob/Theater-w-logo-mob.png);
         }
     .top-start h1 {
         margin-top: 7em;
