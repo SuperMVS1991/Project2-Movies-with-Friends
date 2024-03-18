@@ -15,10 +15,11 @@ Discussion.init(
       allowNull: false,
       unique: true,
     },
-    userName: {
-      type: DataTypes.STRING,
+    userId: {
+      type: DataTypes.INTEGER,
       allowNull: false,
-      unique: true,
+      reference: 'users',
+      key: 'id',
     },
     userPicture: {
       type: DataTypes.STRING,
