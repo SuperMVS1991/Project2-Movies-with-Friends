@@ -1,9 +1,16 @@
-const User = require("./User");
+/* const User = require("./User");
 const Genres = require("./Genres");
 const Movie = require("./Movie");
 const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for clarity
 const Rating = require("./Rating"); // Assuming you have a Rating model defined
+const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined */
+const User = require("./User");
+const Movie = require("./Movie");
+const Genres = require("./genres");
+const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for clarity
+const Rating = require("./rating"); // Assuming you have a Rating model defined
 const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined
+
 // Define associations
 User.hasMany(Rating, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(Nomination, { foreignKey: "userId", onDelete: "CASCADE" });
