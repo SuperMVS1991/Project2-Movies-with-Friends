@@ -15,6 +15,12 @@ router.get("/", async (req, res) => {
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
+    const app = express();
+
+// route for the landing page
+app.get('/layouts', (req, res) => {
+  res.render('landing', { layout: 'landing' }); // Specify the 'landing' layout for this view
+});
     res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
