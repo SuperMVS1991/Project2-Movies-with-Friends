@@ -34,7 +34,7 @@ UserMovieVote.init(
     },
     vote: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
     }
 }, {
     sequelize,

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movies with Friends</title>
+  <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+  <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+ <!-- <link rel="stylesheet" href="/css/jass.css"> -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <h1 id="dynamicId">Discussion Name</h1>
+    <div id="img">
+    <img id="img" src="https://source.unsplash.com/random/200x200?sig=1" />
+    </div>
+    <p id="description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto voluptas praesentium consequuntur voluptatem autem necessitatibus, saepe quas vel a reprehenderit possimus magni reiciendis illo eos nihil nesciunt laudantium. Aliquid, mollitia.</p>
+    <div class="container">
+        <div class="comments"></div>
+        <div class="commentbox">
+            <div class="content">
+                <h2 id="post">Post a comment </h2>
+                <input type="text" placeholder="username" class="user">
+
+                <div class="commentinput">
+                    <input type="text" placeholder="Enter comment" class="usercomment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="publish">Publish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="commentSection">
+    <div  id="commentCounter"><span id="comment">0</span> Comments</div>
+    <div id="containerComments"></div>
+    <div id="commentreply">
+        <h2>Reply to: </h2>
+        <input type="text" placeholder="username" class="userReply">
+
+  
+        <input type="text" placeholder="Enter comment" class="replyComment">
+        <div class="buttons">
+            <button type="submit" disabled id="publishReply">Publish</button>
+        </div>
+    </div>
+    </section>  
+
+
+    <footer>
+        <div class="footer-content">
+          <p>&copy; Movies With Friends</p>
+        </div>
+      </footer>
+    
+<script src="/javascript/comment.js">
+
+</script>
+
+</body>
+</html>
