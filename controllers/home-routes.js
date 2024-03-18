@@ -20,26 +20,21 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/movie/:id", async (req, res) => {
+router.get("/about", async (req, res) => {
   try {
-    const movieData = await Movie.findByPk(req.params.id, {
-      include: [
-        {
-          attributes: ["name"],
-        },
-      ],
-    });
+    const movieData = await Movie.findAll({});
 
-    const movie = movieData.get({ plain: true });
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-    res.render("movie", {
-      ...movie,
+    res.render("about", {
+      movies,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
 
 router.get("/profile", withAuth, async (req, res) => {
   try {
