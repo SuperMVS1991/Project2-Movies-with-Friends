@@ -18,7 +18,7 @@ Discussion.init(
     userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      reference: 'users',
+      reference: 'user',
       key: 'id',
     },
     userPicture: {

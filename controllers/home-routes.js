@@ -1,13 +1,17 @@
 const router = require("express").Router();
-const {
-  User,
-  Movie,
-} = require("../models");
+const { Movie, User } = require("../models");
 const withAuth = require("../utilities/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const movieData = await Movie.findAll({});
+    const movieData = await Movie.findAll({
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ["name"],
+      //   },
+      // ],
+    });
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
