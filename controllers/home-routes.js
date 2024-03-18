@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-    res.render("welcome", {
+    res.render("landing", {
       movies,
       logged_in: req.session.logged_in,
     });
@@ -67,13 +67,13 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-router.get("/landing", async (req, res) => {
+router.get("/welcome", async (req, res) => {
   try {
     const movieData = await Movie.findAll({});
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-    res.render("landing", {
+    res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
     });

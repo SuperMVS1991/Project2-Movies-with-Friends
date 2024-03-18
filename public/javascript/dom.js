@@ -14,8 +14,8 @@ const notify = document.querySelector(".notifyinput");
 
 document.addEventListener('DOMContentLoaded', function() {
   // Get the button and div elements by their IDs
-  var toggleButton = document.getElementById('action-button');
-  var myDiv = document.getElementById('myDiv');
+  var toggleButton = document.getElementById('addBtn');
+  var myDiv = document.getElementById('discussionInput');
 
   // Add an event listener to the button for click events
   toggleButton.addEventListener('click', function() {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let published = 
         `<div id="parents">
             <div id="comment1">
-                <a href="api.html">
+                <a href="discussion">
                 <p id="discussionName">${USERID.message}</p>
                 </a>
                 <button onclick="deleteDiv1()">Delete</button>
@@ -80,3 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     //when publish button is clicked discussion is posted
     publishBtn.addEventListener("click", addDiscussion);
+
+    document.getElementById('action-button').addEventListener('click', function() {
+      // Redirect to the desired view
+      window.location.href = 'discussion'; // Change 'view.html' to the URL of your desired view/page
+    });
+    

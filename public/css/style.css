@@ -520,3 +520,6 @@ Light Gray: #f5f5f5
 Dark Gray: #363636 
 
 */
+.hidden {
+    display: none;
+}
