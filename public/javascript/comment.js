@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const commentsList = document.getElementById('commentsList');
+    const urlParams = new URLSearchParams(window.location.search);
+    const discussionId = urlParams.get('discussionId');
+  
+    fetch(`/api/discussions/${discussionId}/comments`)
+      .then(response => response.json())
+      .then(comments => {
+        comments.forEach(comment => {
+          const li = document.createElement('li');
+          li.textContent = `${comment.username}: ${comment.commentText}`;
+          commentsList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching comments:', error));
+  });
+
+
 const USERID = {
     name: null,
     identity: null,

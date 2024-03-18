@@ -1,11 +1,7 @@
 const { DataTypes, Model } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class Discussion extends Model {
-  // checkPassword(loginPw) {
-  //   return bcrypt.compareSync(loginPw, this.password);
-  // }
-}
+class Discussion extends Model {}
 
 Discussion.init(
   {
@@ -14,7 +10,7 @@ Discussion.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    DiscussionName: {
+    discussionName: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
@@ -28,14 +24,14 @@ Discussion.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    comment: {
+    userComment: {
       type: DataTypes.STRING,
       allowNull: false,
     },
   },
   {
     sequelize,
-    tableName: "Discussion",
+    modelName: "Discussion", // Use modelName instead of tableName for Sequelize v6 and later
     timestamps: false,
     underscored: true,
   }

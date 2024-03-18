@@ -2,62 +2,38 @@ const express = require('express');
 const router = express.Router();
 const { Discussion } = require('../../models');
 
-// Get user's comment
-router.get('/', async (req, res) => {
+router.post('/discussion', async (req, res) => {
+  const { discussionName, userName, userPicture, userComment } = req.body;
+
   try {
-    if (!req.session.logged_in) {
-      res.status(401).json({ message: 'You are not logged in' });
-      return;
+    const newDiscussion = await Discussion.create({
+      discussionName,
+      userName,
+      userPicture,
+      userComment,
+    });
+
+    res.status(201).json(newDiscussion);
+  } catch (error) {
+    console.error('Error creating discussion:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+router.get('/discussion/:id', async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const discussion = await Discussion.findByPk(id);
+    if (!discussion) {
+      return res.status(404).json({ error: 'Discussion not found' });
     }
-    const user = await Discussion.findByPk(req.session.user_id);
-    res.render('profile', { user }); // Render 'profile' view
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving user data');
+    res.json(discussion);
+  } catch (error) {
+    console.error('Error fetching discussion:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-// Get user's friends's comment
-router.get('/friends', async (req, res) => {
-  try {
-    const friends = await User.findAll({
-      where: {
-        id: {
-          [Op.ne]: req.session.user_id // Exclude the current user
-        }
-      }
-    });
-    res.render('friends', { friends }); // Render 'friends' view
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving user data');
-  }
-});
-
-// Get user's nominated movies
-router.get('/my-noms', async (req, res) => {
-  try {
-  const mynoms = await User.findByPk(req.session.user_id, {
-  include: [{ model: Nomination }]
-});
-    res.render('mynoms', { mynoms }); // Render 'my nominations' view
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving user\'s nominations');
-  }
-});
-
-// Get user's voting history
-router.get('/my-votes', async (req, res) => {
-  try {
-    const myvotes = await User.findByPk(req.session.user_id, {
-      include: [{ model: Vote }]
-    });
-    res.render('myvotes', { myvotes }); // Render 'my votes' view
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Error retrieving user\'s voting history');
-  }
-});
 
 module.exports = router;
