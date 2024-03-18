@@ -15,7 +15,7 @@ Movie.hasMany(Nomination, { foreignKey: "movieId", onDelete: "CASCADE" });
 Movie.hasMany(Rating, { foreignKey: "movieId", onDelete: "CASCADE" });
 Movie.hasMany(UserMovieVote, { foreignKey: "movieId", onDelete: "CASCADE" });
 Genres.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
-Nomination.belongsTo(User, { foreignKey: "userId" });
+Nomination.belongsTo(User, { foreignKey: "userId", onDelete: "CASCADE"});
 Nomination.belongsTo(Movie, { foreignKey: "movieId", onDelete: "CASCADE" });
 Rating.belongsTo(User, { foreignKey: "userId" });
 Rating.belongsTo(Movie, { foreignKey: "movieId" });

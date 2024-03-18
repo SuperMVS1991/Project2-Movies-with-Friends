@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-const  movieRoutes = require('./movieRoutes');
+const movieRoutes = require('./movieRoutes');
 const genreRoutes = require('./genreRoutes');
 const calendarRoutes = require('./calendarRoutes');
 const nominationRoutes = require('./nominationRoutes');
