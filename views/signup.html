@@ -1,0 +1,234 @@
+<!--This file will serve as the signup.handlebars. Including the main/index code so it will display-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies with Friends</title>
+
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body class="is-dark">
+    <main id="main-body" class="has-text-light">
+
+<!--SIGNUP PARTIAL BEGINS-->
+<!-- Render the signup.handlebars -->
+
+<div class="row">
+    <div class="col-md-6">
+      <h2 class="is-size-3 my-4 pb-3">Sign Up to Become a Member of <span class="chennai">Movies with Friends</span>. It's completely free!</h2>
+  
+      <form id="signup-form" class="form login-form">
+
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input class="form-input" type="text" id="first_name" />
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input class="form-input" type="text" id="last_name" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input class="form-input" type="text" id="email" />
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input class="form-input" type="password" id="password" />
+        </div>
+        <div class="form-group">
+            <label for="password2">Confirm Password:</label>
+            <input class="form-input" type="password" id="password2" />
+        </div>
+        <div class="form-group">
+            <label for="user_name">Create a User Name:</label>
+            <input class="form-input" type="text" id="user_name" />
+        </div>
+        <div class="form-group">
+            <label for="user_name">What state do you live in?:</label>
+            <select id="state" name="state">
+                <optgroup label="A">
+                  <option value="Alabama">Alabama</option>
+                  <option value="Alaska">Alaska</option>
+                  <option value="Arizona">Arizona</option>
+                  <option value="Arkansas">Arkansas</option>
+                </optgroup>
+                <optgroup label="C">
+                  <option value="California">California</option>
+                  <option value="Colorado">Colorado</option>
+                  <option value="Connecticut">Connecticut</option>
+                </optgroup>
+                <optgroup label="D">
+                  <option value="Delaware">Delaware</option>
+                </optgroup>
+                <optgroup label="F">
+                  <option value="Florida">Florida</option>
+                </optgroup>
+                <optgroup label="G">
+                  <option value="Georgia">Georgia</option>
+                </optgroup>
+                <optgroup label="H">
+                  <option value="Hawaii">Hawaii</option>
+                </optgroup>
+                <optgroup label="I">
+                  <option value="Idaho">Idaho</option>
+                  <option value="Illinois">Illinois</option>
+                  <option value="Indiana">Indiana</option>
+                  <option value="Iowa">Iowa</option>
+                </optgroup>
+                <optgroup label="K">
+                  <option value="Kansas">Kansas</option>
+                  <option value="Kentucky">Kentucky</option>
+                </optgroup>
+                <optgroup label="L">
+                  <option value="Louisiana">Louisiana</option>
+                </optgroup>
+                <optgroup label="M">
+                  <option value="Maine">Maine</option>
+                  <option value="Maryland">Maryland</option>
+                  <option value="Massachusetts">Massachusetts</option>
+                  <option value="Michigan">Michigan</option>
+                  <option value="Minnesota">Minnesota</option>
+                  <option value="Mississippi">Mississippi</option>
+                  <option value="Missouri">Missouri</option>
+                  <option value="Montana">Montana</option>
+                </optgroup>
+                <optgroup label="N">
+                  <option value="Nebraska">Nebraska</option>
+                  <option value="Nevada">Nevada</option>
+                  <option value="New Hampshire">New Hampshire</option>
+                  <option value="New Jersey">New Jersey</option>
+                  <option value="New Mexico">New Mexico</option>
+                  <option value="New York">New York</option>
+                  <option value="North Carolina">North Carolina</option>
+                  <option value="North Dakota">North Dakota</option>
+                </optgroup>
+                <optgroup label="O">
+                  <option value="Ohio">Ohio</option>
+                  <option value="Oklahoma">Oklahoma</option>
+                  <option value="Oregon">Oregon</option>
+                </optgroup>
+                <optgroup label="P">
+                  <option value="Pennsylvania">Pennsylvania</option>
+                </optgroup>
+                <optgroup label="R">
+                  <option value="Rhode Island">Rhode Island</option>
+                </optgroup>
+                <optgroup label="S">
+                  <option value="South Carolina">South Carolina</option>
+                  <option value="South Dakota">South Dakota</option>
+                </optgroup>
+                <optgroup label="T">
+                  <option value="Tennessee">Tennessee</option>
+                  <option value="Texas">Texas</option>
+                </optgroup>
+                <optgroup label="U">
+                  <option value="Utah">Utah</option>
+                </optgroup>
+                <optgroup label="V">
+                  <option value="Vermont">Vermont</option>
+                  <option value="Virginia">Virginia</option>
+                </optgroup>
+                <optgroup label="W">
+                  <option value="Washington">Washington</option>
+                  <option value="West Virginia">West Virginia</option>
+                  <option value="Wisconsin">Wisconsin</option>
+                  <option value="Wyoming">Wyoming</option>
+                </optgroup>
+              </select>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Select your fvorite movie genres:</legend>
+                <input type="checkbox" id="action" name="genre" value="action">
+                <label for="action">Action</label><br>
+                <input type="checkbox" id="comedy" name="genre" value="comedy">
+                <label for="comedy">Comedy</label><br>
+                <input type="checkbox" id="drama" name="genre" value="drama">
+                <label for="drama">Drama</label><br>
+                <input type="checkbox" id="thriller" name="genre" value="thriller">
+                <label for="thriller">Thriller</label><br>
+                <input type="checkbox" id="horror" name="genre" value="horror">
+                <label for="horror">Horror</label><br>
+                <input type="checkbox" id="romance" name="genre" value="romance">
+                <label for="romance">Romance</label><br>
+                <input type="checkbox" id="science fiction" name="genre" value="science fiction">
+                <label for="science fiction">Science fiction</label><br>
+                <input type="checkbox" id="fantasy" name="genre" value="fantasy">
+                <label for="fantasy">Fantasy</label><br>
+                <input type="checkbox" id="science fiction" name="genre" value="science fiction">
+                <label for="science fiction">Science fiction</label><br>
+                <input type="checkbox" id="animation" name="genre" value="animation">
+                <label for="animation">Animation</label><br>
+                <input type="checkbox" id="documentary" name="genre" value="documentary">
+                <label for="documentary">Documentary</label><br>
+                <input type="checkbox" id="musical" name="genre" value="musical">
+                <label for="musical">Musical</label><br>
+                <input type="checkbox" id="mystery" name="genre" value="mystery">
+                <label for="mystery">Mystery</label><br>
+                <input type="checkbox" id="western" name="genre" value="western">
+                <label for="western">Western</label><br>
+                <input type="checkbox" id="historical-fiction" name="genre" value="historical fiction">
+                <label for="historical fiction">Historical fiction</label><br>
+                <input type="checkbox" id="biography" name="genre" value="biography">
+                <label for="biography">Biography</label><br>
+                <input type="checkbox" id="indie-films" name="genre" value="indie-films">
+                <label for="indie-films">Indie Films</label><br>
+              </fieldset>
+        </div>
+        <div class="form-group">
+            <label for="about_me">Tell us a little about yourself:</label>
+            <input class="form-input" type="text" id="about_me" />
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Select an avatar:</legend>
+               
+                <input type="checkbox" id="pac-danger" name="user_avatar" value="pac-danger">
+                <label for="pac-danger."><img src="/public/images/pac-danger.png" alt="red"></label><br>
+
+                <input type="checkbox" id="pac-info" name="user_avatar"" value="pac-info">
+                <label for="pac-info"><img src="/public/images/pac-info.png" alt="marine blue"></label><br>
+
+                <input type="checkbox" id="pac-primary" name="user_avatar" value="pac-primary">
+                <label for="pac-primary"><img src="/public/images/pac-primary.png" alt="teal green"></label><br>
+
+                <input type="checkbox" id="pac-success" name="user_avatar" value="pac-success">
+                <label for="pac-success"><img src="/public/images/pac-success.png" alt="green"></label><br>
+
+                <input type="checkbox" id="pac-warning" name="user_avatar" value="pac-warning">
+                <label for="pac-warning"><img src="/public/images/pac-warning.png" alt="yellow"></label><br>
+
+                <input type="checkbox" id="pac-link" name="user_avatar" value="pac-link">
+                <label for="pac-link"><img src="/public/images/pac-link.png" alt="royal blue"></label><br>
+                
+            </fieldset>
+
+
+                
+                
+
+       
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">login</button>
+        </div>
+      </form>
+    </div>
+   
+  </div>
+
+<!--end rating.handlebars ************************* -->
+
+        </main>
+
+        <script src="/public/javascript/mwf-misc.js"></script>
+        <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
