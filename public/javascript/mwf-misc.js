@@ -10,7 +10,16 @@ loginButton.addEventListener('click', function() {
 }
 );
 
-document.getElementById('signupBtn').addEventListener('click', function() {
-  // Redirect to the Handlebars view URL
-  window.location.href = '';
-});
+
+// Code to confirm password match
+
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+const signUpButton = document.getElementById('signup-button');
+
+signUpButton.addEventListener('click', function() {
+  if (password.value !== confirmPassword.value) {
+    alert('Passwords do not match');
+    return;
+  }
+})

@@ -331,7 +331,7 @@ main h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
 }
 
-#member-signin form {
+#member-signin, #signup-form, form {
     background-color: #333;
     border-style: groove;
     border-color: is-dark; 
