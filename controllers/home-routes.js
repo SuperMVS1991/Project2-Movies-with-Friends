@@ -36,18 +36,76 @@ router.get("/about", async (req, res) => {
 });
 
 
-router.get("/profile", withAuth, async (req, res) => {
+router.get("/discussion", async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ["password"] },
-      include: [{ model: Movie }],
-    });
+    const movieData = await Movie.findAll({});
 
-    const user = userData.get({ plain: true });
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
+
+    res.render("discussion", {
+      movies,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+router.get("/profile", async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({});
+
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
 
     res.render("profile", {
-      ...user,
-      logged_in: true,
+      movies,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/landing", async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({});
+
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
+
+    res.render("landing", {
+      movies,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/friends", async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({});
+
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
+
+    res.render("friends", {
+      movies,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/signup", async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({});
+
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
+
+    res.render("signup", {
+      movies,
+      logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);

@@ -2,14 +2,12 @@
 
 const loginButton = document.getElementById('landing-showlogin');
 const memberSignin = document.getElementById('member-signin');
-const SignupButton = document.getElementById('signupBtn');
 
-loginButton.addEventListener('click', function() {
-  memberSignin.classList.toggle('visible-form');
-  console.log('clicked-member-login');
-}
-);
 
+document.getElementById('action-button').addEventListener('click', function() {
+  // Redirect to the desired view
+  window.location.href = 'discussion'; // Change 'view.html' to the URL of your desired view/page
+});
 
 // Code to confirm password match
 

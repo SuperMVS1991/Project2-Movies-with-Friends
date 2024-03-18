@@ -1,0 +1,111 @@
+
+
+<body id="landing-body" class="has-background-dark">
+    
+    <section class="hero is-black is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <!--navigation-->
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <!--connect to home-->
+                <a class="navbar-item">
+                  <img src= "/images/MwF-alt-logo.png" alt="Movies with Friends">
+                </a>
+                <span class="navbar-burger has-text-light" data-target="navbarMenuHeroA">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu has-text-light">
+                <div class="navbar-end">
+                  <a class="navbar-item">
+                    Member Sign in
+                  </a>
+                  <a class="navbar-item ">
+                    Sign up
+                  </a>
+                  <hr class="navbar-divider">
+                  <a class="navbar-item">
+                    About Movies with Friends
+                  </a>
+                  <a class="navbar-item">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body theater">
+          <div class="container has-text-centered pt-5 px-6">
+            <section class="top-start">
+                <h1 class="has-text-light has-shadow is-size-3-mobile is-size-2-tablet is-size-2-desktop">You might want to join <span class="chennai">Movies with Friends</span> if...</h1>
+            </section>
+            <section>
+             <p class="has-text-warning is-size-5"><span><i class="fa-solid fa-people-line is-size-3 mt-2 mr-3"></i></span>You love to watch movies AND discuss them with other people.</p>
+            </section>
+            <section>
+                <p class="has-text-info is-size-5"><span><i class="fa-solid fa-pen-to-square is-size-3 mt-2 mr-3"></i></span>You like to read and write reviews on major movie websites.</p> 
+            </section>
+            <section>
+                <p class="has-text-success is-size-5"><span><i class="fa-solid fa-share-nodes is-size-3 mt-2 mr-3"></i></span>You post about movies on other social media platforms, <br />but not everyone shares your passion for analysis or has watched the same films.</p>
+            </section>
+          </div>
+        </div>
+    
+         <!--Call to action-->
+         <container class="has-text-centered px-7 pb-7 mx-auto">
+          <div class="column">
+              <p class="is-size-5 has-text-light">Sign up for <span class="chennai">Movies with Friends</span> today and join the conversation!</p>
+          </div>
+      
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+          
+           
+    
+                <!--member sign in box, visible when the sign in button is clicked-->
+            <container id="member-signin" class="hidden-form">
+    
+              <form class="box mx-auto level">
+                <div class="level-left">
+                  <div class="field level-item">
+                    <label class="label has-text-grey-light is-size-6">Email:&nbsp;&nbsp;</label>
+                    <div class="control">
+                      <input class="input" type="email" placeholder="e.g. luke@starwars.com">
+                    </div>
+                  </div>
+                  <div class="field level-item">
+                    <label class="label has-text-grey-light is-size-6">Password:&nbsp;&nbsp;</label>
+                    <div class="control">
+                      <input class="input" type="password" placeholder="********">
+                    </div>
+                  </div>
+                </div>
+                <div class="level-right">
+                  <button id="landing-signin" class="button is-danger level-item pl-2">Sign in</button>
+                </div>
+              </form>
+    
+          </container> <!--end of sign in box-->
+          
+    
+                <div id ="entry-buttons" class="column">
+                <a id="signupBtn" class="button m-2 hero-button is-danger">Sign Up</a>
+                <a id = "landing-showlogin" class="button m-2 hero-button is-danger is-outlined">Member Sign In</a>
+                </div>
+            </container>
+    
+        </div>
+      </section>
+      <script src="/javascript/dom.js"></script>
+      <script src="/javascript/add-post.js"></script>
+      <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+    </body>

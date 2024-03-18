@@ -53,3 +53,9 @@ async function signupFormHandler(event) {
   document
     .querySelector(".signup-form")
     .addEventListener("submit", signupFormHandler);  
+
+    document.getElementById('btn').addEventListener('click', function() {
+      // Redirect to the desired view
+      window.location.href = '/'; // Change 'view.html' to the URL of your desired view/page
+    });
+    
