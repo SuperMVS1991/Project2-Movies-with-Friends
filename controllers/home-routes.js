@@ -16,7 +16,6 @@ router.get("/", async (req, res) => {
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
     res.render("welcome", {
-    res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
     });
