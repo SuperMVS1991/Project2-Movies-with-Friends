@@ -12,7 +12,7 @@ Styling: Enhance CSS with Sass and Bulma for a modern and visually appealing des
 ## Installation
 Clone the repository: git clone https://github.com/yourusername/Project2-Movies-with-Friends.git
 Navigate to the project directory: cd movies-with-friends
-##Install dependencies: 
+## Install dependencies: 
 npm install
 ## Usage
 Start the server: npm start
