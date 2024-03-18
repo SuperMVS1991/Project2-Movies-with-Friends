@@ -16,6 +16,7 @@ const USERID = {
   const userName = document.querySelector(".user");
   const userNameReply = document.querySelector(".userReply");
   const notify = document.querySelector(".notifyinput");
+  const container = document.getElementById('containerComments');
   
       userComment.addEventListener("input", e => {
           if(!userComment.value) {
@@ -51,7 +52,7 @@ const USERID = {
               </div>    
           </div>`
   
-          comments.innerHTML += published;
+          container.innerHTML += published;
           userComment.value = "";
           publishBtn.classList.remove("abled")
   
@@ -130,7 +131,7 @@ const USERID = {
             </div>    
         </div>`
 
-          comments.innerHTML += published;
+          container.innerHTML += published;
           replyComment.value = "";
           userNameReply.value ="";
           publishReply.classList.remove("abled")
@@ -181,5 +182,6 @@ const USERID = {
           }
 
         };
+   
 
-     console.log('working');
+     

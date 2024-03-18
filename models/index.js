@@ -4,10 +4,12 @@ const Movie = require("./Movie");
 const Nomination = require("./Nomination"); // Renamed from 'movieNominate' for clarity
 const Rating = require("./Rating"); // Assuming you have a Rating model defined
 const UserMovieVote = require("./Vote"); // Assuming you have a UserMovieVote model defined
+const Discussion = require("./Discussion"); 
 
 // Define associations
 User.hasMany(Rating, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(Nomination, { foreignKey: "userId", onDelete: "CASCADE" });
+User.hasMany(Discussion, { foreignKey: "userId", onDelete: "CASCADE" });
 User.hasMany(UserMovieVote, {
   foreignKey: "userId",
   onDelete: "CASCADE",
@@ -33,4 +35,5 @@ module.exports = {
   Nomination,
   Rating,
   UserMovieVote,
+  Discussion
 };
