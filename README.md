@@ -1,8 +1,8 @@
 # Movies with Friends:
-##Description
+## Description
 "Movies with Friends" is an online platform designed for movie enthusiasts who enjoy discussing and reviewing movies collectively. Users can register on the site, create profiles, participate in forum discussions, and vote to select the group's movie of the month. The platform is categorized by genre for easy selection and voting.
 
-##Features
+## Features
 User Registration: Users can create accounts and personalize their profiles.
 Forum Interaction: Engage in discussions with other users about movies and related topics.
 Movie Voting: Vote for the group's movie of the month from a curated list of free options on Peacock.
