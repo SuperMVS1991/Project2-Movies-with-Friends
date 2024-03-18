@@ -1,8 +1,5 @@
 const router = require("express").Router();
-const {
-  User,
-  Movie,
-} = require("../models");
+const { Movie, User } = require("../models");
 const withAuth = require("../utilities/auth");
 
 router.get("/", async (req, res) => {
@@ -66,6 +63,31 @@ router.get("/profile", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get("/login", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+
+  res.render("login");
+});
+
+
+router.get("/signup", (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect("/profile");
+    return;
+  }
+
+  res.render("signup");
+}
+);
+
+router.get("/add", withAuth, (req, res) => {
+  res.render("add");
+});
+
 
 module.exports = router;
 
