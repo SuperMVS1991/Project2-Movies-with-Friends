@@ -1,3 +1,21 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const commentsList = document.getElementById('commentsList');
+    const urlParams = new URLSearchParams(window.location.search);
+    const discussionId = urlParams.get('discussionId');
+  
+    fetch(`/api/discussions/${discussionId}/comments`)
+      .then(response => response.json())
+      .then(comments => {
+        comments.forEach(comment => {
+          const li = document.createElement('li');
+          li.textContent = `${comment.username}: ${comment.commentText}`;
+          commentsList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error fetching comments:', error));
+  });
+
+
 const USERID = {
     name: null,
     identity: null,
@@ -6,6 +24,8 @@ const USERID = {
     date: null
   }
   
+  const discussionName = document.querySelector(".dynamicId");
+  const paragraph = document.querySelector("#discussionName");
   const userComment = document.querySelector(".usercomment");
   const replyComment = document.querySelector(".replyComment");
   const publishBtn = document.querySelector("#publish");
@@ -14,6 +34,7 @@ const USERID = {
   const userName = document.querySelector(".user");
   const userNameReply = document.querySelector(".userReply");
   const notify = document.querySelector(".notifyinput");
+  const container = document.getElementById('containerComments');
   
       userComment.addEventListener("input", e => {
           if(!userComment.value) {
@@ -49,7 +70,7 @@ const USERID = {
               </div>    
           </div>`
   
-          comments.innerHTML += published;
+          container.innerHTML += published;
           userComment.value = "";
           publishBtn.classList.remove("abled")
   
@@ -128,7 +149,7 @@ const USERID = {
             </div>    
         </div>`
 
-          comments.innerHTML += published;
+          container.innerHTML += published;
           replyComment.value = "";
           userNameReply.value ="";
           publishReply.classList.remove("abled")
@@ -179,5 +200,6 @@ const USERID = {
           }
 
         };
+   
 
-     console.log('working');
+     

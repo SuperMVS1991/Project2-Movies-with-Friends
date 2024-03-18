@@ -1,4 +1,3 @@
-const sequelize = require('../config/connection');
 const { UserMovieVote } = require('../models');
 const voteSeeds = [
     {
@@ -33,7 +32,7 @@ const voteSeeds = [
     }
 ];
 
-const createVoteSeeds = () => UserMovieVote.bulkCreate(VoteSeeds, {
+const createVoteSeeds = () => UserMovieVote.bulkCreate(voteSeeds, {
     individualHooks: true
 });
 
