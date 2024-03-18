@@ -13,15 +13,20 @@ const userNameReply = document.querySelector(".userReply");
 const notify = document.querySelector(".notifyinput");
 
 document.addEventListener('DOMContentLoaded', function() {
-  const toggleButton = document.getElementById('addBtn');
-  const myDiv = document.getElementById('discussionInput');
+  // Get the button and div elements by their IDs
+  var toggleButton = document.getElementById('action-button');
+  var myDiv = document.getElementById('myDiv');
 
+  // Add an event listener to the button for click events
   toggleButton.addEventListener('click', function() {
-    if (myDiv.classList.contains('hidden')) {
-      myDiv.classList.remove('hidden');
-    } else {
-      myDiv.classList.add('hidden');
-    }
+      // Check if the div has the 'hidden' class
+      if (myDiv.classList.contains('hidden')) {
+          // If it has the class, remove it to show the div
+          myDiv.classList.remove('hidden');
+      } else {
+          // If it doesn't have the class, add it to hide the div
+          myDiv.classList.add('hidden');
+      }
   });
 });
 
