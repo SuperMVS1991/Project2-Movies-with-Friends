@@ -20,14 +20,6 @@ Nomination.init(
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    // genreid: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     references: {
-    //         model: "genres",
-    //         key: "id",
-    //     }
-    // },
     director: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -36,7 +28,7 @@ Nomination.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'User',
             key: 'id',
         },
     },
@@ -50,6 +42,7 @@ Nomination.init(
     timestamps: true,
     underscored: true,
 
-});
+}
+);
 
 module.exports = Nomination;
