@@ -10,3 +10,15 @@ loginButton.addEventListener('click', function() {
 );
 
 
+// Code to confirm password match
+
+const password = document.getElementById('password');
+const confirmPassword = document.getElementById('confirm-password');
+const signUpButton = document.getElementById('signup-button');
+
+signUpButton.addEventListener('click', function() {
+  if (password.value !== confirmPassword.value) {
+    alert('Passwords do not match');
+    return;
+  }
+})
