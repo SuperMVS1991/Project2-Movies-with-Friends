@@ -1,4 +1,4 @@
-<!--This file will serve as the friends.handlebars. Including the main/index code so it will display-->
+<!--This file will serve as the profile.handlebars. Including the main/index code so it will display-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,15 +38,34 @@
 
 {{{user-header}}} <!-- This is the user-header.handlebars partial -->
 
-<div id="users-profiles" class="container is-size-5">
-    <h1 class="is-size-3">Movies with Friends Members</h1>
-    <div id="user-nominations" class="bg-success-alpha p-3">
-      <ul>
-        {{#each user.Users}}
-          <li class="pb-3"><img src="/public/images/{{this.user_avatar}}" alt="Avatar" class="avatar inline-image"><span class="has-text-weight-bold">{{this.user_name}}</span> is from {{this.state}} <br />Favorite genres:&emsp;{{this.favorite_genres}}  <br />Favorite movies:&emsp;{{this.favorite_movies}}  <br />About me:&emsp;{{this.about_me}}</li>
-        {{/each}}
-      </ul>
-  </div>
+<div id="user-profile" class="container is-size-5">
+    <h1 class="is-size-3">My Profile</h1>
+    <div class="profile">
+    <!--in handlebars, replace with:
+                    <h2 class="is-size-2 my-4"><img src="/public/images/{{user_avatar}}" alt="Avatar" class="avatar inline-image"> Hi, {{user_name}}</h2> -->
+        <h2 class="is-size-2 my-4"><img src="/public/images/pac-success.png" alt="Avatar" class="avatar inline-image"> Hi, MovieManiac77</h2>
+
+        <div class="bg-danger-alpha p-3">
+            <p>Name:&emsp;{{name_first}} {{name_last}}</p>
+            <p>Email:&emsp;{{email}}</p>
+            <p>Hailing from:&emsp;{{state}}</p>
+            <hr />
+            <p>My favorite movie genres:&emsp;{{favorite_genres}}</p>
+            <p>My favorite movies:&emsp;{{favorite_movies}}</p>
+            <p>About me:&emsp;{{about_me}}</p>
+        </div>
+
+
+        <hr />
+
+        <div id="user-nominations" class="bg-success-alpha p-3">
+                <h2 class="is-size-4 mb-4">Movies I have nominated:</h2>
+                <ul>
+                  {{#each user.Nominations}}
+                    <li>{{this.title}}</li>
+                  {{/each}}
+                </ul>
+            </div>
 
 <!--end friends.handlebars ************************* -->
 <script src="/public/javascript/dom.js"></script>
