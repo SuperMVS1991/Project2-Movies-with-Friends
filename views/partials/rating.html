@@ -1,0 +1,104 @@
+<!--This file will serve as the profile.handlebars. Including the main/index code so it will display-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movies with Friends</title>
+
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+
+<body class="is-dark">
+    <main id="main-body" class="has-text-light">
+
+<!--RATING PARTIAL BEGINS-->
+<!-- Render the rating.handlebars -->
+
+<!-- RATING PARTIAL BEGINS -->
+<!-- Render the rating.handlebars -->
+
+<div class="rating-container">
+    <h2 class="is-size-2 my-4"><i class="fa-solid fa-star"></i> Rate this Movie <i class="fa-solid fa-star"></i></h2>
+    <form action="/rate-movie" method="POST">
+
+        <div class="rating-category pb-3">
+            <select name="originality" id="originality" class="rating-select">
+                <option value="1" class="fa-solid">&#xf005;</i></option>
+                <option value="2" class="fa-solid">&#xf005;&#xf005;</option>
+                <option value="3" class="fa-solid">&#xf005;&#xf005;&#xf005;</option>
+                <option value="4" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;</option>
+                <option value="5" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
+            </select>
+            <label for="originality"><span class="chennai pl-2">Originality:</span></label>
+            <p>Assessing the creativity and uniqueness of the storyline, characters, and overall concept.</p>
+        </div>
+
+        <div class="rating-category pb-3">
+            <select name="entertainment" id="entertainment" class="rating-select">
+                <option value="1" class="fa-solid">&#xf005;</i></option>
+                <option value="2" class="fa-solid">&#xf005;&#xf005;</option>
+                <option value="3" class="fa-solid">&#xf005;&#xf005;&#xf005;</option>
+                <option value="4" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;</option>
+                <option value="5" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
+            </select>
+            <label for="entertainment"><span class="chennai pl-2">Entertainment Value:</span></label>
+            <p>Evaluating how engaging and enjoyable the movie is to watch, including its ability to captivate and hold the audience's attention.</p>
+        </div>
+
+        <div class="rating-category pb-3">
+            <select name="cinematography" id="cinematography" class="rating-select">
+                <option value="1" class="fa-solid">&#xf005;</i></option>
+                <option value="2" class="fa-solid">&#xf005;&#xf005;</option>
+                <option value="3" class="fa-solid">&#xf005;&#xf005;&#xf005;</option>
+                <option value="4" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;</option>
+                <option value="5" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
+            </select>
+            <label for="cinematography"><span class="chennai pl-2">Cinematography and Visuals:</span></label>
+            <p>Considering the quality of cinematography, visual effects, set design, and overall aesthetic appeal.
+            </p>
+        </div>
+
+        <div class="rating-category pb-3">
+            <select name="acting" id="acting" class="rating-select">
+                <option value="1" class="fa-solid">&#xf005;</i></option>
+                <option value="2" class="fa-solid">&#xf005;&#xf005;</option>
+                <option value="3" class="fa-solid">&#xf005;&#xf005;&#xf005;</option>
+                <option value="4" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;</option>
+                <option value="5" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
+            </select>
+            <label for="acting"><span class="chennai pl-2">Acting and Performance:</span></label>
+            <p>Assessing the quality of performances by the cast, including believability, emotional depth, and chemistry between characters.</p>
+        </div>
+
+        <div class="rating-category pb-3">
+            <select name="storytelling" id="storytelling" class="rating-select">
+                <option value="1" class="fa-solid">&#xf005;</i></option>
+                <option value="2" class="fa-solid">&#xf005;&#xf005;</option>
+                <option value="3" class="fa-solid">&#xf005;&#xf005;&#xf005;</option>
+                <option value="4" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;</option>
+                <option value="5" class="fa-solid">&#xf005;&#xf005;&#xf005;&#xf005;&#xf005;</option>
+            </select>
+            <label for="storytelling"><span class="chennai pl-2">Storytelling and Pacing:</span></label>
+            <p>Analyzing the coherence of the narrative structure, pacing of the plot, and effectiveness of storytelling techniques in engaging the audience.</p>
+            
+        </div>
+        <button type="submit" class="button">Submit Rating</button>
+    </form>
+</div>
+
+
+<!--end rating.handlebars ************************* -->
+
+        </main>
+
+        <script src="/public/javascript/mwf-misc.js"></script>
+        <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
