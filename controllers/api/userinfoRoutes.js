@@ -45,5 +45,19 @@ router.get('/my-noms', async (req, res) => {
     console.error(err);
     res.status(500).send('Error retrieving user\'s nominations');
   }
+});
 
-module.exports = router;})
+// Get user's voting history
+router.get('/my-votes', async (req, res) => {
+  try {
+    const myvotes = await User.findByPk(req.session.user_id, {
+      include: [{ model: Vote }]
+    });
+    res.render('myvotes', { myvotes }); // Render 'my votes' view
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error retrieving user\'s voting history');
+  }
+});
+
+module.exports = router;
