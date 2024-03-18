@@ -1,4 +1,3 @@
-const sequelize = require("../config/connection");
 const { Rating } = require("../models");
 
 const ratingData = [

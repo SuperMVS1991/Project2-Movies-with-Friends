@@ -15,8 +15,26 @@
 <body class="is-dark">
     <main id="main-body" class="has-text-light">
 
-<!--PROFILE PAGE BEGINS-->
-<!-- Render the profile.handlebars -->
+      <div class="container">
+        <div><span id="discussion">0</span> Discussions</div>
+        <div class="local"></div>
+        <div class="commentbox">
+            <div class="content">
+              <button id="addBtn">Add a discussion</button>
+                <div id="discussionInput" class="hidden">
+                    <input type="text" placeholder="Enter discussion name" class="usercomment">
+                    <div class="buttons">
+                        <button type="submit" disabled id="publish">Create</button>
+                    </div>
+                </div>
+    
+               
+            </div>
+        </div>
+    </div>
+
+<!--FRIENDS PAGE BEGINS-->
+<!-- Render the friends.handlebars -->
 
 {{{user-header}}} <!-- This is the user-header.handlebars partial -->
 
@@ -63,7 +81,9 @@
 
 <!--end profile.handlebars ************************* -->
 
-        </main>
+<!--end friends.handlebars ************************* -->
+<script src="/public/javascript/dom.js"></script>
+</main>
 </body>
 
 </html>
