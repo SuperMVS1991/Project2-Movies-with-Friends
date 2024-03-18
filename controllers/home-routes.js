@@ -5,17 +5,17 @@ const withAuth = require("../utilities/auth");
 router.get("/", async (req, res) => {
   try {
     const movieData = await Movie.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
+      // include: [
+      //   {
+      //     model: User,
+      //     attributes: ["name"],
+      //   },
+      // ],
     });
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-    res.render("homepage", {
+    res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
     });
@@ -63,31 +63,6 @@ router.get("/profile", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-
-router.get("/login", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  }
-
-  res.render("login");
-});
-
-
-router.get("/signup", (req, res) => {
-  if (req.session.logged_in) {
-    res.redirect("/profile");
-    return;
-  }
-
-  res.render("signup");
-}
-);
-
-router.get("/add", withAuth, (req, res) => {
-  res.render("add");
-});
-
 
 module.exports = router;
 
