@@ -7,12 +7,11 @@ const withAuth = require("../utilities/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const movieData = await Movie.findAll({
-    });
+    const movieData = await Movie.findAll({});
 
     const movies = movieData.map((movie) => movie.get({ plain: true }));
 
-    res.render("landing", {
+    res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
     });
@@ -24,6 +23,11 @@ router.get("/", async (req, res) => {
 router.get("/movie/:id", async (req, res) => {
   try {
     const movieData = await Movie.findByPk(req.params.id, {
+      include: [
+        {
+          attributes: ["name"],
+        },
+      ],
     });
 
     const movie = movieData.get({ plain: true });
