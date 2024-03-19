@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", function() {
     phaseDisplay.innerHTML = phaseName;
 
     let monthName = getCurrentMonth();
-    let monthDisplay = document.getElementById('current-month-display');
+    let monthDisplay = document.querySelectorAll('.current-month-display');
     monthDisplay.innerHTML = monthName;
 
     let genreName = getMonthGenre();
@@ -84,6 +84,8 @@ function getWinningMovie() {
         return "{{Movie}}";
     }
 }
+
+// Modal functionality
 
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal

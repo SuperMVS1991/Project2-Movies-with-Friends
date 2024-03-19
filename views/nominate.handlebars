@@ -1,27 +1,75 @@
-<div class="nominate-container">
-  <h1>Nominate a Movie</h1>
-  <form action="/nominate" method="POST">
-    <label for="movie-title">Movie Title:</label>
-    <input type="text" id="movie-title" name="movieTitle" required />
+<body class="is-dark">
+<main id="main-body" class="has-text-light test">
 
-    <label for="release-year">Release Year:</label>
-    <input type="number" id="release-year" name="releaseYear" required />
+      <!--NOMINATION PAGE BEGINS-->
+       <!-- Render the nominate.handlebars -->
+       
+      {{> user-header }}
 
-    <label for="director">Director:</label>
-    <input type="text" id="director" name="director" required />
+    
+       <section class="section">
+        <div class="container has-text-centered">
+            <div class="is-centered is-vcentered">
+              <h1 class="is-size-1 mb-5">Make your nominations from the movies shown below.</h1>
+              <p class="is-size-4">You may nominate up to five movies. The top five movies will move forward to the voting round. The nomination period ends on <span class="current-month-display"></span> 5th at 11:59 pm EST.</p>
+                <div class="columns has-background-black p-3">
+                  <div class="column is-two-thirds">
+                   
+                   <form id="nomination-form" class="form is-centered p-5">
+                    <div class="form-group">
+                     <fieldset id="nomination-fieldset">
+                      
+                      </div>
 
-    <label for="genre">Genre:</label>
-    <select id="genre" name="genre" required>
-      <option value="action">Action</option>
-      <option value="comedy">Comedy</option>
-      <option value="drama">Drama</option>
-      <option value="fantasy">Fantasy</option>
-      <option value="horror">Horror</option>
-      <option value="romance">Romance</option>
-      <option value="sci-fi">Sci-Fi</option>
-      <option value="thriller">Thriller</option>
-    </select>
-    {{! why do we have these genre list above if we have a genre database? }}
-    <button type="submit">Submit</button>
-  </form>
-</div>
+              
+                
+                    <!--buttons to view calendar and interact with the group-->
+                    <div id="welcome-buttons" class="has-text-weight-bold buttons is-centered">
+                       
+                      <a id="show-calendar" class="button is-info is-outlined js-modal-trigger" data-target="calendarModal">View Calendar</a>
+                       
+           
+                      <a id="action-button" class="button is-warning"><span id="action-text"></span></a>
+    
+                    </div>
+                    <!--end buttons div-->
+
+
+                   <div class="is-size-4 mt-5 mb-5">
+                      <p>The winning movie for this month is <span id="winning-movie-display"></span></p>
+                    </div>
+                    <div id="poster-display">
+                      <!--source needs to be updated programmatically-->
+                        <img id="winning-movie-poster" src="/images/temp-poster-kfp.jpg" alt="winning movie poster" class="poster">
+                    </div>
+                </div>
+
+                <!--Links to view the closed forums-->
+                <div id="closed-forums" class="column is-one-third is-fullheight">
+                  <div class="p-3 has-background-grey mt-6">
+                    <p class="has-text-black is-size-4">Check out the forums from past months <br /><span class="is-size-5">(closed for discussion)</span></p>
+                    <div class="is-size-5 has-text-light">
+                      <!--Should be {{month}}: {{title}}-->
+                      <p class="mb-3"><a href="">January: <br /><strong>Die Hard</strong></a></p>
+                      <hr />
+                      <p><a href="">February: <br /><strong>The Ark and the Darkness</strong></a></p>
+                   </div>
+                  </div>
+                   
+                </div>
+            </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+                
+      </main>
+  
+  <script src="/javascript/mwf-misc.js"></script>
+  <script src="/javascript/phase.js"></script>
+  <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+
+ 
+</body>
