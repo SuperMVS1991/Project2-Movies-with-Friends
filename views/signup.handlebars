@@ -7,9 +7,9 @@
 
 <div class="row">
     <div class="col-md-6">
-      <h2 class="is-size-3 my-4 pb-3">Sign Up to Become a Member of <span class="chennai">Movies with Friends</span>. It's completely free!</h2>
+      <h2 class="is-size-3 my-4 pb-3">Sign Up to Become a Member of <span class="chennai">Movies with Friends</span>.</h2> 
   
-      <form id="signup-form" class="form login-form">
+      <form id="signup-form" class="form login-form p-5">
 
         <div class="form-group">
             <label for="first_name">First Name:</label>
@@ -29,7 +29,7 @@
         </div>
         <div class="form-group">
             <label for="password2">Confirm Password:</label>
-            <input class="form-input" type="password" id="password2" />
+            <input class="form-input" type="password" id="confirm-password" />
         </div>
         <div class="form-group">
             <label for="user_name">Create a User Name:</label>
@@ -130,7 +130,7 @@
         </div>
         <div class="form-group">
             <fieldset>
-                <legend>Select your fvorite movie genres:</legend>
+                <legend>Select your favorite movie genres:</legend>
                 <input type="checkbox" id="action" name="genre" value="action">
                 <label for="action">Action</label><br>
                 <input type="checkbox" id="comedy" name="genre" value="comedy">
@@ -167,41 +167,38 @@
                 <label for="indie-films">Indie Films</label><br>
               </fieldset>
         </div>
-        <div class="form-group">
+        <div class="form-group my-3">
             <label for="about_me">Tell us a little about yourself:</label>
             <input class="form-input" type="text" id="about_me" />
         </div>
-        <div class="form-group">
+        <div id="avatar-select" class="form-group mb-3">
             <fieldset>
                 <legend>Select an avatar:</legend>
                
                 <input type="checkbox" id="pac-danger" name="user_avatar" value="pac-danger">
-                <label for="pac-danger."><img src="/images/pac-danger.png" alt="red"></label><br>
+                <label for="pac-danger."><img src="/images/pac-danger.png" alt="red"></label>
 
                 <input type="checkbox" id="pac-info" name="user_avatar" value="pac-info">
-                <label for="pac-info"><img src="/images/pac-info.png" alt="marine blue"></label><br>
+                <label for="pac-info"><img src="/images/pac-info.png" alt="marine blue"></label>
 
                 <input type="checkbox" id="pac-primary" name="user_avatar" value="pac-primary">
-                <label for="pac-primary"><img src="/images/pac-primary.png" alt="teal green"></label><br>
+                <label for="pac-primary"><img src="/images/pac-primary.png" alt="teal green"></label>
 
                 <input type="checkbox" id="pac-success" name="user_avatar" value="pac-success">
-                <label for="pac-success"><img src="/images/pac-success.png" alt="green"></label><br>
+                <label for="pac-success"><img src="/images/pac-success.png" alt="green"></label>
 
                 <input type="checkbox" id="pac-warning" name="user_avatar" value="pac-warning">
-                <label for="pac-warning"><img src="/images/pac-warning.png" alt="yellow"></label><br>
+                <label for="pac-warning"><img src="/images/pac-warning.png" alt="yellow"></label>
 
                 <input type="checkbox" id="pac-link" name="user_avatar" value="pac-link">
-                <label for="pac-link"><img src="/images/pac-link.png" alt="royal blue"></label><br>
+                <label for="pac-link"><img src="/images/pac-link.png" alt="royal blue"></label>
                 
             </fieldset>
-
+</div>
 
                 
-                
-
-       
-        <div class="form-group">
-          <button id="btn" class="btn btn-primary" type="submit">login</button>
+      <div class="form-group my-5">
+          <button id="submit-signup" class="btn btn-primary" type="submit">Sign up</button>
         </div>
       </form>
     </div>

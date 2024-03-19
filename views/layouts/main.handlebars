@@ -15,9 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
-  <nav>
-    <a href="/"><h1 class="title is-1">Home</h1></a>
-
+ 
 <body class="has-background-dark">
     
 <section>
@@ -26,7 +24,7 @@
         <div class="container">
           <div class="navbar-brand">
             <!--connect to home-->
-            <a class="navbar-item">
+            <a class="navbar-item" href="/">
               <img src= "/images/des/MwF-logo-hor-des.png" alt="Movies with Friends" height="100px">
             </a>
             <span class="navbar-burger has-text-light" data-target="navbarMenuMain">
@@ -41,7 +39,7 @@
               <a class="navbar-item">
                 My profile
               </a>
-              <a class="navbar-item ">
+              <a id="nav-friends" class="navbar-item">
                 Friends
               </a>
               <!--{{/if}} -->
@@ -69,12 +67,7 @@
        {{{ body }}} 
       </main>
 
-      <footer class="footer has-background-black">
-        <div class="content has-text-centered">
-          <img src="/images/MwF-alt-logo.png" alt="Movies with Friends mini logo" style="width: 150px;">
-          <p class="is-size-4 has-text-grey-light">
-            <strong>Movies with Friends &copy;2024</strong>
-          </p>
+     {{> footer }}
   
   <script src="/javascript/mwf-misc.js"></script>
   <script src="/javascript/phase.js"></script>
