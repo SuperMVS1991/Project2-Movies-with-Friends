@@ -127,4 +127,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
+
+function fetchAndDisplayGenres() {
+  const url = 'https://streaming-availability.p.rapidapi.com/genres';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'e0fd7191d3msh744fc8740a01ac7p1081e7jsn8cd0c4f9b596',
+      'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+    }
+  };
+
+  fetch(url, options)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Failed to fetch genres');
+      }
+      return response.json();
+    })
+    .then(data => {
+      displayGenres(data); // Call function to display genres
+    })
+    .catch(error => {
+      console.error('Error fetching genres:', error);
+      const genresDisplay = document.getElementById('genres-display');
+      genresDisplay.innerHTML = "Error fetching genres. Please try again later.";
+    });
+}
+
+/* Function to display genres on the HTML page */
+function displayGenres(data) {
+  console.log('Data received:', data);
+  console.log('Data type:', typeof data);
+
+  const genresDisplay = document.getElementById('genres-display');
+  if (data && typeof data === 'object' && data.result) {
+    // Extract genre names from the nested object
+    const genreNames = Object.values(data.result);
+    console.log('Genre names:', genreNames);
+
+    genresDisplay.innerHTML = genreNames.join(', '); // Join array elements with a comma separator
+  } else {
+    genresDisplay.innerHTML = "No genres found"; // Display a message if no genres are available
+    console.error("Genres data not available or in unexpected format:", data);
+  }
+}
+window.addEventListener("DOMContentLoaded", function() {
+  // Call the function to fetch and display genres
+  fetchAndDisplayGenres();
+});

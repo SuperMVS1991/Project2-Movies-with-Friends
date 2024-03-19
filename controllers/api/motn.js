@@ -1,16 +1,6 @@
 console.log('hello world');
 
 //button that once clicked will give a list of genres 
-function generateGenresList() {
-    var  x = document.getElementById("genresList")
-  
-    if(x.style.display !== "none"){
-      x.style.display = "block";
-    }
-      else { 
-        x.style.display == "none";
-    }
-  };
   
 const url = 'https://moviesminidatabase.p.rapidapi.com/genres/';
 const options = {
