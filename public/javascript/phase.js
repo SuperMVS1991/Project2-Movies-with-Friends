@@ -1,5 +1,7 @@
 const currentDate = new Date(); // Use the current date
 
+
+
 window.addEventListener("DOMContentLoaded", function() {
     // Your code here will run when the entire page, including the Handlebars template, is fully loaded
     let phaseName = getCurrentPhase();

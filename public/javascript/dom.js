@@ -80,9 +80,4 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     //when publish button is clicked discussion is posted
     publishBtn.addEventListener("click", addDiscussion);
-
-    document.getElementById('action-button').addEventListener('click', function() {
-      // Redirect to the desired view
-      window.location.href = 'discussion'; // Change 'view.html' to the URL of your desired view/page
-    });
     
