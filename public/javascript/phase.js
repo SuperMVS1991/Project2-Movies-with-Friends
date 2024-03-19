@@ -5,22 +5,27 @@ window.addEventListener("DOMContentLoaded", function() {
     let phaseName = getCurrentPhase();
     let phaseDisplay = document.getElementById('phase-display');
     phaseDisplay.innerHTML = phaseName;
+    console.log(phaseName);
 
     let monthName = getCurrentMonth();
     let monthDisplay = document.querySelectorAll('.current-month-display');
     monthDisplay.innerHTML = monthName;
+    console.log(monthName);
 
     let genreName = getMonthGenre();
     let genreDisplay = document.querySelectorAll('.genre-display');
    genreDisplay.innerHTML = genreName;
+    console.log(genreName);
 
     let buttonText = getButtonText();
     let buttonDisplay = document.getElementById('action-text');
     buttonDisplay.innerHTML = buttonText;
+    console.log(buttonText);
 
     let winningMovie = getWinningMovie();
     let winningMovieDisplay = document.getElementById('winning-movie-display');
     winningMovieDisplay.innerHTML = winningMovie;
+    console.log(winningMovie);
 });
 
 /* Checks the current date to determine the phase of site activity */
