@@ -7,11 +7,11 @@ window.addEventListener("DOMContentLoaded", function() {
     phaseDisplay.innerHTML = phaseName;
 
     let monthName = getCurrentMonth();
-    let monthDisplay = document.getElementById('current-month-display');
+    let monthDisplay = document.querySelectorAll('.current-month-display');
     monthDisplay.innerHTML = monthName;
 
     let genreName = getMonthGenre();
-    let genreDisplay = document.getElementById('genre-display');
+    let genreDisplay = document.querySelectorAll('.genre-display');
    genreDisplay.innerHTML = genreName;
 
     let buttonText = getButtonText();
@@ -84,6 +84,8 @@ function getWinningMovie() {
         return "{{Movie}}";
     }
 }
+
+// Modal functionality
 
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
