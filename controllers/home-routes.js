@@ -2,25 +2,16 @@ const router = require("express").Router();
 const { Movie, User } = require("../models");
 const withAuth = require("../utilities/auth");
 
-router.get("/", async (req, res) => {
-  try {
-    const movieData = await Movie.findAll({
-      // include: [
-      //   {
-      //     model: User,
-      //     attributes: ["name"],
-      //   },
-      // ],
-    });
 
-    const movies = movieData.map((movie) => movie.get({ plain: true }));
-
-    const app = express();
 
 // route for the landing page
-app.get('/layouts', (req, res) => {
+router.get('/layouts', (req, res) => {
   res.render('landing', { layout: 'landing' }); // Specify the 'landing' layout for this view
 });
+router.get("/welcome", async (req, res) => {
+  try {
+    const movieData = await Movie.findAll({});
+    const movies = movieData.map((movie) => movie.get({ plain: true }));
     res.render("welcome", {
       movies,
       logged_in: req.session.logged_in,
@@ -121,7 +112,15 @@ router.get("/signup", async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get("/", (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect("/welcome");
+    return;
+  }
 
+  res.render("landing");
+});
 module.exports = router;
 
 // const express = require('express');

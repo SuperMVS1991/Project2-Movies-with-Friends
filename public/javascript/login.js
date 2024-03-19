@@ -28,15 +28,22 @@ async function signupFormHandler(event) {
 }
 
 // Sign in form handler for landing.handlebars hidden form (id="member-signin")
-
+function showlogin() {
+  const memberSignin = document.getElementById("member-signin");
+  memberSignin.classList.toggle("visible-form");
+  const loginButton = document.getElementById("landing-signin");
+  loginButton.addEventListener("click", loginFormHandler);
+}
 async function loginFormHandler(event) {
   event.preventDefault();
+  console.log("loginFormHandler");
 
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    const response = await fetch("controllers/api/userRoutes.js", {
+    console.log(email, password)
+    const response = await fetch("api/userRoutes/login", {
       method: "post",
       body: JSON.stringify({
         email,
@@ -44,10 +51,11 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-
+console.log(response)
     if (response.ok) {
-      userLoggedIn = true;
-      window.location.href = "welcome";
+      console.log("success");
+      document.location.replace("/welcome");
+
     } else {
       alert(response.statusText);
     }
@@ -56,7 +64,7 @@ async function loginFormHandler(event) {
 
 document
   .querySelector("#landing-showlogin")
-  .addEventListener("submit", loginFormHandler);
+  .addEventListener("click", showlogin);
 document
   .querySelector("#signup-button")
   .addEventListener("submit", signupFormHandler);
