@@ -287,7 +287,7 @@ main h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-body p {
-    margin-top:.5em;
+    margin-top:0;
 }
 
 .rating-select {
@@ -333,9 +333,7 @@ main h1, h2, h3, h4, h5, h6 {
  #main-body, #landing-body {
     background-image: url(/images/filmstrip-bg.png);
     background-color: #444444;
-    padding: 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    padding: 0 1em 1em 1em;
  }
 
 
