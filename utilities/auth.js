@@ -1,10 +1,14 @@
-const withAuth = (req, res, next) => {
-    // If the user isn't logged in, redirect them to the login route
-    if (!req.session.logged_in) {
-      res.redirect('/login');
-    } else {
-      next();
-    }
-  };
+const express = require('express');
+const app = express();
+
+const withAuth = app.get('/', (req, res) => {
+  // If the user isn't logged in, redirect them to the landing route
+  if (!req.session.logged_in) {
+    res.redirect('/landing');
+  } else {
+    // If the user is logged in, render the welcome view with the main layout
+    res.render('welcome', { layout: 'main' });
+  }
+});
   
   module.exports = withAuth;  

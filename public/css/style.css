@@ -379,6 +379,18 @@ main h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1em;
 }
 
+#signup-form .form-group {
+    margin-bottom: .5em;
+}
+
+.form-group label {
+  margin-right: 1em;
+}
+
+.form-group input {
+    max-width: 50%;
+}
+
 .label:not(:last-child), .field:not(:last-child) {
     margin-bottom: 0 !important;
 }
