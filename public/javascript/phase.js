@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", function() {
     monthDisplay.innerHTML = monthName;
 
     let genreName = getMonthGenre();
-    let genreDisplay = document.getElementById('genre-display');
+    let genreDisplay = document.querySelectorAll('.genre-display');
    genreDisplay.innerHTML = genreName;
 
     let buttonText = getButtonText();

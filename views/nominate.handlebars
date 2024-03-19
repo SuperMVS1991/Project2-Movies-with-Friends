@@ -1,5 +1,5 @@
-<body class="is-dark">
-<main id="main-body" class="has-text-light test">
+<body>
+  <main id="main-body" class="has-text-light test">
 
       <!--NOMINATION PAGE BEGINS-->
        <!-- Render the nominate.handlebars -->
@@ -18,54 +18,26 @@
                    <form id="nomination-form" class="form is-centered p-5">
                     <div class="form-group">
                      <fieldset id="nomination-fieldset">
-                      
-                      </div>
-
-              
-                
-                    <!--buttons to view calendar and interact with the group-->
-                    <div id="welcome-buttons" class="has-text-weight-bold buttons is-centered">
-                       
-                      <a id="show-calendar" class="button is-info is-outlined js-modal-trigger" data-target="calendarModal">View Calendar</a>
-                       
-           
-                      <a id="action-button" class="button is-warning"><span id="action-text"></span></a>
-    
-                    </div>
-                    <!--end buttons div-->
-
-
-                   <div class="is-size-4 mt-5 mb-5">
-                      <p>The winning movie for this month is <span id="winning-movie-display"></span></p>
-                    </div>
-                    <div id="poster-display">
-                      <!--source needs to be updated programmatically-->
-                        <img id="winning-movie-poster" src="/images/temp-poster-kfp.jpg" alt="winning movie poster" class="poster">
-                    </div>
+                      <legend class="is-size-4">Movies available on Peacock in the <span class="genre-display"></span></span> genre</legend>
+                      <div class="columns is-multiline is-centered">
+                        <!--Movies will be added here programmatically-->
+                        {{#each movie}}
+                        <input type="checkbox" id="movie-{{movie.id}}" name="{{movie.title}}" value="{{movie.title}}">
+                <label for="{{movie.title}}">{{movie.title}}</label><br /></label>
+                  {{/each}}
+              </div>
+              </fieldset>
+                      <div class="form-group my-5">
+                  <button id="submit-nominations" class="btn btn-primary" type="submit">Nominate</button>
                 </div>
-
-                <!--Links to view the closed forums-->
-                <div id="closed-forums" class="column is-one-third is-fullheight">
-                  <div class="p-3 has-background-grey mt-6">
-                    <p class="has-text-black is-size-4">Check out the forums from past months <br /><span class="is-size-5">(closed for discussion)</span></p>
-                    <div class="is-size-5 has-text-light">
-                      <!--Should be {{month}}: {{title}}-->
-                      <p class="mb-3"><a href="">January: <br /><strong>Die Hard</strong></a></p>
-                      <hr />
-                      <p><a href="">February: <br /><strong>The Ark and the Darkness</strong></a></p>
-                   </div>
-                  </div>
-                   
-                </div>
+              </div>
+              </form>                 
             </div>
             </div>
-
-                </div>
             </div>
-        </div>
+      </div>
     </section>
-                
-      </main>
+</main>
   
   <script src="/javascript/mwf-misc.js"></script>
   <script src="/javascript/phase.js"></script>
