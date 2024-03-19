@@ -1,3 +1,7 @@
+// Purpose: To handle the login and signup forms
+
+// Sign up form handler for signup.handlebars
+
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -22,6 +26,8 @@ async function signupFormHandler(event) {
     }
   }
 }
+
+// Sign in form handler for landing.handlebars hidden form (id="member-signin")
 
 async function loginFormHandler(event) {
   event.preventDefault();
