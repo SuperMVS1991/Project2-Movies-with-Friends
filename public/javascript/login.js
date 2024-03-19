@@ -55,13 +55,13 @@ async function loginFormHandler(event) {
 }
 
 document
-  .querySelector(".login-form")
+  .querySelector("#landing-showlogin")
   .addEventListener("submit", loginFormHandler);
 document
-  .querySelector(".signup-form")
+  .querySelector("#signup-button")
   .addEventListener("submit", signupFormHandler);
 
-document.getElementById("btn").addEventListener("click", function () {
-  // Redirect to the desired view
-  window.location.href = "/"; // Change 'view.html' to the URL of your desired view/page
-});
+// document.getElementById("btn").addEventListener("click", function () {
+//   // Redirect to the desired view
+//   window.location.href = "/"; // Change 'view.html' to the URL of your desired view/page
+// });
