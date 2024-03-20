@@ -8,27 +8,39 @@ friendsLink.addEventListener('click', function() {
 }
 ); */
 
-// Landing page login button event listeners
+// Landing page Sign In
 
-const loginButton = document.getElementById("landing-showlogin");
-const memberSignin = document.getElementById("member-signin");
+const showSignInForm = document.getElementById("landing-showlogin");
+const signInMember = document.getElementById("signin-member");
 
-loginButton.addEventListener("click", function () {
-  console.log("clicked-login");
-  memberSignin.classList.toggle("visible-form");
-  console.log("clicked-member-login");
+showSignInForm.addEventListener("click", function () {
+  console.log("clicked show sign in form button");
+signInMember.classList.toggle("visible-form");
+  console.log("sign in form is now visible");
 });
 
-// Button to go to signup view
+// Landing page Sign Up
 
-document.getElementById("signup-button").addEventListener("click", function () {
-  // Redirect to the desired view
-  const password = document.getElementById("password-signup");
-  const confirmPassword = document.getElementById("confirm-password");
+const showSignUpForm = document.getElementById("landing-showsignup");
+const signUpNewUser = document.getElementById("signup-newuser");
 
-  window.location.href = "signup"; // Change 'view.html' to the URL of your desired view/page
-  console.log("clicked-signup");
+
+showSignUpForm.addEventListener("click", function () {
+  console.log("clicked show sign up form button");
+signUpNewUser.classList.toggle("visible-form");
+  console.log("sign up form is now visible");
 });
+
+// Toggle form visibility
+
+function toggleForm(signInMember, signUpNewUser) {
+  if (signInMember.classList.contains("visible-form") && signUpNewUser.classList.contains("visible-form")) {
+    signInMember.classList.remove("visible-form");
+  } else {
+    signInMember.classList.toggle("visible-form");
+    signUpNewUser.classList.toggle("visible-form");
+  }
+}
 
 // Code to confirm password match
 
