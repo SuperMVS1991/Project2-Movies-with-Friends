@@ -44,16 +44,6 @@ function toggleForm(signInMember, signUpNewUser) {
 
 // Code to confirm password match
 
-const submitSignup = document.getElementById("submit-signup");
-
-submitSignup.addEventListener("click", function () {
-  if (password.value !== confirmPassword.value) {
-    alert("Passwords do not match");
-
-    return;
-  }
-});
-
 //prevent user from selecting more than 5 movies to nominate
 
 window.onload = function () {
