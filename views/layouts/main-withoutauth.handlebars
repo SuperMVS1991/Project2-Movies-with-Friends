@@ -17,7 +17,37 @@
   </head>
  
 <body class="has-background-dark">
-    
+    <section class="hero is-black is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <!--navigation-->
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <!--connect to home-->
+            <a class="navbar-item">
+              <img src= "/images/MwF-alt-logo.png" alt="Movies with Friends">
+            </a>
+            <span class="navbar-burger has-text-light" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu has-text-light">
+            <div class="navbar-end">
+              <a class="navbar-item">
+                About Movies with Friends
+              </a>
+              <a class="navbar-item">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
     <main id="main-body">
        <!-- Render the sub layout -->
        {{{ body }}} 

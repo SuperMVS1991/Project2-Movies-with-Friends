@@ -10,37 +10,37 @@ friendsLink.addEventListener('click', function() {
 
 // Landing page Sign In
 
-const showSignInForm = document.getElementById("landing-showlogin");
-const signInMember = document.getElementById("signin-member");
+// const showSignInForm = document.getElementById("landing-showlogin");
+// const signInMember = document.getElementById("signin-member");
 
-showSignInForm.addEventListener("click", function () {
-  console.log("clicked show sign in form button");
-signInMember.classList.toggle("visible-form");
-  console.log("sign in form is now visible");
-});
+// showSignInForm.addEventListener("click", function () {
+//   console.log("clicked show sign in form button");
+// signInMember.classList.toggle("visible-form");
+//   console.log("sign in form is now visible");
+// });
 
-// Landing page Sign Up
+// // Landing page Sign Up
 
-const showSignUpForm = document.getElementById("landing-showsignup");
-const signUpNewUser = document.getElementById("signup-newuser");
+// const showSignUpForm = document.getElementById("landing-showsignup");
+// const signUpNewUser = document.getElementById("signup-newuser");
 
 
-showSignUpForm.addEventListener("click", function () {
-  console.log("clicked show sign up form button");
-signUpNewUser.classList.toggle("visible-form");
-  console.log("sign up form is now visible");
-});
+// showSignUpForm.addEventListener("click", function () {
+//   console.log("clicked show sign up form button");
+// signUpNewUser.classList.toggle("visible-form");
+//   console.log("sign up form is now visible");
+// });
 
-// Toggle form visibility
+// // Toggle form visibility
 
-function toggleForm(signInMember, signUpNewUser) {
-  if (signInMember.classList.contains("visible-form") && signUpNewUser.classList.contains("visible-form")) {
-    signInMember.classList.remove("visible-form");
-  } else {
-    signInMember.classList.toggle("visible-form");
-    signUpNewUser.classList.toggle("visible-form");
-  }
-}
+// function toggleForm(signInMember, signUpNewUser) {
+//   if (signInMember.classList.contains("visible-form") && signUpNewUser.classList.contains("visible-form")) {
+//     signInMember.classList.remove("visible-form");
+//   } else {
+//     signInMember.classList.toggle("visible-form");
+//     signUpNewUser.classList.toggle("visible-form");
+//   }
+// }
 
 // Code to confirm password match
 

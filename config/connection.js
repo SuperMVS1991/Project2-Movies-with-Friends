@@ -2,9 +2,6 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 
 let sequelize;
-console.log(process.env.DB_NAME);
-console.log(process.env.DB_USER);
-console.log(process.env.DB_PASSWORD);
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
@@ -17,13 +14,10 @@ if (process.env.JAWSDB_URL) {
       dialect: "mysql",
       port: 3306,
       logging: function (str) {
-console.log("success"); 
      }
     }
   );
-  console.log("success");
 }
-console.log("hello");
 // Log a message indicating successful connection
 sequelize
   .authenticate()
