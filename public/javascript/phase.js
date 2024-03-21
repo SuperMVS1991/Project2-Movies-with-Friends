@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 /* Checks the current date to determine the phase of site activity */
+
 function getCurrentPhase() {
     const phases = [
         { name: "Nominating", start: 1, end: 5 },
@@ -86,7 +87,7 @@ function getWinningMovie() {
         return "To be announced!";
     } else {
         /* not sure how to reference the winning movie from the database */
-        return "{{Movie}}";
+        return "Kung Fu Panda 4";
     }
 }
 

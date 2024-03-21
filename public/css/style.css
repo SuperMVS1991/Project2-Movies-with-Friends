@@ -94,6 +94,12 @@ body {
   #description {
     text-align: center;
     margin: 20px;
+  } 
+
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
   
   header {

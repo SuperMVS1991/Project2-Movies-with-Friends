@@ -6,7 +6,7 @@ async function signupFormHandler(event) {
   event.preventDefault();
   const first_name = document.querySelector("#first_name").value.trim();
   const last_name = document.querySelector("#last_name").value.trim();
-const username = document.querySelector("#user_name").value.trim();
+  const username = document.querySelector("#user_name").value.trim();
   const email = document.querySelector("#email-signup").value.trim();
   const password = document.querySelector("#password-signup").value.trim();
   console.log(username, email, password, first_name, last_name);
@@ -39,7 +39,6 @@ function showlogin() {
   loginButton.addEventListener("click", loginFormHandler);
 }
 
-
 async function loginFormHandler(event) {
   event.preventDefault();
   console.log("loginFormHandler");
@@ -48,7 +47,7 @@ async function loginFormHandler(event) {
   const password = document.querySelector("#password-login").value.trim();
 
   if (email && password) {
-    console.log(email, password)
+    console.log(email, password);
     const response = await fetch("api/users/login", {
       method: "post",
       body: JSON.stringify({
@@ -57,11 +56,10 @@ async function loginFormHandler(event) {
       }),
       headers: { "Content-Type": "application/json" },
     });
-console.log(response)
+    console.log(response);
     if (response.ok) {
       console.log("success");
       document.location.replace("/welcome");
-
     } else {
       alert(response.statusText);
     }
@@ -79,14 +77,17 @@ const signUpNewUser = document.getElementById("signup-newuser");
 const signupButton = document.getElementById("submit-signup");
 
 showSignUpForm.addEventListener("click", function () {
-signUpNewUser.classList.toggle("visible-form");
+  signUpNewUser.classList.toggle("visible-form");
 });
 
 signupButton.addEventListener("click", signupFormHandler);
 // Toggle form visibility
 
 function toggleForm(signInMember, signUpNewUser) {
-  if (signInMember.classList.contains("visible-form") && signUpNewUser.classList.contains("visible-form")) {
+  if (
+    signInMember.classList.contains("visible-form") &&
+    signUpNewUser.classList.contains("visible-form")
+  ) {
     signInMember.classList.remove("visible-form");
   } else {
     signInMember.classList.toggle("visible-form");

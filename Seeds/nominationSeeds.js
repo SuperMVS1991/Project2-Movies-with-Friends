@@ -18,7 +18,7 @@ const movieNominationSeeds = [
     },
     {
         movieId: 4,
-        userId: 4,
+        userId: 3,
         month: "April",
     },
 ];
