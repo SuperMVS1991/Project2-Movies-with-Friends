@@ -1,12 +1,13 @@
 
 {{#each this}}
-  <div class="card m-5" style="width: 18rem;">
+  <div key="{{id}}" class="card m-5" style="width: 18rem;">
     <img src="{{poster}}" class="card-img-top" alt={{title}} />
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">{{releaseYear}}</p> 
-      <p class="card-text">{{director}}</p>
-      <a href="#" class="btn btn-primary">nominate</a>
+      <p class="card-text">{{director}}</p> 
+      <p> {{id}}</p>
+      <button id="nominate" data-movie-id={{id}} class="btn btn-primary">nominate</button>
     </div>
   </div> 
   {{/each}}
