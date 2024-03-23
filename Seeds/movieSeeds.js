@@ -1,75 +1,75 @@
 const { Movie } = require("../models");
 
+
 const movieData = [
+ {
+   title: "The Shawshank Redemption",
+   releaseYear: 1994,
+   director: "Frank Darabont",
+   poster: "https://parentguiding.com/wp-content/uploads/2023/07/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI-._V1_SX300.jpg",
+ },
+ {
+   title: "The Godfather",
+   releaseYear: 1972,
+   director: "Francis Ford Coppola",
+   poster: "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2023/07/padrino-3096022.jpg?tf=2048x",
+ },
+ {
+   title: "The Dark Knight",
+   releaseYear: 2008,
+   director: "Christopher Nolan",
+   poster: "https://img.posterstore.com/zoom/wb0037-8batman-thedarkknightrises50x70.jpg",
+ },
+ {
+   title: "The Godfather: Part II",
+   releaseYear: 1974,
+   director: "Francis Ford Coppola",
+   poster: "https://wallsdesk.com/wp-content/uploads/2016/11/talia-shire-Background-.jpg",
+ },
+ {
+   title: "The Lord of the Rings: The Return of the King",
+   releaseYear: 2003,
+   director: "Peter Jackson",
+   poster: "https://www.desktopbackground.org/p/2013/08/11/621161_liv-tyler-as-arwen-wallpaper_1600x900_h.jpg",
+ },
   {
-    title: "The Shawshank Redemption",
-    releaseYear: 1994,
-    director: "Frank Darabont",
-  },
-  {
-    title: "The Godfather",
-    releaseYear: 1972,
-    director: "Francis Ford Coppola",
-  },
-  {
-    title: "The Dark Knight",
-    releaseYear: 2008,
-    director: "Christopher Nolan",
-  },
-  { title: "12", releaseYear: 2019, director: "Yasir Al Yasiri" },
-  {
-    title: "The Godfather: Part II",
-    releaseYear: 1974,
-    director: "Francis Ford Coppola",
-  },
-  {
-    title: "The Lord of the Rings: The Return of the King",
-    releaseYear: 2003,
-    director: "Peter Jackson",
-  },
-  { title: "Pulp Fiction", releaseYear: 1994, director: "Quentin Tarantino" },
-  {
-    title: "Schindler's List",
-    releaseYear: 1993,
-    director: "Steven Spielberg",
-  },
-  { title: "Inception", releaseYear: 2010, director: "Christopher Nolan" },
-  { title: "Fight Club", releaseYear: 1999, director: "David Fincher" },
-  { title: "Forrest Gump", releaseYear: 1994, director: "Robert Zemeckis" },
-  {
-    title: "The Lord of the Rings: The Fellowship of the Ring",
-    releaseYear: 2001,
-    director: "Peter Jackson",
-  },
-  {
-    title: "The Lord of the Rings: The Two Towers",
-    releaseYear: 2002,
-    director: "Peter Jackson",
-  },
-  { title: "The Matrix", releaseYear: 1999, director: "Lana Wachowski" },
-  { title: "Goodfellas", releaseYear: 1990, director: "Martin Scorsese" },
-  { title: "Se7en", releaseYear: 1995, director: "David Fincher" },
-  {
-    title: "The Silence of the Lambs",
-    releaseYear: 1991,
-    director: "Jonathan Demme",
-  },
-  { title: "City of God", releaseYear: 2002, director: "Fernando Meirelles" },
-  { title: "The Usual Suspects", releaseYear: 1995, director: "Bryan Singer" },
-  {
-    title: "Léon: The Professional",
-    releaseYear: 1994,
-    director: "Luc Besson",
-  },
-  {
-    title: "Life Is Beautiful",
-    releaseYear: 1997,
-    director: "Roberto Benigni",
-  },
-  { title: "American History X", releaseYear: 1998, director: "Tony Kaye" },
-  { title: "The Green Mile", releaseYear: 1999, director: "Frank Darabont" },
+   title: "Schindler's List",
+   releaseYear: 1993,
+   director: "Steven Spielberg",
+   poster: "https://th-thumbnailer.cdn-si-edu.com/XWVNLkyMx1btkxNgRd4ldh_lv-8=/1000x750/filters:no_upscale():focal(700x527:701x528)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer_public/ce/60/ce606b0a-bd71-43b3-84d6-08811e7828c7/schindlers.jpg",
+ },
+ {
+   title: "Inception",
+   releaseYear: 2010,
+   director: "Christopher Nolan",
+   poster: "https://image.tmdb.org/t/p/original/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
+ },
+ {
+   title: "Fight Club",
+   releaseYear: 1999,
+   director: "David Fincher",
+   poster: "https://m.media-amazon.com/images/I/81Luju2cHuL._AC_UF894,1000_QL80_.jpg",
+ },
+ {
+   title: "Forrest Gump",
+   releaseYear: 1994,
+   director: "Robert Zemeckis",
+   poster: "https://m.media-amazon.com/images/I/41Al9falobL._AC_UF894,1000_QL80_.jpg",
+ },
+ {
+   title: "The Matrix",
+   releaseYear: 1999,
+   director: "Lana Wachowski",
+   poster: "https://cdn.europosters.eu/image/1300/art-photo/matrix-choose-your-path-i153524.jpg",
+ },
+
+
+
+
 ];
 
+
 const seedMovies = () => Movie.bulkCreate(movieData);
+
 
 module.exports = seedMovies;
