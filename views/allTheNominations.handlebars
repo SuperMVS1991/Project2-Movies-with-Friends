@@ -1,0 +1,12 @@
+<section id="img" class="flexwrap">
+{{#each Noms as |Nom|}}
+ <div class="card m-5" style="width: 18rem;">
+   <img src={{Nom.Movie.poster}} class="card-img-top" alt={{Nom.Movie.title}} />
+   <div class="card-body">
+     <h5 class="card-title">{{Nom.Movie.title}}</h5>
+     <p class="card-text">{{Nom.Movie.releaseYear}}</p>
+     <p class="card-text">{{Nom.Movie.director}}</p>
+   </div>
+ </div>
+ {{/each}}
+  </section>

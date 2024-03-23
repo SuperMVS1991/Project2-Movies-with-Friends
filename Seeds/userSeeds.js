@@ -1,5 +1,6 @@
 const { User } = require("../models");
 
+
 const userSeeds = [
   {
     first_name: "John",
@@ -36,12 +37,14 @@ const userSeeds = [
     about_me: "I'm an artist, musician, and web development student. I love animals, crystals, and the color purple.",
   }
 
-  // Add more user objects as needed
+ // Add more user objects as needed
 ];
 
+
 const seedUsers = () =>
-  User.bulkCreate(userSeeds, {
-    individualHooks: true,
-  });
+ User.bulkCreate(userSeeds, {
+   individualHooks: true,
+ });
+
 
 module.exports = seedUsers;
