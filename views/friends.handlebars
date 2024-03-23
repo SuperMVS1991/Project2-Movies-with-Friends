@@ -1,0 +1,22 @@
+{{{user-header}}} <!-- This is the user-header.handlebars partial -->
+
+<div id="user-profile" class="container is-size-5">
+    <h1 class="is-size-3">My Profile</h1>
+    <div class="profile">
+    
+        <h2 class="is-size-2 my-4"><img src="/images/{{user_avatar}}" alt="Avatar" class="avatar inline-image"> Hi, {{user_name}}</h2>
+
+
+        <div class="bg-danger-alpha p-3 friend">
+            {{#each user}}
+            <p>{{user_name}}</p>
+            <p>Hailing from:&emsp;{{state}}</p>
+            <p>My favorite movie genres:&emsp;{{favorite_genres}}</p>
+            <p>My favorite movies:&emsp;{{favorite_movies}}</p>
+            <p>About me:&emsp;{{about_me}}</p>
+            {{/each}}
+        </div>
+
+
+      
+</div><!--code from friends.html will go here -->

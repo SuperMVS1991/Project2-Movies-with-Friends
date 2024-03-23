@@ -1,137 +1,246 @@
-/* font-family: "chennai", sans-serif;
-font-weight: 700;
-font-style: normal; */
+:root {
+    /* Primary Color */
+    --primary: #00d1b2;
+    --primary-light: #ebfffc;
+    --primary-dark: #00b89c;
+    --primary-dark-alpha: rgba(0, 184, 156, 0.1);
+  
+    /* Link Color */
+    --link: #3273dc;
+    --link-light: #eff8ff;
+    --link-dark: #276cda;
+    --link-dark-alpha: rgba(39, 108, 218, 0.1);
+  
+    /* Info Color */
+    --info: #209cee;
+    --info-light: #d9f2ff;
+    --info-dark: #1aa3ff;
+    --info-dark-alpha: rgba(26, 163, 255, 0.1);
+  
+    /* Success Color */
+    --success: #23d160;
+    --success-light: #e7f9ed;
+    --success-dark: #20bd53;
+    --success-dark-alpha: rgba(32, 189, 83, 0.1);
+  
+    /* Warning Color */
+    --warning: #ffdd57;
+    --warning-light: #fff9e6;
+    --warning-dark: #ffd700;
+    --warning-dark-alpha: rgba(255, 215, 0, 0.1);
+  
+    /* Danger Color */
+    --danger: #ff3860;
+    --danger-light: #ffe3eb;
+    --danger-dark: #ff3860;
+    --danger-dark-alpha: rgba(255, 56, 96, 0.1);
+  
+    /* Gray Shades */
+    --white: #fff;
+    --black: #0a0a0a;
+    --light-gray: #f5f5f5;
+    --dark-gray: #363636;
+  }
+body p {
+        line-height: 125%;
+        size: 1rem;
+        padding-bottom: 1em;
+    }
+  
 
-/* font-family: "chennai", sans-serif;
-font-weight: 300;
-font-style: normal; */
+  /*Backgrounds*/
 
-/* a little bit of temporary styling for comments */
-.commentbox {
+.bg-danger-alpha {
+    background-color: var(--danger-dark-alpha);
+}
+
+.bg-success-alpha {
+    background-color: var(--success-dark-alpha);
+}
+
+.bg-warning-alpha {
+    background-color: var(--warning-dark-alpha);
+}
+
+
+ .main-menu {
+    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
+}
+
+/* COMMENT STYLES*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.148);
+  }
+  
+  #dynamicId {
+  font-size: xx-large;
+  text-align: center;
+  }
+  
+  #post {
+    text-align: center;
+  }
+  
+  #img {
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
-}
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
+  
+  #description {
+    text-align: center;
+    margin: 20px;
+  } 
 
-.commentbox > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    /* float: left; */
-    margin-right: 20px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.content {
-    width: 100%;
-}
-
-.user {
-    border: none;
-    outline: none;
-    margin: 5px 0;
-    color: #808080;
-    margin-left: 20px;
-    padding: 10px;
-}
-
-.commentinput > input {
-    border: none;
-    padding: 10px;
-    padding-left: 0;
-    outline: none;
-    border-bottom: 2px solid blue;
+  .flexwrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  
+  nav {
+    display: inline-block;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .title {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .subtitle {
+    color: #555;
+    font-size: 20px;
     margin-bottom: 10px;
-    width: 95%;
-}
-
-#commentreply {
-    display: none;
-}
-
-#commentreply1 {
-    display: none;
-}
-
-.buttons {
+  }
+  
+  #commentreply {
+   display: none;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 20px;
+  }
+  
+  #commentCounter {
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    color: gray;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+  }
+  
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #808080;
-}
-
-.buttons > button {
-    padding: 5px 10px;
-    background: lightgrey;
-    color: #808080;
-    text-transform: uppercase;
-    border: none;
-    outline: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.buttons > button.abled {
-    background: blue;
+    padding: 20px;
+  }
+  
+  .footer-content p {
+    margin: 0;
+  }
+  
+  .footer-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-content ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  .footer-content ul li a {
     color: #fff;
-}
-
-#parents {
-    font-family: Arial, sans-serif;
-    display: flex;
-    margin-bottom: 30px;
-    border: solid;
-}
-
-#parents h1 {
-    font-size: 0.9em;
-}
-
-#parents p {
-    margin: 10px 0;
-    font-size: 0.9em;
-}
-
-#parents > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-    object-position: center;
-}
-/* reply comment stylings*/
-#parents1 {
-    font-family: Arial, sans-serif;
-    display: flex;
-    margin-bottom: 30px;
-    border: solid;
-    max-width: 50%;
-}
-
-#parents1 h1 {
-    font-size: 0.9em;
-}
-
-#parents1 p {
-    margin: 10px 0;
-    font-size: 0.9em;
-}
-
-#parents1 > img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-    object-position: center;
-}
-
-.date {
-    color: #808080;
-    font-size: 0.8em;
-}
+    text-decoration: none;
+  }
+  
+  /* Styling the scrollbar */
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    background-color: rgba(0, 0, 0, 0.434); /* Background color of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #555; /* Color of the scrollbar thumb */
+    border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+  }
+  
+  #parents {
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  #parents1 {
+    border: 2px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    width: 50%;
+  }
 /* end of comments styling*/
 
 /* pop up button drop down on click*/
@@ -159,16 +268,22 @@ span.chennai {
     white-space: nowrap;
 }
 
-main p, h1, h2, h3, h4, h5, h6 {
+main h1, h2, h3, h4, h5, h6 {
     line-height: 125%;
 }   
 
-main p {
-    line-height: 115%;
+.profile p, li {
+    margin-bottom: 1em;
 }
 
-.profile p {
+#about-mwf {
+    max-width: 75%;
+    min-width: 35%;
+}
+
+#about-mwf p {
     margin-bottom: 1em;
+    line-height: 150%;
 }
 
 .hero h1 {
@@ -178,13 +293,20 @@ main p {
 }
 
 .hero-body p {
-    margin-top:.5em;
+    margin-top:0;
+}
+
+.rating-select {
+    font-family: "Font Awesome 6 Free";
+    padding: 8px;
+    font-size: 16px;
+    color: var(--black);
 }
 
 /*Navigation styles*/
 
 .navbar-item {
-    color: #AAA;
+    color: var(--light-gray);
     font-family: "chennai", sans-serif;
     font-weight: 700;
     font-style: normal;
@@ -202,9 +324,12 @@ main p {
     vertical-align: bottom;
 }
 
- .main-menu {
-    background: linear-gradient(to right, #FFF, #CCC, #222, #000);
+#users-profiles .inline-image {
+    max-height: 1em;
+    vertical-align: bottom;
 }
+
+
  
 
  .navbar-item, .navbar-link {
@@ -212,11 +337,9 @@ main p {
  }
 
  #main-body, #landing-body {
-    background-image: url(/public/images/filmstrip-bg.png);
+    background-image: url(/images/filmstrip-bg.png);
     background-color: #444444;
-    padding: 2em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    padding: 0 1em 1em 1em;
  }
 
 
@@ -248,16 +371,28 @@ main p {
 }
 
 .theater {
-    background-image: url(/public/images/des/Theater-w-logo-des.png);
+    background-image: url(/images/des/Theater-w-logo-des.png);
     background-position: center top;
     background-repeat: no-repeat;
 }
 
-#member-signin form {
+#member-signin, #signup-form, form {
     background-color: #333;
     border-style: groove;
     border-color: is-dark; 
     margin-bottom: 1em;
+}
+
+#signup-form .form-group {
+    margin-bottom: .5em;
+}
+
+.form-group label {
+  margin-right: 1em;
+}
+
+.form-group input {
+    max-width: 50%;
 }
 
 .label:not(:last-child), .field:not(:last-child) {
@@ -270,10 +405,23 @@ main p {
     transition: height 0.5s;
 }
 
+.hidden-signup-form {
+    display: none;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
 .visible-form {
     display: block;
-    height: 250px;
+    }
 
+#signin-member {
+  height: 250px;
+}
+
+#signup-newuser {
+  height: 500px;
+  overflow-y: scroll;
 }
 
 .hero-button {
@@ -305,7 +453,7 @@ main p {
 
 @media (max-width: 768px) {
     .theater {
-        background-image: url(/public/images/mob/Theater-w-logo-mob.png);
+        background-image: url(/images/mob/Theater-w-logo-mob.png);
 
     }
 }
@@ -319,7 +467,7 @@ main p {
 /*Mobile*/
 @media screen and (max-width: 768px) {
     .theater {
-            background-image: url(/public/images/mob/Theater-w-logo-mob.png);
+            background-image: url(/images/mob/Theater-w-logo-mob.png);
         }
     .top-start h1 {
         margin-top: 7em;
@@ -329,4 +477,62 @@ main p {
         display: block;
     }
 
+/* Font style reference ______________ */
 
+/* font-family: "chennai", sans-serif;
+font-weight: 700;
+font-style: normal; */
+
+/* font-family: "chennai", sans-serif;
+font-weight: 300;
+font-style: normal; */
+
+
+/* Bulma size reference _________________________ */
+
+/* is-size-1 - 3rem - 48px
+is-size-2 - 2.5rem - 40px
+is-size-3 - 2rem - 32px
+is-size-4 - 1.5rem - 24px
+is-size-5 - 1.25rem - 20px
+is-size-6 - 1rem - 16px
+is-size-7 - 0.75rem - 12px */
+
+
+/* Bulma color reference ______________ */
+
+/* 
+
+Primary: #00d1b2
+Primary Light: #ebfffc
+Primary Dark: #00b89c
+
+Link: #3273dc
+Link Light: #eff8ff
+Link Dark: #276cda
+
+Info: #209cee
+Info Light: #d9f2ff
+Info Dark: #1aa3ff
+
+Success: #23d160
+Success Light: #e7f9ed
+Success Dark: #20bd53
+
+Warning: #ffdd57
+Warning Light: #fff9e6
+Warning Dark: #ffd700
+
+Danger: #ff3860
+Danger Light: #ffe3eb
+Danger Dark: #ff3860
+
+
+Gray Shades:
+
+White: #fff
+Black: #0a0a0a
+Light Gray: #f5f5f5
+Dark Gray: #363636 
+
+*/

@@ -4,14 +4,14 @@ const withAuth = require('../../utilities/auth');
 
 
 Router.get('/', async (req, res) => {
-   try {
-       const nominationData = await Nomination.findAll();
-       res.status(200).json(nominationData);
-   } catch (err) {
-       console.error(err);
-       res.status(500).json(err);
-   }
-   }
+    try {
+        const nominationData = await Nomination.findAll();
+        res.status(200).json(nominationData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+    }
 );
 
 
@@ -30,23 +30,19 @@ Router.get('/:id', async (req, res) => {
 
 
 Router.post('/', async (req, res) => {
-   try {
-       console.log('create nomination route');
-       console.log(req.body);
-       console.log(req.session.user_id);
-       const newNomination = await Nomination.create({
-           ...req.body,
-           // user_id: req.session.user_id,
-           userId: req.session.user_id,
-       });
-     
- 
-      console.log(newNomination);
-       res.status(200).json(newNomination);
-   } catch (err) {
-       console.error(err);
-       res.status(400).json(err);
-   }
+    try { 
+        console.log('create nomination route'); 
+        console.log(req.body); 
+        console.log(req.session.user_id);
+        const newNomination = await movieNominate.create({
+            ...req.body,
+         userId: req.session.user_id,
+        }); 
+        console.log(newNomination);
+        res.status(200).json(newNomination);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 });
 
 
