@@ -2,63 +2,83 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Movies with Friends</title>
-    <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css" />
-    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css" />
-    <!-- <link rel="stylesheet" href="/css/jass.css"> -->
-    <link rel="stylesheet" href="/css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-  </head>
- 
-<body class="has-background-dark">
-    <section class="hero is-black is-fullheight">
-    <!-- Hero head: will stick at the top -->
-    <div class="hero-head">
-      <!--navigation-->
-      <nav class="navbar">
-        <div class="container">
-          <div class="navbar-brand">
-            <!--connect to home-->
-            <a class="navbar-item">
-              <img src= "/images/MwF-alt-logo.png" alt="Movies with Friends">
-            </a>
-            <span class="navbar-burger has-text-light" data-target="navbarMenuHeroA">
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroA" class="navbar-menu has-text-light">
-            <div class="navbar-end">
-              <a class="navbar-item">
-                About Movies with Friends
-              </a>
-              <a class="navbar-item">
-                Contact Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </div>
-    <main id="main-body">
-       <!-- Render the sub layout -->
-       {{{ body }}} 
-      </main>
 
-      {{> footer }}
-  
+ <head>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <title>Movies with Friends</title>
+   <link rel="stylesheet" href="https://use.typekit.net/paw5dsc.css" />
+   <link rel="stylesheet" href="/node_modules/bulma/css/bulma.min.css" />
+   <!-- <link rel="stylesheet" href="/css/jass.css"> -->
+   <link rel="stylesheet" href="/css/style.css" />
+   <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+ </head>
+<body class="has-background-dark">
+   <section class="hero is-black is-fullheight">
+   <!-- Hero head: will stick at the top -->
+   <div class="hero-head">
+     <!--navigation-->
+     <nav class="navbar">
+       <div class="container">
+         <div class="navbar-brand">
+           <!--connect to home-->
+           <a class="navbar-item">
+             <img src= "/images/MwF-alt-logo.png" alt="Movies with Friends">
+           </a>
+           <span class="navbar-burger has-text-light" data-target="navbarMenuHeroA">
+             <span></span>
+             <span></span>
+             <span></span>
+           </span>
+         </div>
+         <div id="navbarMenuHeroA" class="navbar-menu has-text-light">
+           <div class="navbar-end">
+             <a href="/about" class="navbar-item">
+               About Movies with Friends
+             </a>
+             {{!-- <a class="navbar-item">
+               Contact Us
+             </a> --}}
+           </div>
+         </div>
+       </div>
+     </nav>
+   </div>
+ </div>
+   <main id="main-body">
+      <!-- Render the sub layout -->
+      {{{ body }}}
+     </main>
+
+
+     {{> footer }}
   <script src="/javascript/mwf-misc.js"></script>
-  <script src="/javascript/phase.js"></script>
-  <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
+ <script src="/javascript/phase.js"></script>
+ <script src="https://kit.fontawesome.com/76aa510a07.js" crossorigin="anonymous"></script>
 </body>
+
 
 </html>
 
+
+
+
+Movie.card,handles bars in partial folder 
+
+
+
+{{#each this}}
+ <div class="card m-5" style="width: 18rem;">
+   <img src={{poster}} class="card-img-top" alt={{title}} />
+   <div class="card-body">
+     <h5 class="card-title">{{title}}</h5>
+     <p class="card-text">{{releaseYear}}</p>
+     <p class="card-text">{{director}}</p>
+     <button data-movie-id={{id}} class="nominate btn btn-primary">nominate</button>
+     <a href="/movie/{{id}}" class="btn btn-secondary"> view Info </a>
+   </div>
+ </div>
+ {{/each}}

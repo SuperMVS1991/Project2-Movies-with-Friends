@@ -1,6 +1,11 @@
 const router = require("express").Router();
-const { Movie, User, Nomination } = require("../models");
+const { Movie, User, Nomination, Rating } = require("../models");
 const withAuth = require("../utilities/auth");
+
+
+
+
+
 
 // route for the landing page
 router.get("/welcome", async (req, res) => {
@@ -123,6 +128,31 @@ router.get("/nomination", async (req, res) => {
 console.log(Noms);
    res.render("allTheNominations", {
      Noms,
+     logged_in: req.session.logged_in,
+   });
+ } catch (err) {
+   res.status(500).json(err);
+ }
+});
+
+
+router.get("/movie/:id", async (req, res) => {
+ try {
+   const movieData = await Movie.findByPk(req.params.id, {
+     include: [{
+       model: Rating,
+       include: [{
+         model: User,
+         attributes: ['user_name'] // Specify the attribute you want to include
+       }]
+     }]
+   });
+
+
+   const movie = movieData.get({ plain: true });
+     console.log(movie);
+   res.render("movie", {
+     movie,
      logged_in: req.session.logged_in,
    });
  } catch (err) {

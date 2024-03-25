@@ -1,0 +1,35 @@
+<section class="container d-flex flex-column align-items-center">
+ <div class="m-5 " style="color:white">
+   <img style="max-height: 500px; width:fit-content" src={{movie.poster}} class="m-5 card-img-top" alt={{title}} />
+   <div class="card-body">
+     <h5 class="card-title">{{movie.title}}</h5>
+     <p class="card-text">{{movie.releaseYear}}</p>
+     <p class="card-text">{{movie.director}}</p>
+   </div>
+ </div>
+
+
+{{> ratings movie.Ratings }}
+
+
+<div class="container">
+       <div class="comments"></div>
+       <div class="commentbox">
+           <div class="content">
+               <h2 id="post">Post a rating </h2>
+        
+
+
+               <div class="commentinput">
+                   <input type="text" id="title" placeholder="Write title" class="usercomment">
+                    <input type="text" id="review" placeholder="Write review" class="usercomment">
+                     <input type="text" id="rating"placeholder="Enter rating" class="usercomment">
+                   <div class="buttons">
+                       <button type="submit" id="addRating">Publish</button>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+   <script src="/javascript/rating.js"></script>
