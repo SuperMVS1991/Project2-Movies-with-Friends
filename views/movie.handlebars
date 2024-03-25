@@ -1,10 +1,12 @@
 <section class="container d-flex flex-column align-items-center">
- <div class="m-5 " style="color:white">
-   <img style="max-height: 500px; width:fit-content" src={{movie.poster}} class="m-5 card-img-top" alt={{title}} />
+
+
+ <div class="m-5 d-flex card">
+   <img style="max-height: 400px; width:fit-content" src={{movie.poster}} class="m-2 card-img-top" alt={{title}} />
    <div class="card-body">
      <h5 class="card-title">{{movie.title}}</h5>
-     <p class="card-text">{{movie.releaseYear}}</p>
-     <p class="card-text">{{movie.director}}</p>
+     <p class="card-text" style="padding: 0"> Year: {{movie.releaseYear}}</p>
+     <p class="card-text" style="padding: 0"> Director: {{movie.director}}</p>
    </div>
  </div>
 
