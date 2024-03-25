@@ -40,9 +40,9 @@
              {{!-- <a class="navbar-item">
                My profile
              </a> --}}
-             <a href="/nomination" id="nav-friends" class="navbar-item">
+             {{!-- <a href="/nomination" id="nav-friends" class="navbar-item">
                Nominations
-             </a>
+             </a> --}}
              <!--{{/if}} -->
              <hr class="navbar-divider">
              <a href="/about" class="navbar-item">
@@ -53,10 +53,11 @@
              </a> --}}
            
                <hr class="navbar-divider">
+               {{#if logged_in}}
                <a id="logout" class="navbar-item">
                  Sign out
              </a>
-          
+             {{/if}}
            </div>
          </div>
        </div>

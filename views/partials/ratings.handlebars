@@ -1,9 +1,10 @@
 {{#each this}}
- <div class="m-5" style="width: 80%; color: white">
+ <div class="m-3 card" style="width: 80%">
   
    <div class="card-body">
-     <h5 class="card-title">{{title}} </h5>
-     <p class="card-text">{{review}} by {{user.user_name}}</p>
+     <h5 class="card-title m-1">{{title}} </h5>
+     <p class="card-text m-3" style="padding: 0;">{{review}} </p>
+           <p class="card-text" style="color: grey"> @ {{user.user_name}}</p>
      <p class="card-text"> rating: {{rating}}</p>
     
    </div>
